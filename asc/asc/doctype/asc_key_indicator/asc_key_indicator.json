@@ -1,0 +1,159 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:year",
+    "creation": "2022-04-08 11:16:33.429476",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "year",
+        "total_schools",
+        "completed_asc",
+        "functional_asc_school",
+        "closed_asc_school",
+        "total_primary",
+        "total_middle",
+        "total_elementary",
+        "total_secondary",
+        "total_higher_secondary",
+        "total_staff",
+        "total_student_enrollment",
+        "school_no_building",
+        "total_single_teacher_school",
+        "school_no_electricity",
+        "school_no_water",
+        "total_upload_images",
+        "districts",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "label": "Year",
+            "options": "Year",
+            "unique": 1
+        },
+        {
+            "fieldname": "completed_asc",
+            "fieldtype": "Int",
+            "label": "Completed ASC"
+        },
+        {
+            "fieldname": "functional_asc_school",
+            "fieldtype": "Int",
+            "label": "Total Functional ASC School"
+        },
+        {
+            "fieldname": "closed_asc_school",
+            "fieldtype": "Int",
+            "label": "Total Closed ASC School"
+        },
+        {
+            "fieldname": "total_primary",
+            "fieldtype": "Int",
+            "label": "Total Primary"
+        },
+        {
+            "fieldname": "total_middle",
+            "fieldtype": "Int",
+            "label": "Total Middle"
+        },
+        {
+            "fieldname": "total_secondary",
+            "fieldtype": "Int",
+            "label": "Total Secondary"
+        },
+        {
+            "fieldname": "total_staff",
+            "fieldtype": "Int",
+            "label": "Total Staff"
+        },
+        {
+            "fieldname": "total_student_enrollment",
+            "fieldtype": "Int",
+            "label": "Total Student Enrollment"
+        },
+        {
+            "fieldname": "school_no_building",
+            "fieldtype": "Int",
+            "label": "Total Schools With No Building"
+        },
+        {
+            "fieldname": "total_single_teacher_school",
+            "fieldtype": "Int",
+            "label": "Total Single Teacher School"
+        },
+        {
+            "fieldname": "school_no_electricity",
+            "fieldtype": "Int",
+            "label": "Total Schools With No Electricity"
+        },
+        {
+            "fieldname": "school_no_water",
+            "fieldtype": "Int",
+            "label": "Total Schools With No Water"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "ASC Key Indicator",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_schools",
+            "fieldtype": "Int",
+            "label": "Total School"
+        },
+        {
+            "fieldname": "total_elementary",
+            "fieldtype": "Int",
+            "label": "Total Elementary"
+        },
+        {
+            "fieldname": "total_higher_secondary",
+            "fieldtype": "Int",
+            "label": "Total Higher Secondary"
+        },
+        {
+            "fieldname": "total_upload_images",
+            "fieldtype": "Int",
+            "label": "Total Uploaded Images"
+        },
+        {
+            "fieldname": "districts",
+            "fieldtype": "Table",
+            "label": "District",
+            "options": "District Table Indicator"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2022-04-13 11:57:32.122114",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC Key Indicator",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

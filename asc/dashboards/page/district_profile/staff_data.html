@@ -1,0 +1,160 @@
+<div class="dashboard-table designation-tbl">
+    <h5 class="fs-5 fw-bold mb-0 mt-3">Designation wise Staff</h5>
+    <div class="table-responsive">
+        <table class="table" width="100%">
+            <tbody>
+                <tr class="print-bg-green" style="background-color:#309975 !important;">
+                    <td class="text-center fw-600 text-white">Designation</td>
+                    <td class="text-center fw-600 text-white">Male</td>
+                    <td class="text-center fw-600 text-white">Female</td>
+                    <td class="text-center fw-600 text-white">Total</td>
+                    <td class="text-center fw-600 text-white">Designation</td>
+                    <td class="text-center fw-600 text-white">Male</td>
+                    <td class="text-center fw-600 text-white">Female</td>
+                    <td class="text-center fw-600 text-white">Total</td>
+                </tr>
+                {% row = 0 %}
+                {% count = 0 %}
+                {% inner_count = 0 %}
+                {% male = 0 %}
+                {% female = 0 %}
+
+
+                {% for st in staff_data %}
+                {% skip_flag = 1 %}
+
+                <tr>
+                    {% if count == 0 || count != inner_count %}
+                    <td class="fw-700 text-left">{{st.designation}}</td>
+
+                    {% if st.male_staff > 0 %}
+                    <td class="text-right">{{(st.male_staff).toLocaleString("en-US")}}</td>
+                    {% male = male + st.male_staff %}
+
+                    {% endif %}
+
+                    {% if st.male_staff == 0 %}
+                    <td class="text-right">-</td>
+                    {% endif %}
+
+                    {% if st.female_staff > 0 %}
+                    <td class="text-right">{{(st.female_staff).toLocaleString("en-US")}}</td>
+                    {% female = female + st.female_staff %}
+
+                    {% endif %}
+
+                    {% if st.female_staff == 0 %}
+                    <td class="text-right">-</td>
+                    {% endif %}
+
+                    <td class="text-right fw-600">{{(st.male_staff +
+                        st.female_staff).toLocaleString("en-US")}}</td>
+                    {% row = 1 %}
+
+                    {% endif %}
+
+                    {% if count == inner_count && count != 0 && inner_count != 0 %}
+                    {% skip_flag = 0 %}
+                    {% endif %}
+
+
+
+                    {% if skip_flag == 1 %}
+
+                    {% inner_count = 0 %}
+                    {% for st in staff_data %}
+                    {% if inner_count == count + 1 %}
+                    <td class="fw-700 text-left">{{st.designation}}</td>
+                    {% if st.male_staff > 0 %}
+                    <td class="text-right">{{(st.male_staff).toLocaleString("en-US")}}</td>
+                    {% male = male + st.male_staff %}
+
+                    {% endif %}
+
+                    {% if st.male_staff == 0 %}
+                    <td class="text-right">-</td>
+                    {% endif %}
+
+                    {% if st.female_staff > 0 %}
+                    <td class="text-right">{{(st.female_staff).toLocaleString("en-US")}}</td>
+                    {% female = female + st.female_staff %}
+
+                    {% endif %}
+
+                    {% if st.female_staff == 0 %}
+                    <td class="text-right">-</td>
+                    {% endif %}
+                    <td class="text-right fw-600">{{(st.male_staff +
+                        st.female_staff).toLocaleString("en-US")}}</td>
+                    {% row = 2 %}
+                    {% endif %}
+                    {% inner_count = inner_count + 1 %}
+                    {% endfor %}
+                    {% inner_count = count + 1 %}
+
+                    {% endif %}
+
+                    {% count = count + 1 %}
+
+                    {% if row == 2 %}
+                </tr>
+                {%endif%}
+
+                {% endfor %}
+
+                {% if row == 1 %}
+                <td class="fw-700 text-left">Total Teaching Staff</td>
+                <td class="text-right">{{male.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{female.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-600">{{(male + female).toLocaleString("en-US")}}</td>
+                </tr>
+                <tr>
+
+                    <td class="fw-700 text-left">Non-Teaching Staff</td>
+                    <td class="text-right">{{Non_Teaching_Male.toLocaleString("en-US")}}</td>
+                    <td class="text-right">{{Non_Teaching_Female.toLocaleString("en-US")}}</td>
+                    <td class="text-right fw-600">{{(Non_Teaching_Male +
+                        Non_Teaching_Female).toLocaleString("en-US")}}
+                    </td>
+
+                    <td class="fw-700 text-left">Total Staff(Teaching and Non-Teaching)</td>
+                    <td class="text-right fw-600">{{(male + Non_Teaching_Male).toLocaleString("en-US") }}</td>
+                    <td class="text-right fw-600">{{(female + Non_Teaching_Female).toLocaleString("en-US")}}
+                    </td>
+                    <td class="fw-700 text-right">{{(male + female + Non_Teaching_Male +
+                        Non_Teaching_Female).toLocaleString("en-US")}}</td>
+                </tr>
+                {%endif%}
+                {% if row == 2 %}
+                <tr>
+                    <td class="fw-700 text-left">Total Teaching Staff</td>
+                    <td class="text-right">{{male.toLocaleString("en-US")}}</td>
+                    <td class="text-right">{{female.toLocaleString("en-US")}}</td>
+                    <td class="text-right fw-600">{{(male + female).toLocaleString("en-US")}}</td>
+
+
+                    <td class="fw-700 text-left">Non-Teaching Staff</td>
+                    <td class="text-right">{{Non_Teaching_Male.toLocaleString("en-US")}}</td>
+                    <td class="text-right">{{Non_Teaching_Female.toLocaleString("en-US")}}</td>
+                    <td class="text-right fw-600">{{(Non_Teaching_Male +
+                        Non_Teaching_Female).toLocaleString("en-US")}}
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td class="fw-700 text-left">Total Staff(Teaching and Non-Teaching)</td>
+                    <td class="text-right fw-600">{{(male + Non_Teaching_Male ).toLocaleString("en-US") }}</td>
+                    <td class="text-right fw-600">{{(female + Non_Teaching_Female).toLocaleString("en-US")}}
+                    </td>
+                    <td class="fw-700 text-right">{{(male + female + Non_Teaching_Male +
+                        Non_Teaching_Female).toLocaleString("en-US")}}</td>
+
+
+
+                </tr>
+                {%endif%}
+            </tbody>
+        </table>
+    </div>
+</div>

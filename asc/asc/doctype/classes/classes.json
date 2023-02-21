@@ -1,0 +1,41 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:program",
+    "creation": "2021-12-16 15:23:11.374449",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "program",
+        "order_no"
+    ],
+    "fields": [
+        {
+            "fieldname": "program",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Program",
+            "options": "Program",
+            "unique": 1
+        },
+        {
+            "fetch_from": "program.order_no",
+            "fieldname": "order_no",
+            "fieldtype": "Int",
+            "label": "Order_No"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2021-12-21 20:15:20.992865",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Classes",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

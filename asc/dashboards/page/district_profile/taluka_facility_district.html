@@ -1,0 +1,109 @@
+<h5 class="fs-5 fw-bold mb-0 mt-3 ">Taluka wise Facilities</h5>
+<div class="table-responsive">
+    <table width="100%" cellspacing="1" cellpadding="1" border="1" width="100%">
+        <tbody>
+            <tr class="bg-dark-blue" style="background-color: #454d66 !important;">
+                <td rowspan="2" class="text-center fw-bold text-white">Taluka</td>
+                <td colspan="14" class="text-center fw-bold text-white">Facilities</td>
+
+            </tr>
+
+            <tr class="bg-light-blue" style="background-color: #a4b4e570 !important;">
+                <td class="text-center fw-bold"><span>Drinking Water</span></td>
+                <td class="text-center fw-bold"><span>Electricity</span></td>
+                <td class="text-center fw-bold"><span>Toilet</span></td>
+                <td class="text-center fw-bold"><span>Boundary Wall</span></td>
+                <td class="text-center fw-bold"><span>Lab/Sci.Lab</span></td>
+                <td class="text-center fw-bold"><span>Library</span></td>
+                <td class="text-center fw-bold"><span>Computer Lab</span></td>
+
+                <td class="text-center fw-bold"><span>Handwash</span></td>
+                <td class="text-center fw-bold"><span>Electric Fans</span></td>
+                <td class="text-center fw-bold"><span>Soap</span></td>
+
+                <td class="text-center fw-bold"><span>LED/TV</span></td>
+                <td class="text-center fw-bold"><span>Projectors</span></td>
+                <td class="text-center fw-bold"><span>Play Ground</span></td>
+                <td class="text-center fw-bold"><span>Computers</span></td>
+            </tr>
+
+            {% water = 0 %}
+            {% electricity = 0 %}
+            {% toilet = 0 %}
+            {% wall = 0 %}
+            {% lab = 0 %}
+            {% library = 0 %}
+            {% comp_lab = 0 %}
+            {% wash = 0 %}
+            {% fans = 0 %}
+            {% soap = 0 %}
+            {% tv = 0 %}
+            {% projector = 0 %}
+            {% ground = 0 %}
+            {% comp = 0 %}
+
+
+            {% for tal in taluka_fac %}
+
+            {% water = water + tal.drinking_water %}
+            {% electricity = electricity + tal.Electricity %}
+            {% toilet = toilet + tal.Toilet %}
+            {% wall = wall + tal.boundary_wall %}
+            {% lab = lab + tal.science_lab %}
+            {% library = library + tal.library %}
+            {% comp_lab = comp_lab + tal.computer_lab %}
+            {% wash = wash + tal.hand_wash_facility %}
+            {% fans = fans + tal.fans %}
+            {% soap = soap + tal.soap %}
+            {% tv = tv + tal.tv %}
+            {% projector = projector + tal.projector %}
+            {% ground = ground + tal.play_ground %}
+            {% comp = comp + tal.comp %}
+            {% endfor %}
+
+
+
+
+            <tr class="bg-light-gray" style="background-color: rgb(35 40 47 / 15%) !important;">
+                <td class="text-left fw-bold">Total</td>
+                <td class="text-right fw-bold">{{water.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{electricity.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{toilet.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{wall.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{lab.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{library.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{comp_lab.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{wash.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{fans.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{soap.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{tv.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{projector.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{ground.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{comp.toLocaleString("en-US")}}</td>
+            </tr>
+
+            {% for tal in taluka_fac %}
+            <tr>
+                <td class="text-left fw-700">{{tal.taluka}}</td>
+                <td class="text-right">{{tal.drinking_water.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.Electricity.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.Toilet.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.boundary_wall.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.science_lab.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.library.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.computer_lab.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.hand_wash_facility.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.fans.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.soap}}</td>
+                <td class="text-right">{{tal.tv.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.projector.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.play_ground.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.comp.toLocaleString("en-US")}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+    </table>
+</div>

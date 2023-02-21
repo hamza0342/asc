@@ -1,0 +1,23 @@
+{
+    "content": null,
+    "creation": "2022-06-09 11:36:20.617423",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-06-09 11:36:20.617423",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "school-profile-test",
+    "owner": "Administrator",
+    "page_name": "School Profile Test",
+    "roles": [
+        {
+            "role": "System Manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "School Profile Test"
+}

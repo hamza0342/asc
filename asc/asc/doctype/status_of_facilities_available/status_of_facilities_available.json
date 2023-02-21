@@ -1,0 +1,40 @@
+{
+    "actions": [],
+    "creation": "2021-11-05 11:23:37.093804",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "facility",
+        "status"
+    ],
+    "fields": [
+        {
+            "fieldname": "facility",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Facility",
+            "options": "Facility"
+        },
+        {
+            "default": "Not Available",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Status",
+            "options": "Fully Functional\nPartially Functional\nNon Functional\nNot Available"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2021-12-31 18:53:59.568116",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Status of facilities available",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

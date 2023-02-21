@@ -1,0 +1,62 @@
+<div class="dashboard-table genderwise-tbl">
+    <h5 class="fs-5 fw-bold mb-0 mt-3  ">Class and Gender wise Enrollment</h5>
+    <div class="table-responsive">
+        <table class="table" width="100%">
+            <thead>
+                <tr>
+                    <th class="text-center"></th>
+                    {% if year == "2021-22" %}
+                    <th class="text-center"> ECCE</th>
+                    {% endif %}
+                    <th class="text-center"> Katchi</th>
+                    <th class="text-center">I</th>
+                    <th class="text-center"> II</th>
+                    <th class="text-center"> III</th>
+                    <th class="text-center"> IV</th>
+                    <th class="text-center"> V</th>
+                    <th class="text-center"> VI</th>
+                    <th class="text-center"> VII</th>
+                    <th class="text-center"> VIII</th>
+                    <th class="text-center"> IX</th>
+                    <th class="text-center"> X</th>
+                    <th class="text-center"> XI</th>
+                    <th class="text-center"> XII</th>
+                    <th class="text-center">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left fw-bold text-primary">Boys</td>
+                    {% boys = 0 %}
+                    {% for e in enrols %}
+                    <td class="text-right">{{e.boys.toLocaleString("en-US")}}</td>
+                    {% boys = boys + e.boys %}
+                    {% endfor %}
+                    <td class="text-right fw-700">{{boys.toLocaleString("en-US")}}</td>
+
+
+                </tr>
+
+                <tr>
+                    <td class="text-left fw-bold girl"> Girls</td>
+                    {% girls = 0 %}
+                    {% for e in enrols %}
+                    <td class="text-right">{{e.girls.toLocaleString("en-US")}}</td>
+                    {% girls = girls + e.girls %}
+                    {% endfor %}
+                    <td class="text-right fw-700">{{girls.toLocaleString("en-US")}}</td>
+                </tr>
+
+                <tr>
+                    <td class="text-left fw-bold text-mixed">Total</td>
+                    {% total = 0 %}
+                    {% for e in enrols %}
+                    <td class="text-right fw-700">{{(e.boys +
+                        e.girls).toLocaleString("en-US")}}</td>
+                    {% total = total + e.girls + e.boys %}
+                    {% endfor %}
+                    <td class="text-right text-success fw-700">{{total.toLocaleString("en-US")}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

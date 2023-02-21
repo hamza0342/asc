@@ -1,0 +1,463 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-07-26 17:49:57.914680",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "id",
+        "asc_modified",
+        "semis_code",
+        "year",
+        "division",
+        "district",
+        "tehsil",
+        "uc",
+        "na",
+        "ps",
+        "school_name",
+        "location",
+        "gender",
+        "level",
+        "status",
+        "closure_period",
+        "closure_reason",
+        "building_availability",
+        "building_ownership",
+        "building_condition",
+        "rooms",
+        "post_primary",
+        "primary",
+        "ecce",
+        "classrooms",
+        "water",
+        "electricity",
+        "condition_of_boundary_wall",
+        "toilet",
+        "hand_wash",
+        "soap",
+        "mhm_facility",
+        "iscampus",
+        "no_of_merged_schools",
+        "boys_enrollment",
+        "girls_enrollment",
+        "total_enrollment",
+        "sindhi_enrollment",
+        "urdu_enrollment",
+        "english_enrollment",
+        "male_teachers",
+        "female_teachers",
+        "total_teachers",
+        "ecce_male",
+        "ecce_female",
+        "katchi_male",
+        "katchi_female",
+        "class_1_male",
+        "class_1_female",
+        "class_2_male",
+        "class_2_female",
+        "class_3_male",
+        "class_3_female",
+        "class_4_male",
+        "class_4_female",
+        "class_5_male",
+        "class_5_female",
+        "class_6_male",
+        "class_6_female",
+        "class_7_male",
+        "class_7_female",
+        "class_8_male",
+        "class_8_female",
+        "class_9_male",
+        "class_9_female",
+        "class_10_male",
+        "class_10_female",
+        "class_11_male",
+        "class_11_female",
+        "class_12_male",
+        "class_12_female"
+    ],
+    "fields": [
+        {
+            "fieldname": "id",
+            "fieldtype": "Data",
+            "label": "id"
+        },
+        {
+            "fieldname": "semis_code",
+            "fieldtype": "Data",
+            "label": "SEMIS Code"
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "label": "Year",
+            "options": "Year"
+        },
+        {
+            "fieldname": "division",
+            "fieldtype": "Data",
+            "label": "Division"
+        },
+        {
+            "fieldname": "district",
+            "fieldtype": "Data",
+            "label": "District"
+        },
+        {
+            "fieldname": "tehsil",
+            "fieldtype": "Data",
+            "label": "Tehsil"
+        },
+        {
+            "fieldname": "uc",
+            "fieldtype": "Data",
+            "label": "UC"
+        },
+        {
+            "fieldname": "na",
+            "fieldtype": "Data",
+            "label": "NA"
+        },
+        {
+            "fieldname": "ps",
+            "fieldtype": "Data",
+            "label": "PS"
+        },
+        {
+            "fieldname": "school_name",
+            "fieldtype": "Data",
+            "label": "School Name"
+        },
+        {
+            "fieldname": "location",
+            "fieldtype": "Data",
+            "label": "Location"
+        },
+        {
+            "fieldname": "gender",
+            "fieldtype": "Data",
+            "label": "Gender"
+        },
+        {
+            "fieldname": "level",
+            "fieldtype": "Data",
+            "label": "Level"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Data",
+            "label": "Status"
+        },
+        {
+            "fieldname": "closure_period",
+            "fieldtype": "Data",
+            "label": "Closure Period"
+        },
+        {
+            "fieldname": "closure_reason",
+            "fieldtype": "Data",
+            "label": "Closure Reason"
+        },
+        {
+            "fieldname": "building_availability",
+            "fieldtype": "Data",
+            "label": "Building Availability"
+        },
+        {
+            "fieldname": "building_ownership",
+            "fieldtype": "Data",
+            "label": "Building Ownership"
+        },
+        {
+            "fieldname": "building_condition",
+            "fieldtype": "Data",
+            "label": "Building Condition"
+        },
+        {
+            "fieldname": "rooms",
+            "fieldtype": "Int",
+            "label": "Rooms"
+        },
+        {
+            "fieldname": "post_primary",
+            "fieldtype": "Int",
+            "label": "Post Primary"
+        },
+        {
+            "fieldname": "primary",
+            "fieldtype": "Int",
+            "label": "Primary"
+        },
+        {
+            "fieldname": "ecce",
+            "fieldtype": "Int",
+            "label": "ECCE"
+        },
+        {
+            "fieldname": "classrooms",
+            "fieldtype": "Int",
+            "label": "Classrooms"
+        },
+        {
+            "fieldname": "water",
+            "fieldtype": "Data",
+            "label": "Water"
+        },
+        {
+            "fieldname": "electricity",
+            "fieldtype": "Data",
+            "label": "Electricity"
+        },
+        {
+            "fieldname": "condition_of_boundary_wall",
+            "fieldtype": "Data",
+            "label": "Condition of Boundary Wall"
+        },
+        {
+            "fieldname": "toilet",
+            "fieldtype": "Data",
+            "label": "Toilet"
+        },
+        {
+            "fieldname": "hand_wash",
+            "fieldtype": "Data",
+            "label": "Hand Wash"
+        },
+        {
+            "fieldname": "soap",
+            "fieldtype": "Data",
+            "label": "Soap"
+        },
+        {
+            "fieldname": "mhm_facility",
+            "fieldtype": "Data",
+            "label": "MHM Facility"
+        },
+        {
+            "fieldname": "iscampus",
+            "fieldtype": "Data",
+            "label": "isCampus"
+        },
+        {
+            "fieldname": "no_of_merged_schools",
+            "fieldtype": "Int",
+            "label": "No. of Merged Schools` "
+        },
+        {
+            "fieldname": "boys_enrollment",
+            "fieldtype": "Float",
+            "label": "Boys Enrollment"
+        },
+        {
+            "fieldname": "girls_enrollment",
+            "fieldtype": "Float",
+            "label": "Girls Enrollment"
+        },
+        {
+            "fieldname": "total_enrollment",
+            "fieldtype": "Float",
+            "label": "Total Enrollment"
+        },
+        {
+            "fieldname": "sindhi_enrollment",
+            "fieldtype": "Int",
+            "label": "Sindhi Enrollment"
+        },
+        {
+            "fieldname": "urdu_enrollment",
+            "fieldtype": "Int",
+            "label": "Urdu Enrollment"
+        },
+        {
+            "fieldname": "english_enrollment",
+            "fieldtype": "Int",
+            "label": "English Enrollment"
+        },
+        {
+            "fieldname": "male_teachers",
+            "fieldtype": "Int",
+            "label": "Male Teachers"
+        },
+        {
+            "fieldname": "female_teachers",
+            "fieldtype": "Int",
+            "label": "Female Teachers"
+        },
+        {
+            "fieldname": "total_teachers",
+            "fieldtype": "Int",
+            "label": "Total Teachers"
+        },
+        {
+            "fieldname": "ecce_male",
+            "fieldtype": "Int",
+            "label": "ECCE Male"
+        },
+        {
+            "fieldname": "ecce_female",
+            "fieldtype": "Int",
+            "label": "ECCE Female"
+        },
+        {
+            "fieldname": "katchi_male",
+            "fieldtype": "Int",
+            "label": "Katchi Male"
+        },
+        {
+            "fieldname": "katchi_female",
+            "fieldtype": "Int",
+            "label": "Katchi Female"
+        },
+        {
+            "fieldname": "class_1_male",
+            "fieldtype": "Int",
+            "label": "Class-I Male"
+        },
+        {
+            "fieldname": "class_1_female",
+            "fieldtype": "Int",
+            "label": "Class-I Female"
+        },
+        {
+            "fieldname": "class_2_male",
+            "fieldtype": "Int",
+            "label": "Class-II Male"
+        },
+        {
+            "fieldname": "class_2_female",
+            "fieldtype": "Int",
+            "label": "Class-II Female"
+        },
+        {
+            "fieldname": "class_3_male",
+            "fieldtype": "Int",
+            "label": "Class-III Male"
+        },
+        {
+            "fieldname": "class_3_female",
+            "fieldtype": "Int",
+            "label": "Class-III Female"
+        },
+        {
+            "fieldname": "class_4_male",
+            "fieldtype": "Int",
+            "label": "Class-IV Male"
+        },
+        {
+            "fieldname": "class_4_female",
+            "fieldtype": "Int",
+            "label": "Class-IV Female"
+        },
+        {
+            "fieldname": "class_5_male",
+            "fieldtype": "Int",
+            "label": "Class-V Male"
+        },
+        {
+            "fieldname": "class_5_female",
+            "fieldtype": "Int",
+            "label": "Class-V Female"
+        },
+        {
+            "fieldname": "class_6_male",
+            "fieldtype": "Int",
+            "label": "Class-VI Male"
+        },
+        {
+            "fieldname": "class_6_female",
+            "fieldtype": "Int",
+            "label": "Class-VI Female"
+        },
+        {
+            "fieldname": "class_7_male",
+            "fieldtype": "Int",
+            "label": "Class-VII Male"
+        },
+        {
+            "fieldname": "class_7_female",
+            "fieldtype": "Int",
+            "label": "Class-VII Female"
+        },
+        {
+            "fieldname": "class_8_male",
+            "fieldtype": "Int",
+            "label": "Class-VIII Male"
+        },
+        {
+            "fieldname": "class_8_female",
+            "fieldtype": "Int",
+            "label": "Class-VIII Female"
+        },
+        {
+            "fieldname": "class_9_male",
+            "fieldtype": "Int",
+            "label": "Class-IX Male"
+        },
+        {
+            "fieldname": "class_9_female",
+            "fieldtype": "Int",
+            "label": "Class-IX Female"
+        },
+        {
+            "fieldname": "class_10_male",
+            "fieldtype": "Int",
+            "label": "Class-X Male"
+        },
+        {
+            "fieldname": "class_10_female",
+            "fieldtype": "Int",
+            "label": "Class-X Female"
+        },
+        {
+            "fieldname": "class_11_male",
+            "fieldtype": "Int",
+            "label": "Class-XI Male"
+        },
+        {
+            "fieldname": "class_11_female",
+            "fieldtype": "Int",
+            "label": "Class-XI Female"
+        },
+        {
+            "fieldname": "class_12_male",
+            "fieldtype": "Int",
+            "label": "Class-XII Male"
+        },
+        {
+            "fieldname": "class_12_female",
+            "fieldtype": "Int",
+            "label": "Class-XII Female"
+        },
+        {
+            "fieldname": "asc_modified",
+            "fieldtype": "Datetime",
+            "label": "ASC Modified"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-09-14 18:09:31.456013",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC_KPI",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

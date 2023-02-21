@@ -1,0 +1,23 @@
+{
+    "content": null,
+    "creation": "2022-06-24 17:47:11.126709",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-06-24 17:47:26.082889",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "school-location",
+    "owner": "Administrator",
+    "page_name": "School Location",
+    "roles": [
+        {
+            "role": "System Manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "School Location"
+}

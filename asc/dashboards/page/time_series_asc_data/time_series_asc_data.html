@@ -1,0 +1,168 @@
+<div class="time-series-section" id="time_series_asc_data">
+	<table class="table" cellspacing="0" width="100%">
+		<tbody>
+			<tr>
+				<th colspan="2" style="border:none"></th>
+				<th colspan="4" class="text-center" style="background:aliceblue;">Number of Schools</th>
+				<th colspan="3" class="text-center" style="background:aliceblue;">Enrollment</th>
+				<th colspan="3" class="text-center" style="background:aliceblue;">Teachers</th>
+			</tr>
+
+			<tr style="background:aliceblue;">
+				<th class="text-center">Census Year</th>
+				<th class="text-center">School Level</th>
+				<th class="text-center bg-boy text-white">Boys</th>
+				<th class="text-center bg-girl text-white">Girls</th>
+				<th class="text-center bg-dark-blue text-white">Mixed</th>
+				<th class="text-center">Total</th>
+				<th class="text-center bg-boy text-white">Boys</th>
+				<th class="text-center bg-girl text-white">Girls</th>
+				<th class="text-center">Total</th>
+				<th class="text-center bg-boy text-white">Male</th>
+				<th class="text-center bg-girl text-white">Female</th>
+				<th class="text-center">Total</th>
+			</tr>
+
+			{% currentYear = "" %}
+
+			{% boys = 0 %}
+			{% girls = 0 %}
+			{% mixed = 0 %}
+			{% bg_total = 0 %}
+			{% male = 0 %}
+			{% female = 0 %}
+			{% mf_total = 0 %}
+			{% m_teachers = 0 %}
+			{% f_teachers= 0 %}
+			{% mf_t_total = 0 %}
+			{% count = 1 %}
+
+
+
+			{% for dd in data %}	
+			<tr>
+				{% if dd.year != currentYear && span >=5 %}
+				{% currentYear = dd.year %}
+
+				<td class="text-center bg-white" rowspan={{span}}>{{dd.year}}</td>
+
+				{% endif %}
+				 
+				{% if dd.year != currentYear && span <=2 %}
+				<td class="text-center bg-white">{{dd.year}}</td>
+				{% endif %}
+				<td>{{dd.level}}</td>
+				<td class="text-right">{{dd.boys.toLocaleString("en-US")}}</td> {% boys = boys + dd.boys %}
+				<td class="text-right">{{dd.girls.toLocaleString("en-US")}}</td> {% girls = girls + dd.girls %}
+				<td class="text-right">{{dd.mixed.toLocaleString("en-US")}}</td> {% mixed = mixed + dd.mixed %}
+				<td class="text-right">{{(dd.boys + dd.girls + dd.mixed).toLocaleString("en-US")}}</td> {% bg_total = bg_total + dd.boys + dd.girls + dd.mixed %}
+
+				<td class="text-right">{{dd.male.toLocaleString("en-US")}}</td> {% male = male + dd.male %}
+				<td class="text-right">{{dd.female.toLocaleString("en-US")}}</td> {% female = female + dd.female %}
+				<td class="text-right">{{(dd.male + dd.female).toLocaleString("en-US")}}</td> {% mf_total = mf_total + dd.male + dd.female %}
+
+				<td class="text-right">{{dd.male_teachers.toLocaleString("en-US")}}</td> {% m_teachers = m_teachers + dd.male_teachers %}
+				<td class="text-right">{{(dd.female_teachers).toLocaleString("en-US")}}</td> {% f_teachers = f_teachers + dd.female_teachers %}
+				<td class="text-right">{{(dd.male_teachers + dd.female_teachers).toLocaleString("en-US")}}</td> {% mf_t_total = mf_t_total + dd.male_teachers + dd.female_teachers %}
+			</tr>
+			{% if count == (span-1) && span >=5 %}
+			<tr style="height: 42px;background:aliceblue;">
+				<td class="text-center fw-600">Total</td>
+				<td class="fw-600 text-center">{{boys.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{girls.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{mixed.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{bg_total.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{male.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{female.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{mf_total.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{m_teachers.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{f_teachers.toLocaleString("en-US")}}</td>
+				<td class="fw-600 text-center">{{mf_t_total.toLocaleString("en-US")}}</td>
+			</tr> 
+			{% boys = 0 %}
+			{% girls = 0 %}
+			{% mixed = 0 %}
+			{% bg_total = 0 %}
+			{% male = 0 %}
+			{% female = 0 %}
+			{% mf_total = 0 %}
+			{% m_teachers = 0 %}
+			{% f_teachers= 0 %}
+			{% mf_t_total = 0 %}
+
+			{% count = 0 %}
+			{% endif %}
+
+			{% count = count + 1 %}
+			{% endfor %}
+
+			<!-- <tr>
+				<td class="text-center bg-white" rowspan="5">2002 - 03</td>
+				<td>Primary</td>
+				<td class="text-right">17,226</td>
+				<td class="text-right">6,093</td>
+				<td class="text-right">15,857</td>
+				<td class="text-right">39,176</td>
+				<td class="text-right">1,500,147</td>
+				<td class="text-right">809,075 </td>
+				<td class="text-right">2,309,222</td>
+				<td class="text-right">69,322</td>
+				<td class="text-right">27,915</td>
+				<td class="text-right">97,237</td>
+			</tr>
+			<tr style="background-color: #c0c0c0cf;">
+				<td>Middle / Elementary</td>
+				<td class="text-right">1,159</td>
+				<td class="text-right">674</td>
+				<td class="text-right">407</td>
+				<td class="text-right">2,240</td>
+				<td class="text-right">74,458</td>
+				<td class="text-right">56,014</td>
+				<td class="text-right">130,472</td>
+				<td class="text-right">5,357</td>
+				<td class="text-right">4,334</td>
+				<td class="text-right">9,691</td>
+			</tr>
+			<tr>
+				<td>Secondary</td>
+				<td class="text-right">823</td>
+				<td class="text-right">423</td>
+				<td class="text-right">234</td>
+				<td class="text-right">1,480</td>
+				<td class="text-right">311,042</td>
+				<td class="text-right">200,516</td>
+				<td class="text-right">511,558</td>
+				<td class="text-right">18,453</td>
+				<td class="text-right">10,844</td>
+				<td class="text-right">29,297</td>
+			</tr>
+			<tr style="background-color: #c0c0c0cf;">
+				<td>Higher Secondary</td>
+				<td class="text-right">53</td>
+				<td class="text-right">56</td>
+				<td class="text-right">30</td>
+				<td class="text-right">139</td>
+				<td class="text-right">56,291</td>
+				<td class="text-right">49,626</td>
+				<td class="text-right">105,917</td>
+				<td class="text-right">2,913</td>
+				<td class="text-right">2,913</td>
+				<td class="text-right">5,106</td>
+			</tr>
+			<tr style="height: 42px;background:aliceblue;">
+				<td class="text-center fw-600">Total</td>
+				<td class="fw-600 text-center">19,261</td>
+				<td class="fw-600 text-center">7,246</td>
+				<td class="fw-600 text-center">16,528</td>
+				<td class="fw-600 text-center">43,035</td>
+				<td class="fw-600 text-center">1,941,938</td>
+				<td class="fw-600 text-center">1,115,231</td>
+				<td class="fw-600 text-center">3,057,169</td>
+				<td class="fw-600 text-center">96,045</td>
+				<td class="fw-600 text-center">45,286</td>
+				<td class="fw-600 text-center">141,331</td>
+			</tr> -->
+
+		</tbody>
+	</table>
+</div>

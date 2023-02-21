@@ -1,0 +1,233 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:{semis_code}-{year}",
+    "creation": "2022-03-29 14:28:15.184789",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "updated",
+        "semis_code",
+        "school_name",
+        "status",
+        "enabled",
+        "district",
+        "date_and_time",
+        "date",
+        "column_break_3",
+        "year",
+        "lat",
+        "lng",
+        "source",
+        "images_section",
+        "image_1",
+        "image_2",
+        "column_break_8",
+        "image_3",
+        "image_4",
+        "column_break_11",
+        "image_5",
+        "image_6",
+        "column_break_14",
+        "image_7",
+        "image_8",
+        "section_break_23",
+        "total_images",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "semis_code",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Semis Code",
+            "options": "School",
+            "search_index": 1,
+            "set_only_once": 1
+        },
+        {
+            "fieldname": "lat",
+            "fieldtype": "Float",
+            "label": "Lat"
+        },
+        {
+            "fieldname": "lng",
+            "fieldtype": "Float",
+            "label": "Lng"
+        },
+        {
+            "fieldname": "date_and_time",
+            "fieldtype": "Datetime",
+            "label": "Date and Time"
+        },
+        {
+            "fieldname": "image_1",
+            "fieldtype": "Attach",
+            "label": "Image 1"
+        },
+        {
+            "fieldname": "image_2",
+            "fieldtype": "Attach",
+            "label": "Image 2"
+        },
+        {
+            "fieldname": "image_3",
+            "fieldtype": "Attach",
+            "label": "Image 3"
+        },
+        {
+            "fieldname": "image_4",
+            "fieldtype": "Attach",
+            "label": "Image 4"
+        },
+        {
+            "fieldname": "image_5",
+            "fieldtype": "Attach",
+            "label": "Image 5"
+        },
+        {
+            "fieldname": "image_6",
+            "fieldtype": "Attach",
+            "label": "Image 6"
+        },
+        {
+            "fieldname": "image_7",
+            "fieldtype": "Attach",
+            "label": "Image 7"
+        },
+        {
+            "fieldname": "image_8",
+            "fieldtype": "Attach",
+            "label": "Image 8"
+        },
+        {
+            "fieldname": "images_section",
+            "fieldtype": "Section Break",
+            "label": "Images"
+        },
+        {
+            "fieldname": "column_break_8",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_11",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_14",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "date",
+            "fieldtype": "Date",
+            "hidden": 1,
+            "label": "Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "label": "Year",
+            "options": "Year",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.school_name",
+            "fieldname": "school_name",
+            "fieldtype": "Data",
+            "in_standard_filter": 1,
+            "label": "School Name",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.district",
+            "fieldname": "district",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "District",
+            "read_only": 1
+        },
+        {
+            "default": "Web",
+            "fieldname": "source",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Source",
+            "options": "\nMobile\nWeb",
+            "read_only": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "ASC Images",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_23",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "total_images",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Total Images",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.status",
+            "fieldname": "status",
+            "fieldtype": "Data",
+            "label": "Status",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fetch_from": "semis_code.enabled",
+            "fieldname": "enabled",
+            "fieldtype": "Check",
+            "label": "Enabled",
+            "read_only": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "updated",
+            "fieldtype": "Check",
+            "hidden": 1,
+            "label": "Updated"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-06-20 14:16:00.925217",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC Images",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

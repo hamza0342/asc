@@ -1,0 +1,1166 @@
+{
+    "actions": [],
+    "allow_import": 1,
+    "autoname": "format:ASC-{semis_code}-{year}",
+    "creation": "2021-12-30 18:25:58.744045",
+    "description": "\n\n\n",
+    "doctype": "DocType",
+    "document_type": "Other",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "form_information_section",
+        "year",
+        "semis_code",
+        "lat_n",
+        "lon_e",
+        "column_break_5",
+        "reference_date",
+        "visit_date_and_time",
+        "school_basic_information_section",
+        "region",
+        "district",
+        "taluka",
+        "uc",
+        "ena_constituency",
+        "fps_constituency",
+        "column_break_15",
+        "school_name",
+        "present_address",
+        "column_break_26",
+        "location",
+        "level",
+        "school_gender",
+        "shift",
+        "school_phone_no",
+        "school_administration",
+        "school_administration_other",
+        "school_status_section",
+        "status_detail",
+        "source_information_closure",
+        "section_break_25",
+        "school_duration_of_closure",
+        "school_year_of_closure",
+        "major_reason_closure",
+        "closure_any_other_reasons_text",
+        "closed_type",
+        "school_building_detail_section",
+        "availability_of_building",
+        "yes_relevant_code",
+        "share_building_code",
+        "shared_school_name",
+        "type_of_building",
+        "condition_of_building",
+        "no_relevant_other",
+        "column_break_33",
+        "no_relevant_code",
+        "yes_relevant_other",
+        "total_area_school",
+        "total_rooms_school",
+        "column_break_41",
+        "rooms_used_as_class",
+        "ecce",
+        "primary",
+        "post_primary",
+        "total_rooms",
+        "basic_facilities_section",
+        "source_drinking_water",
+        "provision_drinking_water",
+        "electricity_connection",
+        "no_connection_reason",
+        "status_of_electrification",
+        "condition_of_boundary_wall",
+        "column_break_46",
+        "toilet_facility",
+        "total_no_of_functional_toilets",
+        "total_no_of_non_functional_toilet",
+        "non_functional_toilet_reasons",
+        "toilets_accessible_disabled",
+        "column_break_54",
+        "wheel_chair_ramp_available",
+        "polio_affected",
+        "physical_disabilites",
+        "total_disables",
+        "hand_wash_facility",
+        "mhm_facility",
+        "disposal_for_sanitary",
+        "tree_plantation_school",
+        "ddo_cost_center",
+        "branch_school_and_adoption_of_school_information_section",
+        "adopted_school",
+        "is_this_branch_school",
+        "semis",
+        "name_of_main_school",
+        "column_break_71",
+        "adopter_name",
+        "is_campus_school",
+        "no_of_merger_schools",
+        "list_of_surrounding_government_schools_section",
+        "adjacent_schools",
+        "total_no_of_surrounding_sindh_education_foundation_section",
+        "no_of_sef_schools",
+        "column_break_81",
+        "no_of_private_schools",
+        "column_break_83",
+        "total_surrounding_schools",
+        "major__minor_repair_and_construction_work_detail_section",
+        "details_repair_in_school__year",
+        "construction_work_planned_completed",
+        "column_break_75",
+        "what_constructed_in_school",
+        "what_constructed_text",
+        "smc_fund",
+        "smc_received_detail",
+        "t_r_smc",
+        "utlized",
+        "column_break_105",
+        "m_repair",
+        "cleanliness",
+        "trans_for_g_c",
+        "status_of_facilities_available_in_the_school_section",
+        "status_of_facilities_availability",
+        "status_items_availability",
+        "register_maintained_by_school_section",
+        "school_registers",
+        "school_enrolment_information_section",
+        "a_medium_wise_enrolment",
+        "sindhi_medium_enrolment",
+        "urdu_medium_enrolment",
+        "english_medium_enrolment",
+        "b_enrolment_class__gender_wise",
+        "gender_wise_enrolment",
+        "c_repeaters",
+        "table_repeaters",
+        "total_no_of_working_teaching_and_non_teaching_staff_section",
+        "govt_male_teachers",
+        "govt_female_teachers",
+        "non_govt_male_teachers",
+        "non_govt_female_teachers",
+        "total_teacher",
+        "column_break_112",
+        "non_teaching_male_staff",
+        "non_teaching_female_staff",
+        "total_non_teaching_staff",
+        "section_break_120",
+        "principal_hm_name",
+        "principal_email",
+        "principal_designation",
+        "column_break_121",
+        "cnic_number_principal",
+        "principal_phone",
+        "principal_gender",
+        "date_principal",
+        "principal_signature",
+        "data_collector__enumerator_section",
+        "name_enumerator",
+        "cnic_no_enumerator",
+        "designation_enumerator",
+        "column_break_138",
+        "contact_no_enumerator",
+        "signature",
+        "education_officer",
+        "name_education_officer",
+        "cnic_education_officer",
+        "designation_education_officer",
+        "column_break_145",
+        "contact_education_officer",
+        "signatue_education_officer",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "form_information_section",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "label": "Year",
+            "options": "Year",
+            "reqd": 1
+        },
+        {
+            "bold": 1,
+            "fieldname": "semis_code",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "SEMIS Code / Tracking ID",
+            "options": "School",
+            "reqd": 1
+        },
+        {
+            "fieldname": "reference_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Reference Date"
+        },
+        {
+            "fieldname": "visit_date_and_time",
+            "fieldtype": "Datetime",
+            "in_list_view": 1,
+            "label": "Form Filling / Visit Date and Time"
+        },
+        {
+            "fieldname": "column_break_5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fetch_from": "semis_code.gps_coordinateslatitude",
+            "fieldname": "lat_n",
+            "fieldtype": "Float",
+            "label": "Lat (N)",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.gps_coordinateslongitude",
+            "fieldname": "lon_e",
+            "fieldtype": "Float",
+            "label": "Lon (E)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "school_basic_information_section",
+            "fieldtype": "Section Break",
+            "label": "1. School Basic Information"
+        },
+        {
+            "fetch_from": "semis_code.division",
+            "fieldname": "region",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "a. Region",
+            "options": "Division",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fetch_from": "semis_code.district",
+            "fieldname": "district",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "b. District",
+            "options": "District",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fetch_from": "semis_code.taluka",
+            "fieldname": "taluka",
+            "fieldtype": "Link",
+            "label": "c. Taluka",
+            "options": "Taluka",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fetch_from": "semis_code.union_council",
+            "fieldname": "uc",
+            "fieldtype": "Link",
+            "label": "d. UC/MC/TC",
+            "options": "Union Council"
+        },
+        {
+            "fieldname": "ena_constituency",
+            "fieldtype": "Data",
+            "label": "e. NA Constituency"
+        },
+        {
+            "fieldname": "fps_constituency",
+            "fieldtype": "Data",
+            "label": "f. PS Constituency"
+        },
+        {
+            "fieldname": "column_break_15",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fetch_from": "semis_code.school_name",
+            "fieldname": "school_name",
+            "fieldtype": "Data",
+            "label": "g. School Name with Prefix as per SEMIS Record",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "columns": 2,
+            "fetch_from": "semis_code.address",
+            "fieldname": "present_address",
+            "fieldtype": "Small Text",
+            "label": "h. Present Address",
+            "width": "222"
+        },
+        {
+            "fieldname": "column_break_26",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fetch_from": "semis_code.location",
+            "fieldname": "location",
+            "fieldtype": "Select",
+            "label": "i. Location",
+            "options": "\nUrban\nRural\nNot Reported",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.level",
+            "fieldname": "level",
+            "fieldtype": "Link",
+            "label": "j. Level",
+            "options": "Level",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.gender",
+            "fieldname": "school_gender",
+            "fieldtype": "Link",
+            "label": "k. School Gender",
+            "options": "School Gender",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "semis_code.shift",
+            "fieldname": "shift",
+            "fieldtype": "Select",
+            "label": "l. Shift",
+            "options": "\nMorning\nAfternoon\nBoth",
+            "read_only": 1
+        },
+        {
+            "fieldname": "school_phone_no",
+            "fieldtype": "Data",
+            "label": "m. School Phone No.",
+            "length": 12
+        },
+        {
+            "fieldname": "school_administration",
+            "fieldtype": "Link",
+            "label": "n. School Administration",
+            "options": "School administration"
+        },
+        {
+            "depends_on": "eval:doc.school_administration == 'Other'",
+            "fieldname": "school_administration_other",
+            "fieldtype": "Small Text",
+            "label": "Write School Administration Other"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "school_status_section",
+            "fieldtype": "Section Break",
+            "label": "2. School Status"
+        },
+        {
+            "default": "Functional",
+            "fieldname": "status_detail",
+            "fieldtype": "Select",
+            "label": "a. Status Detail",
+            "options": "\nFunctional\nClosed"
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed'",
+            "fieldname": "source_information_closure",
+            "fieldtype": "Link",
+            "label": "b. Source of information of closure of School",
+            "options": "Source of information of closure of School"
+        },
+        {
+            "fieldname": "section_break_25",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed'",
+            "fieldname": "school_year_of_closure",
+            "fieldtype": "Date",
+            "hidden": 1,
+            "label": "c. Write the day, month and Year of closure"
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed'",
+            "fieldname": "major_reason_closure",
+            "fieldtype": "Link",
+            "label": "d. Write major reason for closure",
+            "options": "Write major reason for closure"
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed' && doc.major_reason_closure == 'Any Other Reason(s)'",
+            "fieldname": "closure_any_other_reasons_text",
+            "fieldtype": "Small Text",
+            "label": "Any Other Reason(s)"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "school_building_detail_section",
+            "fieldtype": "Section Break",
+            "label": "3. School Building Detail"
+        },
+        {
+            "fieldname": "availability_of_building",
+            "fieldtype": "Select",
+            "label": "a. Availability of Building",
+            "options": "\nYes\nNo",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "yes_relevant_code",
+            "fieldtype": "Link",
+            "label": "c. If Yes, write the relevant code",
+            "options": "Case In Availability of Building"
+        },
+        {
+            "depends_on": "eval:doc.yes_relevant_code == 'Another Govt School (SHARED)' && doc.availability_of_building == 'Yes'",
+            "fieldname": "share_building_code",
+            "fieldtype": "Data",
+            "label": "If shared building with other Gov't School building, SEMIS ID:"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "type_of_building",
+            "fieldtype": "Link",
+            "label": "d. Type of building",
+            "options": "Type of building"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "condition_of_building",
+            "fieldtype": "Link",
+            "label": "e. Condition of Building",
+            "options": "Condition of Building"
+        },
+        {
+            "depends_on": "eval:doc.no_relevant_code == 'Other' && doc.availability_of_building == 'No'",
+            "fieldname": "no_relevant_other",
+            "fieldtype": "Small Text",
+            "label": "Write the No, relevant other"
+        },
+        {
+            "fieldname": "column_break_33",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'No'",
+            "fieldname": "no_relevant_code",
+            "fieldtype": "Select",
+            "label": "b. If No, write the relevant code",
+            "options": "\nChappra\nTree\nHut\nOther"
+        },
+        {
+            "depends_on": "eval:doc.yes_relevant_code == 'Other' && doc.availability_of_building == 'Yes'",
+            "fieldname": "yes_relevant_other",
+            "fieldtype": "Small Text",
+            "label": "Write the Yes, relevant other"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "total_area_school",
+            "fieldtype": "Data",
+            "label": "f. Total Area of School in (Sqft)"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "total_rooms_school",
+            "fieldtype": "Int",
+            "label": "g. Total number of rooms in School"
+        },
+        {
+            "fieldname": "column_break_41",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.availability_of_building == 'Yes'",
+            "fieldname": "rooms_used_as_class",
+            "fieldtype": "Int",
+            "label": "h. Total no. rooms used as classroom"
+        },
+        {
+            "depends_on": "eval: doc.rooms_used_as_class > 0 && doc.availability_of_building ==\"Yes\"",
+            "fieldname": "ecce",
+            "fieldtype": "Int",
+            "label": "ECCE"
+        },
+        {
+            "depends_on": "eval: doc.rooms_used_as_class > 0 && doc.availability_of_building ==\"Yes\"",
+            "fieldname": "primary",
+            "fieldtype": "Int",
+            "label": "Primary"
+        },
+        {
+            "depends_on": "eval: doc.rooms_used_as_class > 0 && doc.availability_of_building ==\"Yes\"",
+            "fieldname": "post_primary",
+            "fieldtype": "Int",
+            "label": "Post Primary"
+        },
+        {
+            "depends_on": "eval: doc.rooms_used_as_class > 0 && doc.availability_of_building ==\"Yes\"",
+            "fieldname": "total_rooms",
+            "fieldtype": "Int",
+            "label": "Total Rooms",
+            "read_only": 1
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "basic_facilities_section",
+            "fieldtype": "Section Break",
+            "label": "4. Basic Facilities"
+        },
+        {
+            "description": "( Note : More then one option can be selected )",
+            "fieldname": "source_drinking_water",
+            "fieldtype": "Table MultiSelect",
+            "ignore_user_permissions": 1,
+            "label": "a. Please mention the source of Drinking Water.",
+            "options": "Water source Table"
+        },
+        {
+            "fieldname": "provision_drinking_water",
+            "fieldtype": "Link",
+            "label": "b. Mode of provision of Drinking Water",
+            "options": "Mode of provision of Drinking Water"
+        },
+        {
+            "fieldname": "electricity_connection",
+            "fieldtype": "Select",
+            "label": "c. Please mention the source of Electricity connection",
+            "options": "\nWAPDA/KE\nSolar System\nNo Electricity Connection",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.electricity_connection == 'No Electricity Connection'",
+            "fieldname": "no_connection_reason",
+            "fieldtype": "Select",
+            "label": "d. If No connection, mention the reason",
+            "options": "\nConnection disconnected\nNo Electricity in the area"
+        },
+        {
+            "depends_on": "eval:doc.electricity_connection == 'WAPDA/KE'",
+            "fieldname": "status_of_electrification",
+            "fieldtype": "Select",
+            "label": "e. Status of Electrification within School",
+            "options": "\nFunctional\nPartially Functional\nNon-Functional"
+        },
+        {
+            "fieldname": "condition_of_boundary_wall",
+            "fieldtype": "Select",
+            "label": "f. Condition of Boundary Wall",
+            "options": "\nSatisfactory\nNeeds Repair\nDangerous\nNo Boundary Wall"
+        },
+        {
+            "fieldname": "column_break_46",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "toilet_facility",
+            "fieldtype": "Select",
+            "label": "g. Toilet facility",
+            "options": "\nYes\nNo"
+        },
+        {
+            "depends_on": "eval:doc.toilet_facility == 'Yes'",
+            "fieldname": "total_no_of_functional_toilets",
+            "fieldtype": "Int",
+            "label": "Total no. of Functional Toilets"
+        },
+        {
+            "depends_on": "eval:doc.toilet_facility == 'Yes'",
+            "fieldname": "total_no_of_non_functional_toilet",
+            "fieldtype": "Int",
+            "label": "Total no. of Non Functional Toilet"
+        },
+        {
+            "depends_on": "eval: doc.total_no_of_non_functional_toilet > 0",
+            "description": "( Note : More then one option can be selected )",
+            "fieldname": "non_functional_toilet_reasons",
+            "fieldtype": "Table MultiSelect",
+            "label": "If Non Functional Toilet, select the reasons",
+            "options": "Toilet facility Table"
+        },
+        {
+            "depends_on": "eval:doc.toilet_facility == 'Yes'",
+            "fieldname": "toilets_accessible_disabled",
+            "fieldtype": "Select",
+            "label": "i. Toilets accessible to differently able disabled students",
+            "options": "\nYes\nNo"
+        },
+        {
+            "fieldname": "column_break_54",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "wheel_chair_ramp_available",
+            "fieldtype": "Select",
+            "label": "j.Is ramp available in the School for student using wheel chair",
+            "options": "\nYes\nNo"
+        },
+        {
+            "fieldname": "polio_affected",
+            "fieldtype": "Int",
+            "label": "Polio affected"
+        },
+        {
+            "fieldname": "physical_disabilites",
+            "fieldtype": "Int",
+            "label": "Any other physical disabilites"
+        },
+        {
+            "fieldname": "total_disables",
+            "fieldtype": "Int",
+            "label": "Total",
+            "read_only": 1
+        },
+        {
+            "fieldname": "hand_wash_facility",
+            "fieldtype": "Select",
+            "label": "l. Hand Wash Facility",
+            "options": "\nYes\nNo"
+        },
+        {
+            "fieldname": "mhm_facility",
+            "fieldtype": "Select",
+            "label": "m. MHM facility (in case of post primary girls School)",
+            "options": "\nYes\nNo"
+        },
+        {
+            "fieldname": "disposal_for_sanitary",
+            "fieldtype": "Select",
+            "label": "n. Disposal for sanitary pad/ napkin",
+            "options": "\nDisposed to open area\nThrown into dustbin\nNo\nYes"
+        },
+        {
+            "fieldname": "tree_plantation_school",
+            "fieldtype": "Select",
+            "label": "o. Tree / Plantation within School",
+            "options": "\nYes\nNo"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "branch_school_and_adoption_of_school_information_section",
+            "fieldtype": "Section Break",
+            "label": "5. Consolidation, Clustering, Surrounding Branch School and Adoption of School Information"
+        },
+        {
+            "fieldname": "adopted_school",
+            "fieldtype": "Select",
+            "label": "a. Is this an adopted School?",
+            "options": "\nYes\nNo"
+        },
+        {
+            "fieldname": "is_this_branch_school",
+            "fieldtype": "Select",
+            "label": "b. Is this Branch School ?",
+            "options": "\nYes\nNo",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.is_this_branch_school == 'Yes'",
+            "fieldname": "semis",
+            "fieldtype": "Link",
+            "label": " SEMIS code of Main School",
+            "options": "School"
+        },
+        {
+            "depends_on": "eval:doc.is_this_branch_school == 'Yes'",
+            "fieldname": "name_of_main_school",
+            "fieldtype": "Data",
+            "label": "Name of main school if it is branch school"
+        },
+        {
+            "fieldname": "column_break_71",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.adopted_school == 'Yes'",
+            "fieldname": "adopter_name",
+            "fieldtype": "Data",
+            "label": "c. Adopter Name"
+        },
+        {
+            "fieldname": "is_campus_school",
+            "fieldtype": "Select",
+            "label": "d. Is this a Campus or Hub School ?",
+            "options": "\nYes\nNo",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.is_campus_school == 'Yes'",
+            "fieldname": "no_of_merger_schools",
+            "fieldtype": "Data",
+            "label": "No. of Merger School(s)"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "list_of_surrounding_government_schools_section",
+            "fieldtype": "Section Break",
+            "label": "e. List of surrounding Government Schools"
+        },
+        {
+            "fieldname": "adjacent_schools",
+            "fieldtype": "Table",
+            "label": "School(s) within same premises OR Adjacent School(s)",
+            "options": "Surrounding Government Schools"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "total_no_of_surrounding_sindh_education_foundation_section",
+            "fieldtype": "Section Break",
+            "label": "f. Total No. of surrounding Sindh Education Foundation"
+        },
+        {
+            "fieldname": "no_of_sef_schools",
+            "fieldtype": "Int",
+            "label": "No. of SEF School(s)"
+        },
+        {
+            "fieldname": "column_break_81",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "no_of_private_schools",
+            "fieldtype": "Int",
+            "label": "No. of private School(s)"
+        },
+        {
+            "fieldname": "column_break_83",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "total_surrounding_schools",
+            "fieldtype": "Int",
+            "label": "Total surrounding School(s)",
+            "read_only": 1
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "major__minor_repair_and_construction_work_detail_section",
+            "fieldtype": "Section Break",
+            "label": "6.Major / Minor Repair and Construction Work Detail"
+        },
+        {
+            "fieldname": "details_repair_in_school__year",
+            "fieldtype": "Data",
+            "label": "Please mention the details of repair work taken place in School during last year",
+            "length": 350
+        },
+        {
+            "fieldname": "construction_work_planned_completed",
+            "fieldtype": "Link",
+            "label": "If any construction work planned, then has the work completed ?",
+            "options": "construction work planned"
+        },
+        {
+            "fieldname": "column_break_75",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "what_constructed_in_school",
+            "fieldtype": "Link",
+            "label": "Please mention what was constructed in School",
+            "options": "what was constructed in School",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval: doc.what_constructed_in_school == 'other(specify)'",
+            "fieldname": "what_constructed_text",
+            "fieldtype": "Small Text",
+            "label": "Please write what was constructed"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "status_of_facilities_available_in_the_school_section",
+            "fieldtype": "Section Break",
+            "label": "7. Status of facilities available in the School"
+        },
+        {
+            "fieldname": "status_of_facilities_availability",
+            "fieldtype": "Table",
+            "label": "a. Status of Facilities",
+            "options": "Status of facilities available"
+        },
+        {
+            "fieldname": "status_items_availability",
+            "fieldtype": "Table",
+            "label": "b. Status of Items",
+            "options": "Status of Items availability"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "register_maintained_by_school_section",
+            "fieldtype": "Section Break",
+            "label": "8. Register maintained by School"
+        },
+        {
+            "fieldname": "school_registers",
+            "fieldtype": "Table MultiSelect",
+            "label": "Select registers (multi select allowed)",
+            "options": "Types of Registers Table"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "school_enrolment_information_section",
+            "fieldtype": "Section Break",
+            "label": "9. School Enrolment Information"
+        },
+        {
+            "fieldname": "a_medium_wise_enrolment",
+            "fieldtype": "Heading",
+            "label": "a. Medium wise enrolment"
+        },
+        {
+            "fieldname": "sindhi_medium_enrolment",
+            "fieldtype": "Data",
+            "label": "Sindhi Medium Enrolment"
+        },
+        {
+            "fieldname": "urdu_medium_enrolment",
+            "fieldtype": "Data",
+            "label": "Urdu Medium Enrolment"
+        },
+        {
+            "fieldname": "english_medium_enrolment",
+            "fieldtype": "Data",
+            "label": "English Medium Enrolment"
+        },
+        {
+            "fieldname": "b_enrolment_class__gender_wise",
+            "fieldtype": "Heading",
+            "label": "b. Enrolment (Class / Gender wise)"
+        },
+        {
+            "fieldname": "gender_wise_enrolment",
+            "fieldtype": "Table",
+            "label": "Gender wise",
+            "options": "Enrolment Class and Gender wise"
+        },
+        {
+            "fieldname": "c_repeaters",
+            "fieldtype": "Heading",
+            "label": "c. Repeaters"
+        },
+        {
+            "fieldname": "table_repeaters",
+            "fieldtype": "Table",
+            "label": "Repeaters record",
+            "options": "Repeaters"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "total_no_of_working_teaching_and_non_teaching_staff_section",
+            "fieldtype": "Section Break",
+            "label": "10. Total No. of working Teaching and Non Teaching Staff"
+        },
+        {
+            "fieldname": "govt_male_teachers",
+            "fieldtype": "Int",
+            "label": "Government Male Teacher(s)"
+        },
+        {
+            "fieldname": "govt_female_teachers",
+            "fieldtype": "Int",
+            "label": "Government Female Teacher(s)"
+        },
+        {
+            "fieldname": "non_govt_male_teachers",
+            "fieldtype": "Int",
+            "label": "Non Government Male Teacher(s)"
+        },
+        {
+            "fieldname": "non_govt_female_teachers",
+            "fieldtype": "Int",
+            "label": "Non Government Female Teacher(s)"
+        },
+        {
+            "default": "0",
+            "fieldname": "total_teacher",
+            "fieldtype": "Int",
+            "label": "Total Teachers",
+            "mandatory_depends_on": "// eval:doc.status_detail=='Functional'",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_112",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "non_teaching_male_staff",
+            "fieldtype": "Int",
+            "label": "Non Teaching Male Staff"
+        },
+        {
+            "fieldname": "non_teaching_female_staff",
+            "fieldtype": "Int",
+            "label": "Non Teaching Female Staff"
+        },
+        {
+            "default": "0",
+            "fieldname": "total_non_teaching_staff",
+            "fieldtype": "Int",
+            "label": "Total Non Teaching Staff"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_120",
+            "fieldtype": "Section Break",
+            "label": "11. Particulars Information Provider from School (or from community in case of closed School)"
+        },
+        {
+            "fieldname": "principal_hm_name",
+            "fieldtype": "Data",
+            "label": "a. Name"
+        },
+        {
+            "fieldname": "principal_email",
+            "fieldtype": "Data",
+            "label": "b. Email Address"
+        },
+        {
+            "fieldname": "principal_designation",
+            "fieldtype": "Link",
+            "label": "c. Designation",
+            "options": "Designation"
+        },
+        {
+            "fieldname": "column_break_121",
+            "fieldtype": "Column Break"
+        },
+        {
+            "description": "Note : Enter CNIC Without dashes like 15202-54672536-2",
+            "fieldname": "cnic_number_principal",
+            "fieldtype": "Data",
+            "label": "d. CNIC"
+        },
+        {
+            "description": "mobile no like 0333-0000000",
+            "fieldname": "principal_phone",
+            "fieldtype": "Data",
+            "label": "e. Contact No. (Tele/Mob)",
+            "length": 12
+        },
+        {
+            "fieldname": "principal_gender",
+            "fieldtype": "Select",
+            "label": "f. Gender",
+            "options": "\nMale\nFemale"
+        },
+        {
+            "fieldname": "date_principal",
+            "fieldtype": "Date",
+            "label": "g. Date"
+        },
+        {
+            "description": "Principal Signature",
+            "fieldname": "principal_signature",
+            "fieldtype": "Signature",
+            "label": "Signature with Stamp of information provider"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "data_collector__enumerator_section",
+            "fieldtype": "Section Break",
+            "label": "12.Data Collector / Enumerator"
+        },
+        {
+            "fieldname": "name_enumerator",
+            "fieldtype": "Data",
+            "label": "a. Name"
+        },
+        {
+            "description": "Note : Enter CNIC Without dashes like 15202-54672536-2",
+            "fieldname": "cnic_no_enumerator",
+            "fieldtype": "Data",
+            "label": "b. CNIC No."
+        },
+        {
+            "fieldname": "designation_enumerator",
+            "fieldtype": "Link",
+            "label": "c. Designation",
+            "options": "Designation"
+        },
+        {
+            "fieldname": "column_break_138",
+            "fieldtype": "Column Break"
+        },
+        {
+            "description": "mobile no like 0333-0000000",
+            "fieldname": "contact_no_enumerator",
+            "fieldtype": "Data",
+            "label": "d. Contact No.",
+            "length": 12
+        },
+        {
+            "description": "Emumerator Signature",
+            "fieldname": "signature",
+            "fieldtype": "Signature",
+            "label": "e. Signature"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "education_officer",
+            "fieldtype": "Section Break",
+            "label": "13.Taluka Education Officer(TEO)/District Education Officer(DEO)"
+        },
+        {
+            "fieldname": "name_education_officer",
+            "fieldtype": "Data",
+            "label": "a. Name"
+        },
+        {
+            "description": "Note : Enter CNIC Without dashes like 15202-54672536-2",
+            "fieldname": "cnic_education_officer",
+            "fieldtype": "Data",
+            "label": "b. CNIC No."
+        },
+        {
+            "fieldname": "designation_education_officer",
+            "fieldtype": "Link",
+            "label": "c. Designation",
+            "options": "Designation"
+        },
+        {
+            "fieldname": "column_break_145",
+            "fieldtype": "Column Break"
+        },
+        {
+            "description": "Mobile No like 0300-0000000",
+            "fieldname": "contact_education_officer",
+            "fieldtype": "Data",
+            "label": "d. Contact No.",
+            "length": 12
+        },
+        {
+            "description": "Education Officer Signature",
+            "fieldname": "signatue_education_officer",
+            "fieldtype": "Signature",
+            "label": "e. Signature"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "ASC",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "ASC",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed'",
+            "fieldname": "closed_type",
+            "fieldtype": "Select",
+            "label": "Closed Type",
+            "options": "\nClosed Permanent\nClosed Temporary\nNon-Viable\nViable Closed",
+            "read_only": 1
+        },
+        {
+            "fieldname": "ddo_cost_center",
+            "fieldtype": "Data",
+            "label": "p. DDO Cost Center"
+        },
+        {
+            "fieldname": "smc_fund",
+            "fieldtype": "Section Break",
+            "label": "7. SMC Funds Detail"
+        },
+        {
+            "fieldname": "smc_received_detail",
+            "fieldtype": "Select",
+            "label": "a.Is SMCReceived for the year 2020-21?",
+            "options": "\nYes\nNo"
+        },
+        {
+            "depends_on": "eval:doc.smc_received_detail == 'Yes'",
+            "fieldname": "t_r_smc",
+            "fieldtype": "Data",
+            "label": "b.If 'yes' then total SMC funds recived Rs"
+        },
+        {
+            "depends_on": "eval:doc.smc_received_detail == 'Yes'",
+            "fieldname": "utlized",
+            "fieldtype": "Data",
+            "label": "c.Utlized Rs"
+        },
+        {
+            "fieldname": "column_break_105",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.utlized >> 0",
+            "fieldname": "m_repair",
+            "fieldtype": "Data",
+            "label": "d.Minor repair & Maintenance"
+        },
+        {
+            "depends_on": "eval:doc.utlized >> 0",
+            "fieldname": "cleanliness",
+            "fieldtype": "Data",
+            "label": "Cleanliness"
+        },
+        {
+            "depends_on": "eval:doc.utlized >> 0",
+            "fieldname": "trans_for_g_c",
+            "fieldtype": "Data",
+            "label": "Transport fare for school girls or small children"
+        },
+        {
+            "depends_on": "eval:doc.status_detail == 'Closed'",
+            "fieldname": "school_duration_of_closure",
+            "fieldtype": "Select",
+            "label": "c.School_duration_of_closure",
+            "options": "\nLess than 1 year\nLess than 2 years\nLess than 3 years\n4 years or More"
+        },
+        {
+            "fieldname": "shared_school_name",
+            "fieldtype": "Data",
+            "label": "Shared School Name",
+            "read_only": 1
+        }
+    ],
+    "is_submittable": 1,
+    "links": [
+        {
+            "group": "ASC",
+            "link_doctype": "Working Teaching Staff Detail",
+            "link_fieldname": "asc"
+        }
+    ],
+    "modified": "2022-05-09 17:09:35.725812",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "import": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Data Entry Operator",
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

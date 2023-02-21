@@ -1,0 +1,66 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-04-15 12:06:42.726348",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "semis_code",
+        "date",
+        "page",
+        "error"
+    ],
+    "fields": [
+        {
+            "fieldname": "semis_code",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Semis Code",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "error",
+            "fieldtype": "Text",
+            "in_list_view": 1,
+            "label": "Error",
+            "reqd": 1
+        },
+        {
+            "fieldname": "page",
+            "fieldtype": "Int",
+            "label": "Page"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-05-18 00:05:08.831498",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Data Import Errors",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

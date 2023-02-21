@@ -1,0 +1,2140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+	<section class="district-content school-page" id="school_profile">
+		{% for data in response %}
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<div class="ajrak-bg"></div>
+			</div>
+
+			<div class="col-md-9 line-h-13 col-sm-12">
+				<div class="d-flex flow-row mb-4">
+					<img style="width:67px;" src="/assets/semis_theme/img/rsu_logo.png">
+					<div class="mt-2">
+						<h5 class="rsu-title">REFORM SUPPORT UNIT </h5>
+						<span class="school-education d-block">School Education & Literacy Department, </span>
+						<span class="school-education d-block">Government of Sindh</span>
+					</div>
+				</div>
+
+				<span class="anual-cesus2">{{ data.school_name }}<p
+						class="mb-0 mt-0 ms-2 d-inline fs-8 text-theme-green">
+						({{data.semis_code}})</p> </span>
+				<p class="text-success d-block mb-0 fw-600">{{ data.address }}
+					<span>({{ data.phone }})</span>
+				</p>
+
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="card-header-district mt-1 d-none d-sm-block">
+					<div class="card-body-district">
+						<table width="100%" class="district-header-tbl">
+							<tbody>
+								<tr>
+									<th>
+										<h5 class="mb-0 fs-6 text-danger fw-600"> SEMIS Code:</h5>
+									</th>
+									<td>
+										<h5 class="text-dark fw-600 mb-0">{{ data.semis_code }}</h5>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<h5 class="mb-0 fs-6 text-danger fw-600"> District:</h5>
+									</th>
+									<td>
+										<h5 class="text-dark fw-600 mb-0">{{ data.district }}</h5>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<h5 class="mb-0 fs-6 text-danger fw-600"> Taluka:</h5>
+									</th>
+									<td>
+										<h5 class="text-dark fw-600 mb-0">{{ data.taluka }}</h5>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<h5 class="mb-0 fs-6 text-danger fw-600"> UC/TC/MC:</h5>
+									</th>
+									<td>
+										<h5 class="text-dark fw-600 mb-0">{{ data.union_council }}</h5>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+		<hr>
+		<div class="table-responsive">
+			<table class="main-table">
+				<tbody>
+
+					<tr>
+						<td>
+							<h5 class="fs-5 fw-600 mb-0 mt-2">School Details</h5>
+							<div class="i-card" style="border:none !important;">
+								<div class="card-body-district p-0">
+									<table class="table data-list table-striped mt-0 mb-3 school-detail" width="100%"
+										border="0" cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<th class="fw-500 fs-6">Location</th>
+												<td><span class="num text-muted fs-6">{{data.location}}</span></td>
+												<th class="fw-500 fs-6">Level</th>
+												<td><span class="num text-muted fs-6">{{ data.level }}</span></td>
+												<th class="fw-500 fs-6"> Gender</th>
+												<td><span class="num text-muted fs-6">{{ data.school_gender }}</span>
+												</td>
+											</tr>
+
+											<tr>
+												<th class="fw-500 fs-6"> Medium</th>
+												<td><span class="num text-muted fs-6">{{data.school_medium}}</span></td>
+												{% if data.school_medium %}
+
+												{% if data.sindhi_enrollment > 0 && data.school_medium =="Sindhi" %}
+												<th class="fw-500 fs-6"> Sindhi Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.sindhi_enrollment}}</span>
+												</td>
+												{% endif %}
+
+												{% if data.urdu_enrollment > 0 && data.school_medium =="Urdu" %}
+												<th class="fw-500 fs-6"> Urdu Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.urdu_enrollment}}</span>
+												</td>
+												{% endif %}
+
+												{% if data.english_enrollment > 0 && data.school_medium == "English" %}
+												<th class="fw-500 fs-6"> English Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.english_enrollment}}</span>
+												</td>
+												{% endif %}
+
+
+												{% if data.school_medium == "Mixed" %}
+
+												{% check = 0 %}
+
+												<th class="fw-500 fs-6"> Sindhi Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.sindhi_enrollment}}</span>
+												</td>
+
+
+												<th class="fw-500 fs-6"> Urdu Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.urdu_enrollment}}</span>
+												</td>
+											</tr>
+
+
+
+											<tr>
+
+												<th class="fw-500 fs-6"> English Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.english_enrollment}}</span>
+												</td>
+
+												<th class="fw-500 fs-6"> Total Enrollment</th>
+												<td><span class="num text-muted fs-6">{{data.enrollments}}</span>
+												</td>
+
+												{% endif %}
+
+
+
+												{% endif %}
+												<th class="fw-500 fs-6">Shift</th>
+												<td><span class="num text-muted fs-6">{{ data.shift }}</span></td>
+											</tr>
+
+
+
+											{% if data.status == "Closed"%}
+											<tr>
+												<th class="fw-500 fs-6"> Status</th>
+												<td><span class="num text-muted fs-6">{{ data.status }}</span></td>
+												<th class="fw-500 fs-6">Duration of Closure</th>
+												<td><span class="num text-muted fs-6">{{data.duration}}</span></td>
+												<th class="fw-500 fs-6"> Reason of Closure </th>
+												<td><span class="num text-muted fs-6">{{data.reason}}</span></td>
+											</tr>
+											<tr>
+
+												<th class="fw-500 fs-6">School Administration</th>
+												<td><span class="num text-muted fs-6">{{data.admin}}</span></td>
+												<th class="fw-500 fs-6"> DDO Cost Center </th>
+												<td><span class="num text-muted fs-6">{{data.ddo}}</span></td>
+												<th class="fw-500 fs-6">Is Campus</th>
+												<td><span class="num text-muted fs-6">{{data.is_campus_school}}</span>
+												</td>
+											</tr>
+											{% else %}
+											<tr>
+												<th class="fw-500 fs-6"> Status</th>
+												<td><span class="num text-muted fs-6">{{ data.status }}</span></td>
+												<th class="fw-500 fs-6">School Administration</th>
+												<td><span class="num text-muted fs-6">{{data.admin}}</span></td>
+												<th class="fw-500 fs-6"> DDO Cost Center </th>
+												<td><span class="num text-muted fs-6">{{data.ddo}}</span></td>
+											</tr>
+											{% endif %}
+
+											<tr>
+												<th class="fw-500 fs-6">Total Surrounding Schools</th>
+												<td><span class="num text-muted fs-6">{{data.surrounding}}</span></td>
+												<th class="fw-500 fs-6">Adopted School</th>
+												<td><span class="num text-muted fs-6">{{data.adopted_school}}</span>
+												</td>
+												{% if data.adopted_school == "Yes" %}
+												<th class="fw-500 fs-6">Adopter Name</th>
+												<td><span class="num text-muted fs-6">{{data.adopter_name}}</span></td>
+												{% else %}
+												<th class="fw-500 fs-6"></th>
+												<td><span class="num text-muted fs-6"></span></td>
+												{% endif %}
+
+											</tr>
+
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</td>
+
+						{% if data.reason == "School does not exist" %}
+						<td style="width:460px;">
+							<h5 class="fs-5 fw-600 mt-2 mb-0">Principal/ HM /Data Provider</h5>
+							<div class="i-card">
+								<div class="card-body-district">
+									<table class="table data-list" width="100%" border="0" cellpadding="0"
+										cellspacing="0">
+										<tbody>
+											<tr>
+												<th>
+													<i
+														class="fas fa-user-circle school-level-img text-primary mr-2 fs-2"></i>
+													Name
+												</th>
+												<td class="text-right"><span class="num text-muted">{{ data.hm_name
+														}}</span></td>
+											</tr>
+											<tr>
+												<th>
+													<i
+														class="fa-solid fa-address-book school-level-img text-primary mr-2 fs-2"></i>
+													Designation
+												</th>
+												<td class="text-right"><span class="num text-muted">{{
+														data.hm_designation
+														}}</span>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<i
+														class="fa-solid fa-phone  school-level-img text-primary mr-2 fs-2"></i>
+													Contact
+												</th>
+												<td class="text-right"><span
+														class="num text-muted">{{data.hm_phone}}</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</td>
+						{% endif %}
+					</tr>
+
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="social-profile-tabs">
+			<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="asc-section-tab" data-bs-toggle="tab"
+						data-bs-target="#asc-section" type="button" role="tab" aria-controls="asc-section"
+						aria-selected="true">ASC</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="visit-section-tab" data-bs-toggle="tab" data-bs-target="#visit-section"
+						type="button" role="tab" aria-controls="visit-section" aria-selected="false">M&E Visit
+						Report</button>
+				</li>
+			</ul>
+		</div>
+
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="asc-section" role="tabpanel" aria-labelledby="asc-section-tab">
+
+				<div class="row">
+					<div class="col-md-6">
+						{% if data.have_building == "Yes" %}
+						<h5 class="fs-5 fw-600 mb-0 mt-3">Building Status</h5>
+						<div class="i-card building-stats-card">
+							<div class="card-body-district ">
+								<table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+									cellspacing="0">
+									<tbody>
+
+										<tr>
+											<th>
+												<img src="/assets/semis_theme/img/building.png" class="school-level-img"
+													width="20">
+												<p>Having Building</p>
+											</th>
+											<td class="text-right"><span class="num text-success">{{ data.have_building
+													}}</span></td>
+										</tr>
+										<tr>
+											<th style="    width: 102px;"><i
+													class="fa fa-id-card-o text-light-blue school-level-img "
+													aria-hidden="true"></i>
+												<p>Ownership</p>
+											</th>
+											<td class="text-right"><span class="num text-muted">{{ data.ownership
+													}}</span>
+											</td>
+										</tr>
+
+
+										<tr>
+											<th><img src="/assets/semis_theme/img/building-type.png"
+													class="school-level-img" width="20">
+												<p>Construction Type</p>
+											</th>
+											<td class="text-right"><span class="num text-muted">{{
+													data.construction_type }}</span></td>
+										</tr>
+										<tr>
+											<th><img src="/assets/semis_theme/img/building-condition.png"
+													class="school-level-img" width="20">
+												<p>Building Condition</p>
+											</th>
+											<td class="text-right" style="width: 90px;"><span class="num text-muted">{{
+													data.condition_ }}</span></td>
+										</tr>
+										<tr>
+											<th><img src="/assets/semis_theme/img/room.png" class="school-level-img"
+													width="20">
+												<p>Total Rooms</p>
+											</th>
+											<td class="text-right"><span class="num text-muted">{{ data.total_rooms
+													}}</span>
+											</td>
+										</tr>
+										<tr>
+											<th><img src="/assets/semis_theme/img/classroom-blue.png"
+													class="school-level-img " width="20">
+												<p>ClassRooms</p>
+											</th>
+											<td class="text-right"><span class="num text-muted">{{ data.classrooms
+													}}</span>
+											</td>
+										</tr>
+
+										<tr>
+
+											<th><img src="/assets/semis_theme/img/area.png" class="school-level-img "
+													width="20">
+												<p style="margin: 0 0 0 8px;">Area</p>
+											</th>
+											<td class="text-right"><span class="num text-danger">{{
+													data.area.toLocaleString("en-US")
+													}} sqft</span>
+											</td>
+										</tr>
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+						{% endif %}
+						{% if data.reason != "School does not exist" %}
+						{% if data.have_building == "No" %}
+						<h5 class="fs-5 fw-600 mb-0 mt-3">Building Status</h5>
+						<div class="i-card" style="height: 97px;">
+							<div class="card-body-district d-flex flex-row align-items-center">
+
+								<i class="fa fa-building text-light-blue school-level-img fs-2  me-2"
+									aria-hidden="true"></i>
+								<p class="fw-500 mb-0 fs-6">This School has no building working temporarily under {{
+									data.no_relevant_code}}.</p>
+								<!-- <span class="num text-danger fw-600">{{ data.have_building}}</span> -->
+
+
+								<!-- <div>
+									<i class="fas fa-info-circle text-light-blue school-level-img fs-2"
+										aria-hidden="true"></i>
+									<p class="fw-600 mb-0 fs-6">Other Building Detail</p>
+									<span class="num text-danger fw-600">{{data.no_relevant_code}}</span>
+								</div> -->
+
+							</div>
+						</div>
+						{% endif %}
+						{% endif %}
+					</div>
+
+					<div class="col-md-6">
+						<div class="designation-tbl">
+
+							{% if data.reason != "School does not exist" %}
+
+							{% flag = 1 %}
+
+							{% for st in data.staf %}
+							{% if st.designation=="No Data" %}
+							<h5 class="fs-5 fw-600 mb-0 mt-3">Staff Detail</h5>
+							{%if data.have_building == "Yes" %}
+
+							<div class="i-card building-stats-card">
+								<div class="card-body-district ">
+									<table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+										cellspacing="0">
+										<tbody>
+
+											<tr>
+												<th>
+													<p>Government Male Teacher(s)</p>
+												</th>
+												<td class="text-right"><span class="num">{{ data.ggggg}}</span></td>
+											</tr>
+											<tr>
+												<th>
+													<p>Non Government Male Teacher(s)</p>
+												</th>
+												<td class="text-right"><span class="num">{{
+														data.non_govt_male_teachers}}</span></td>
+											</tr>
+											<tr>
+												<th>
+													<p>Government Female Teacher(s)</p>
+												</th>
+												<td class="text-right">{{ data.govt_female_teachers}}</td>
+											</tr>
+											<tr>
+												<th>
+													<p>Non Government Female Teacher(s)</p>
+												</th>
+												<td class="text-right">{{ data.non_govt_female_teachers}}</td>
+											</tr>
+
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+							{% else %}
+							<div class="i-card building-stats-card">
+								<div class="card-body-district ">
+									<table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+										cellspacing="0">
+										<tbody>
+
+											<tr>
+												<th>
+													<p>Government Male Teacher(s)</p>
+												</th>
+												<td class="text-right"><span class="num">{{ data.ggggg}}</span></td>
+											</tr>
+											<tr>
+												<th>
+													<p>Non Government Male Teacher(s)</p>
+												</th>
+												<td class="text-right"><span class="num">{{
+														data.non_govt_male_teachers}}</span></td>
+											</tr>
+											<tr>
+												<th>
+													<p>Government Female Teacher(s)</p>
+												</th>
+												<td class="text-right">{{ data.govt_female_teachers}}</td>
+											</tr>
+											<tr>
+												<th>
+													<p>Non Government Female Teacher(s)</p>
+												</th>
+												<td class="text-right">{{ data.non_govt_female_teachers}}</td>
+											</tr>
+
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+							{% endif %}
+
+
+							{% flag = 0 %}
+							{% endif %}
+							{% endfor %}
+							{% if flag =="1" %}
+
+							<h5 class="fs-5 fw-600 mb-0 mt-10">Designation wise Staff</h5>
+							<div class="table-responsive">
+								<table class="table" width="100%">
+									<tbody>
+										<tr class="print-bg-lightgreen" style="background-color: #e2f4e2 !important;">
+											<td class="text-center fw-700 fs-12">Designation</td>
+											<td class="text-center fw-700 fs-12">Male</td>
+											<td class="text-center fw-700 fs-12">Female</td>
+											<td class="text-center fw-700 fs-12">Total</td>
+											<td class="text-center fw-700 fs-12">Designation</td>
+											<td class="text-center fw-700 fs-12">Male</td>
+											<td class="text-center fw-700 fs-12">Female</td>
+											<td class="text-center fw-700 fs-12">Total</td>
+										</tr>
+										{% count = 0 %}
+										{% inner_count = 0 %}
+										{% row = 0 %}
+										{% male = 0 %}
+										{% female = 0 %}
+
+
+										{% for st in data.staf %}
+										{% if st.designation !="No Data" %}
+
+										{% skip_flag = 1 %}
+
+
+										<tr>
+											{% if count == 0 || count != inner_count %}
+											<td class="fw-500 text-center">{{st.designation}}</td>
+
+
+											{% if st.male_staff > 0 %}
+											<td class="text-center">{{st.male_staff}}</td>
+											{% male = male + st.male_staff %}
+											{% endif %}
+
+											{% if st.male_staff == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% if st.female_staff > 0 %}
+											<td class="text-center">{{st.female_staff}}</td>
+											{% female = female + st.female_staff %}
+											{% endif %}
+
+											{% if st.female_staff == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+
+											{% if (st.male_staff + st.female_staff) > 0 %}
+											<td class="text-center">{{st.male_staff + st.female_staff}}</td>
+
+											{% endif %}
+
+											{% if (st.male_staff + st.female_staff) == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% row = 1 %}
+
+											{% endif %}
+
+											{% if count == inner_count && count != 0 && inner_count != 0 %}
+											{% skip_flag = 0 %}
+											{% endif %}
+
+
+
+											{% if skip_flag == 1 %}
+
+											{% inner_count = 0 %}
+
+											{% for st in data.staf %}
+											{% if inner_count == count + 1 %}
+											<td class="fw-500 text-center">{{st.designation}}</td>
+
+
+											{% if st.male_staff > 0 %}
+											<td class="text-center">{{st.male_staff}}</td>
+											{% male = male + st.male_staff %}
+											{% endif %}
+
+											{% if st.male_staff == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% if st.female_staff > 0 %}
+											<td class="text-center">{{st.female_staff}}</td>
+											{% female = female + st.female_staff %}
+											{% endif %}
+
+											{% if st.female_staff == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+
+											{% if (st.male_staff + st.female_staff) > 0 %}
+											<td class="text-center">{{st.male_staff + st.female_staff}}</td>
+
+											{% endif %}
+
+											{% if (st.male_staff + st.female_staff) == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% row = 2 %}
+											{% endif %}
+											{% inner_count = inner_count + 1 %}
+											{% endfor %}
+											{% inner_count = count + 1 %}
+
+											{% endif %}
+
+											{% count = count + 1 %}
+
+											{% if row == 2 %}
+										</tr>
+										{%endif%}
+										{%endif%}
+
+										{% endfor %}
+
+										{% if row == 1 %}
+										<td class="fw-700 text-center">Total Teachers</td>
+										<td class="text-center">{{male}}</td>
+										<td class="text-center">{{female}}</td>
+										<td class="text-center">{{male + female}}</td>
+										</tr>
+										<tr>
+											<td class="fw-500 text-center">Non Teaching</td>
+											{% if data.Non_Teaching_Male > 0 %}
+											<td class="text-center">{{data.Non_Teaching_Male}}</td>
+											{% endif %}
+
+											{% if data.Non_Teaching_Male == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% if data.Non_Teaching_Female > 0 %}
+											<td class="text-center">{{data.Non_Teaching_Female}}</td>
+											{% endif %}
+											{% if data.Non_Teaching_Female == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% if (data.Non_Teaching_Male + data.Non_Teaching_Female) > 0 %}
+											<td class="text-center">{{data.Non_Teaching_Male +
+												data.Non_Teaching_Female}}
+											</td>
+											{% endif %}
+											{% if (data.Non_Teaching_Male + data.Non_Teaching_Female) == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+
+											<td class="fw-700 text-center">Total Staff(Teaching and Non-Teaching)</td>
+											<td class="text-center fw-600">{{(male + data.Non_Teaching_Male
+												).toLocaleString("en-US") }}</td>
+											<td class="text-center fw-600">{{(female +
+												data.Non_Teaching_Female).toLocaleString("en-US")}}</td>
+											<td class="fw-700 text-center">{{(male + female + data.Non_Teaching_Male +
+												data.Non_Teaching_Female).toLocaleString("en-US")}}</td>
+
+
+
+
+
+										</tr>
+										{%endif%}
+
+										{% if row == 2 %}
+										<tr>
+											<td class="fw-700 text-center">Total Teachers</td>
+											<td class="text-center">{{male}}</td>
+											<td class="text-center">{{female}}</td>
+											<td class="text-center">{{male + female}}</td>
+
+
+											<td class="fw-500 text-center">Non Teaching</td>
+											{% if data.Non_Teaching_Male > 0 %}
+											<td class="text-center">{{data.Non_Teaching_Male}}</td>
+											{% endif %}
+
+											{% if data.Non_Teaching_Male == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+
+											{% if data.Non_Teaching_Female > 0 %}
+											<td class="text-center">{{data.Non_Teaching_Female}}</td>
+											{% endif %}
+											{% if data.Non_Teaching_Female == 0 %}
+											<td class="text-center">-</td>
+											{% endif %}
+											<td class="text-center">{{data.Non_Teaching_Male +
+												data.Non_Teaching_Female}}
+											</td>
+										</tr>
+										{%endif%}
+
+
+
+
+
+
+
+									</tbody>
+								</table>
+							</div>
+
+							{% endif %}
+							{% endif%}
+
+						</div>
+					</div>
+					{% if data.reason != "School does not exist" %}
+
+				</div>
+
+
+				<div class="row">
+					{% if data.reason != "School does not exist" %}
+					<div class="col-md-12">
+						<h5 class="fs-5 fw-600 mt-3">Basic Facilities</h5>
+						<div class="school-facilities-card">
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/drinking-water.png"
+											class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Drinking Water
+											{% if data.drinking_water == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.drinking_water }}</span>
+											{% endif %}
+
+											{% if data.drinking_water == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.drinking_water }}</span>
+											{% endif %}
+
+											{% if data.drinking_water == "" %}
+											<span class="text-center fs-6 num text-danger d-block">No</span>
+											{% endif %}
+
+											{% if data.drinking_water == "-" %}
+											<span class="text-center fs-6 num text-danger d-block">-</span>
+											{% endif %}
+										</p>
+
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/toilet.png" class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Toilets
+											{% if data.toilets == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.toilets}}
+												({{data.no_toilets}})</span>
+											{% endif %}
+
+											{% if data.toilets == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.toilets}}</span>
+											{% endif %}
+
+											{% if data.toilets == "" %}
+											<span class="text-center fs-6 num text-danger d-block">No</span>
+											{% endif %}
+
+											{% if data.toilets == "-" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.toilets}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/handwash.png" class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Hand Wash
+											{% if data.hand_wash == "Yes" %}
+											<span
+												class="text-center fs-6  num text-success d-block">{{data.hand_wash}}</span>
+											{% endif %}
+
+											{% if data.hand_wash == "No" %}
+											<span
+												class="text-center fs-6 num text-danger d-block">{{data.hand_wash}}</span>
+											{% endif %}
+
+											{% if data.hand_wash == "" %}
+											<span class="text-center fs-6 num text-danger d-block">No</span>
+											{% endif %}
+
+											{% if data.hand_wash == "-" %}
+											<span class="text-center fs-6 num text-danger d-block">-</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/soap.png" class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Soap
+											{% if data.soap == "Yes" %}
+											<span
+												class="text-center fs-6  num text-success d-block">{{data.soap}}</span>
+											{% endif %}
+											{% if data.soap == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{data.soap}}</span>
+											{% endif %}
+											{% if data.soap == "" %}
+											<span class="text-center fs-6 num text-danger d-block">No</span>
+											{% endif %}
+											{% if data.soap == "-" %}
+											<span class="text-center fs-6 num text-danger d-block">-</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/electricity.png"
+											class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Electricity
+											{% if data.electricity == "WAPDA/KE" %}
+											<span class="text-center fs-6  num text-success d-block">Yes</span>
+											{% endif %}
+											{% if data.electricity == "Solar System" %}
+											<span class="text-center fs-6  num text-success d-block">Yes</span>
+											{% endif %}
+											{% if data.electricity == "No Electricity Connection" %}
+											<span class="text-center fs-6 num text-danger d-block">No</span>
+											{% endif %}
+											{% if data.electricity == "-" || data.electricity == "" %}
+											<span class="text-center fs-6 num text-danger d-block">-</span>
+											{% endif %}
+										</p>
+
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/boundry-wall.png"
+											class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Boundary Wall
+											{% if data.boundary_wall == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.boundary_wall}}</span>
+											{% endif %}
+											{% if data.boundary_wall == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.boundary_wall}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/science-lab.png"
+											class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Lab/Sci.Lab
+											{% if data.science_lab == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.science_lab}}</span>
+											{% endif %}
+
+											{% if data.science_lab == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.science_lab}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/library.png" class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Library
+											{% if data.library == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.library}}</span>
+											{% endif %}
+											{% if data.library == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.library}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/computer-teal.png"
+											class="fac-img-schoolprofile">
+										<p class="fw-600 mb-0 mt-0">Computer Lab
+											{% if data.computer_lab == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.computer_lab}}</span>
+											{% endif %}
+											{% if data.computer_lab == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.computer_lab}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="i-card fac-card-schoolprofile">
+								<div class="card-body">
+									<div class="d-flex">
+										<img src="/assets/semis_theme/img/playground-teal.png"
+											class="fac-img-schoolprofile">
+										<span class="fw-600 fs-6 "></span>
+										<p class="fw-600 mb-0 mt-0">Play Ground
+											{% if data.play_ground == "Yes" %}
+											<span class="text-center fs-6  num text-success d-block">{{
+												data.play_ground}}
+												({{data.play_ground_area.toLocaleString("en-US")}})</span>
+											{% endif %}
+											{% if data.play_ground == "No" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.play_ground}}</span>
+											{% endif %}
+											{% if data.play_ground == "-" %}
+											<span class="text-center fs-6 num text-danger d-block">{{
+												data.play_ground}}</span>
+											{% endif %}
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					{% endif %}
+				</div>
+				<div class="row page-breaks">
+					<div class="col-md-12">
+						<h5 class="fs-5 fw-600 mt-3 page-breaks">Items</h5>
+						<div class="school-facilities-card furniture-tbl">
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/blackboard.png">
+									</div>
+									Black Boards
+									{% if data.blackboard > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{data.blackboard}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block"> - </span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/whiteboard.png">
+									</div>
+									White Boards
+									{% if data.whiteboard > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.whiteboard}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/teacherchair.png">
+									</div>
+									Student Chairs
+									{% if data.student_chairs > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.student_chairs}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/desk.png">
+									</div>
+									Student Dual Desks
+									{% if data.student_desks > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.student_desks}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/bench.png">
+									</div>
+									Student Benches
+									{% if data.bench>0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{ data.bench}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/teacher-table.png">
+									</div>
+									Teacher Tables
+									{% if data.teacher_tables>0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.teacher_tables}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/teacherchair.png">
+									</div>
+									Teacher Chairs
+									{% if data.teacher_chairs>0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.teacher_chairs}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/closet.png">
+									</div>
+									Almirahs
+									{% if data.almirah>0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{
+										data.almirah}}</span>
+									{% else %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/comp-orange.png">
+									</div>
+									Computers
+									{% if data.comp > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{data.comp}}</span>
+									{% endif %}
+									{% if data.comp == 0 %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/projector-orange.png">
+									</div>
+									Projectors
+									{% if data.projector > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{data.projector}}</span>
+									{% endif %}
+									{% if data.projector == 0 %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/fan-orange.png">
+									</div>
+									Electric Fans
+									{% if data.fans > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{data.fans}}</span>
+									{% endif %}
+									{% if data.fans == 0 %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="i-card">
+								<div class="card-body">
+									<div class="furniture-icon">
+										<img src="/assets/semis_theme/img/LED-orange.png">
+									</div>
+									LED/TV
+									{% if data.tv > 0 %}
+									<span class="text-center fs-5 num text-orange d-block">{{data.tv}}</span>
+									{% endif %}
+									{% if data.tv == 0 %}
+									<span class="text-center fs-5 num text-orange d-block">-</span>
+									{% endif %}
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+
+				{% if data.enrollments != 0 %}
+				<h5 class="fs-5 fw-600 mb-0 mt-3 ">Enrollment</h5>
+				<div class="dashboard-table designation-tbl">
+					<div class="table-responsive">
+						<table class="table" width="100%">
+							<tbody>
+								<tr class="print-bg-green" style="background-color:#309975 !important;">
+
+									<td></td>
+									{% if data.year == "2021-22"%}
+									<td colspan="2" class="text-center text-white">
+										<span class="num fw-700"> Pre-Primary Classes</span>
+									</td>
+									{% endif %}
+									{% if data.year != "2021-22"%}
+									<td class="text-center text-white">
+										<span class="num fw-700"> Pre-Primary Classes</span>
+									</td>
+									{% endif %}
+
+									<td colspan="5" class="text-center text-white">
+										<span class="num fw-700"> Primary Classes</span>
+									</td>
+									{% if data.level != "Primary" %}
+									<td colspan="3" class="text-center text-white">
+										<span class="num fw-700"> Middle Classes</span>
+									</td>
+									{% endif %}
+
+
+									<td rowspan="2" class="text-center text-white">
+										<span class="num fw-700"> Total</span>
+									</td>
+								</tr>
+
+								<tr class="print-bg-green" style="background-color:#309975 !important;">
+									<td class="text-center fw-700 text-white"><span class="num"> Grade</span></td>
+									{% if data.year == "2021-22"%}
+									<td class="text-center fw-700 text-white"><span class="num"> ECCE</span></td>
+									{% endif %}
+									<td class="text-center fw-700 text-white"><span class="num"> Katchi</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> I</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> II</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> III</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> IV</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> V</span></td>
+									{% if data.level != "Primary" %}
+									<td class="text-center fw-700 text-white"><span class="num"> VI</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> VII</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> VIII</span></td>
+									{% endif %}
+
+								</tr>
+
+								{% if data.year == "2021-22"%}
+								{% loop_control = 9 %}
+								{% endif %}
+
+								{% if data.year != "2021-22"%}
+								{% loop_control = 8 %}
+								{% endif %}
+
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Boys</span></td>
+
+									{% boys = 0 %}
+									{% index = 0 %}
+									{% for enrol in data.enrollment %}
+									{% if index <= loop_control %} <td class="text-center"><span class="fs-12">
+											{{enrol.boys}}</span>
+										</td>
+										{% boys = boys + enrol.boys %}
+										{% endif %}
+										{% index = index + 1 %}
+										{% endfor %}
+
+										<td class="text-center fw-700"><span class="fs-12"> {{boys}}</span></td>
+								</tr>
+
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Girls</span></td>
+									{% index = 0 %}
+									{% girls = 0 %}
+									{% for enrol in data.enrollment %}
+									{% if index <= loop_control %} <td class="text-center"><span
+											class="fs-12">{{enrol.girls}}</span>
+										</td>
+										{% girls = girls + enrol.girls %}
+										{% endif %}
+										{% index = index + 1 %}
+										{% endfor %}
+
+										<td class="text-center fw-700"><span class="fs-12"> {{girls}}</span></td>
+								</tr>
+
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Total</span></td>
+									{% total = 0 %}
+									{% index = 0 %}
+
+									{% for enrol in data.enrollment %}
+									{% if index <= loop_control %} <td class="text-center fw-700"><span class="fs-12">
+											{{enrol.total}}</span>
+										</td>
+										{% total = total + enrol.total%}
+										{% endif %}
+										{% index = index + 1 %}
+
+										{% endfor %}
+
+										<td class="text-center fw-700"><span class="fs-12"> {{total}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if data.enrollments == 0 %}
+				<div class="i-card">
+					<div class="card-body-district">
+						<h5 class="text-center mt-2 text-danger fw-700 fs-5">No Enrollment Available</h5>
+					</div>
+				</div>
+				{% endif %}
+
+
+
+				<!-- {% if data.have_building == "No" %}
+				<tr>
+					<td style="width: 520px;">
+						<div class="i-card" style="height:100px;">
+							<div class="card-body-district ">
+								<h5 class="school-prof-level mb-2">Building Status</h5>
+								<table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+									cellspacing="0">
+									<tbody>
+
+										<tr>
+											<th><i class="fa fa-building text-light-blue school-level-img "
+													aria-hidden="true"></i>
+												<p>Having Building</p>
+											</th>
+											<td class="text-right"><span class="num text-danger">NO</span></td>
+										</tr>
+										<tr>
+											<th>
+											</th>
+											<td class="">Temporary working under <span
+													class="num text-success"></span></td>
+										</tr>
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</td>
+				</tr>
+				{% endif %} -->
+
+
+				{% if data.enrollments != 0 && (data.level == "Higher Secondary" ||
+				data.level == "Secondary" ) %}
+
+				{% temp = data.ix_arts_general_boys + data.ix_computer_boys +
+				data.ix_bio_boys + data.x_arts_general_boys + data.x_computer_boys +
+				data.x_bio_boys + data.ix_arts_general_girls + data.ix_computer_girls +
+				data.ix_bio_girls + data.x_arts_general_girls + data.x_computer_girls +
+				data.x_bio_girls %}
+
+				{% if temp > 0 %}
+
+				<div class="dashboard-table genderwise-tbl print-bottom">
+					<h5 class="fs-5 fw-600 mb-0 mt-3">Subject wise Details</h5>
+					<div class="table-responsive">
+						<table class="table" width="100%">
+
+							<tbody>
+								<tr class="bg-dark-blue" style="background: #454d66 !important">
+									<td class="text-center fw-bold text-white">Class</td>
+									<td class="text-center fw-bold text-white" colspan="3">IX</td>
+									<td class="text-center fw-bold text-white" rowspan="3">Total</td>
+									<td class="text-center fw-bold text-white" colspan="3">X</td>
+									<td class="text-center fw-bold text-white" rowspan="3">Total</td>
+
+								</tr>
+
+								<tr class="print-bg-light-purple" style="background: #eef2ff !important;">
+									<td class="text-center fw-bold" rowspan="2">Group</td>
+									<td class="text-center fw-bold" rowspan="2">Arts/General</td>
+									<td class="text-center fw-bold" colspan="2">Science</td>
+									<td class="text-center fw-bold" rowspan="2">Arts/General</td>
+									<td class="text-center fw-bold" colspan="2">Science</td>
+								</tr>
+
+								<tr class="print-bg-light-purple" style="background: #eef2ff !important;">
+									<td class="text-center fw-bold">Computer</td>
+									<td class="text-center fw-bold">Biology</td>
+									<td class="text-center fw-bold">Computer</td>
+									<td class="text-center fw-bold">Biology</td>
+								</tr>
+
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Boys</span></td>
+									<td class="text-center"><span class="num">{{data.ix_arts_general_boys}}</span></td>
+									<td class="text-center"><span class="num">{{data.ix_computer_boys}} </span>
+									</td>
+									<td class="text-center"><span class="num">{{data.ix_bio_boys}} </span></td>
+									{% boys_ix_class = 0 %}
+									{% boys_ix_class = data.ix_arts_general_boys + data.ix_computer_boys +
+									data.ix_bio_boys%}
+									<td class="text-center fw-700"><span class="num"> {{boys_ix_class}}</span></td>
+									<td class="text-center"><span class="num">{{data.x_arts_general_boys}}</span></td>
+									<td class="text-center"><span class="num">{{data.x_computer_boys}} </span>
+									</td>
+									<td class="text-center"><span class="num"> {{data.x_bio_boys}}</span></td>
+									{% boys_x_class = 0 %}
+									{% boys_x_class= data.x_arts_general_boys + data.x_computer_boys +
+									data.x_bio_boys%}
+									<td class="text-center fw-700"><span class="num"> {{boys_x_class}} </span></td>
+								</tr>
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Girls</span></td>
+									<td class="text-center"><span class="num">{{data.ix_arts_general_girls}}</span></td>
+									<td class="text-center"><span class="num"> {{data.ix_computer_girls}}</span>
+									</td>
+									<td class="text-center"><span class="num"> {{data.ix_bio_girls}}</span></td>
+									{% girls_ix_class = 0 %}
+									{% girls_ix_class = data.ix_arts_general_girls + data.ix_computer_girls +
+									data.ix_bio_girls%}
+									<td class="text-center fw-700"><span class="num"> {{girls_ix_class}}</span></td>
+									<td class="text-center"><span class="num">
+											{{data.x_arts_general_girls}}</span></td>
+									<td class="text-center"><span class="num"> {{data.x_computer_girls}}</span>
+									</td>
+									<td class="text-center"><span class="num">{{data.x_bio_girls}} </span></td>
+									{% girls_x_class = 0 %}
+									{% girls_x_class = data.x_arts_general_girls + data.x_computer_girls +
+									data.x_bio_girls%}
+									<td class="text-center fw-700"><span class="num"> {{girls_x_class}}</span></td>
+								</tr>
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Total</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ix_arts_general_girls +
+											data.ix_arts_general_boys}}</span></td>
+									<td class="text-center fw-700"><span class="num">{{data.ix_computer_girls +
+											data.ix_computer_boys}} </span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ix_bio_girls +
+											data.ix_bio_boys}}</span></td>
+									<td class="text-center fw-700"><span class="num"></span>{{data.ix_arts_general_boys
+										+ data.ix_computer_boys + data.ix_bio_boys+data.ix_arts_general_girls +
+										data.ix_computer_girls + data.ix_bio_girls}}</td>
+									<td class="text-center fw-700"><span class="num"> {{data.x_arts_general_girls +
+											data.x_arts_general_boys}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.x_computer_girls +
+											data.x_computer_boys}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.x_bio_girls +
+											data.x_bio_boys}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.x_arts_general_boys +
+											data.x_computer_boys +data.x_bio_boys+data.x_arts_general_girls +
+											data.x_computer_girls + data.x_bio_girls}}</span></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+
+
+
+				{% endif %}
+
+				{% endif %}
+
+				{% if data.enrollments != 0 && data.level == "Higher Secondary" %}
+				{% temp = data.ii_arts_general_boys + data.ii_computer_boys + data.ii_pre_medical_boys +
+				data.ii_pre_enginering_boys + data.ii_commerce_boys +
+				data.iix_arts_general_boys + data.iix_computer_boys + data.iix_pre_medical_boys +
+				data.iix_pre_enginering_boys +
+				data.iix_commerce_boys +
+				data.ii_arts_general_girls + data.ii_computer_girls + data.ii_pre_medical_girls +
+				data.ii_pre_enginering_girls +
+				data.ii_commerce_girls +
+				data.iix_arts_general_girls + data.iix_computer_girls + data.iix_pre_medical_girls +
+				data.iix_pre_enginering_girls + data.iix_commerce_girls
+				%}
+				{% if temp>0 %}
+
+
+				<div class="dashboard-table designation-tbl">
+					<div class="table-responsive">
+						<table class="table" width="100%">
+
+							<tbody>
+								<tr class="print-bg-green" style="background-color: #309975 !important;">
+									<td class="text-center fw-bold text-white">Class</td>
+									<td class="text-center fw-bold text-white" colspan="5">XI</td>
+									<td class="text-center fw-bold text-white" rowspan="3">Total</td>
+									<td class="text-center fw-bold text-white" colspan="5">XII</td>
+									<td class="text-center fw-bold text-white" rowspan="3">Total</td>
+
+								</tr>
+
+								<tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+									<td class="text-center fw-bold" rowspan="2">Group</td>
+									<td class="text-center fw-bold" rowspan="2">Arts/General</td>
+									<td class="text-center fw-bold" colspan="3">Science</td>
+									<td class="text-center fw-bold" rowspan="2">Commerce</td>
+									<td class="text-center fw-bold" rowspan="2">Arts/General</td>
+									<td class="text-center fw-bold" colspan="3">Science</td>
+									<td class="text-center fw-bold" rowspan="2">Commerce</td>
+								</tr>
+
+								<tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+									<td class="text-center fw-bold">Comp</td>
+									<td class="text-center fw-bold">Pre-Med</td>
+									<td class="text-center fw-bold">Pre-Eng</td>
+
+									<td class="text-center fw-bold">Comp</td>
+									<td class="text-center fw-bold">Pre-Med</td>
+									<td class="text-center fw-bold">Pre-Eng</td>
+								</tr>
+
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Boys</span></td>
+									<td class="text-center"><span class="num">{{data.ii_arts_general_boys}}
+										</span></td>
+									<td class="text-center"><span class="num">{{data.ii_computer_boys}} </span>
+									</td>
+									<td class="text-center"><span class="num">{{data.ii_pre_medical_boys}}
+										</span></td>
+									<td class="text-center"><span class="num">{{data.ii_pre_enginering_boys}}
+										</span></td>
+									<td class="text-center"><span class="num">{{data.ii_commerce_boys}} </span>
+									</td>
+									<td class="text-center fw-700"><span
+											class="num">{{data.ii_arts_general_boys+data.ii_computer_boys+data.ii_pre_medical_boys+data.ii_pre_enginering_boys+data.ii_commerce_boys}}
+										</span></td>
+									<td class="text-center"><span class="num">{{data.iix_arts_general_boys}}</span></td>
+									<td class="text-center"><span class="num">{{data.iix_computer_boys}}</span>
+									</td>
+									<td class="text-center"><span class="num">{{data.iix_pre_medical_boys}}</span></td>
+									<td class="text-center"><span class="num">{{data.iix_pre_enginering_boys}}
+										</span></td>
+									<td class="text-center"><span class="num"> {{data.iix_commerce_boys}}</span>
+									</td>
+									<td class="text-center fw-700"><span
+											class="num">{{data.iix_arts_general_boys+data.iix_computer_boys+data.iix_pre_medical_boys+data.iix_pre_enginering_boys+data.iix_commerce_boys}}
+										</span></td>
+								</tr>
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Girls</span></td>
+									<td class="text-center"><span class="num">{{data.ii_arts_general_girls}}</span></td>
+									<td class="text-center"><span class="num"> {{data.ii_computer_girls}}</span>
+									</td>
+									<td class="text-center"><span class="num">{{data.ii_pre_medical_girls}}
+										</span></td>
+									<td class="text-center"><span class="num">
+											{{data.ii_pre_enginering_girls}}</span></td>
+									<td class="text-center"><span class="num">{{data.ii_commerce_girls}} </span>
+									</td>
+									<td class="text-center fw-700"><span
+											class="num">{{data.ii_arts_general_girls+data.ii_computer_girls+data.ii_pre_medical_girls+data.ii_pre_enginering_girls+data.ii_commerce_girls}}
+										</span></td>
+									<td class="text-center"><span class="num">
+											{{data.iix_arts_general_girls}}</span></td>
+									<td class="text-center"><span class="num">
+											{{data.iix_computer_girls}}</span></td>
+									<td class="text-center"><span class="num">
+											{{data.iix_pre_medical_girls}}</span></td>
+									<td class="text-center"><span class="num">
+											{{data.iix_pre_enginering_girls}}</span></td>
+									<td class="text-center"><span class="num">
+											{{data.iix_commerce_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num">
+											{{data.iix_arts_general_girls+data.iix_computer_girls+data.iix_pre_medical_girls+data.iix_pre_enginering_girls+data.iix_commerce_girls}}</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center fw-700"><span class="num"> Total</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ii_arts_general_boys +
+											data.ii_arts_general_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ii_computer_boys +
+											data.ii_computer_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ii_pre_medical_boys +
+											data.ii_pre_medical_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ii_pre_enginering_boys +
+											data.ii_pre_enginering_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num"> {{data.ii_commerce_boys +
+											data.ii_commerce_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num">{{data.ii_arts_general_boys +
+											data.ii_computer_boys +
+											data.ii_pre_medical_boys+data.ii_pre_enginering_boys+data.ii_commerce_boys+data.ii_arts_general_girls+data.ii_computer_girls+data.ii_pre_medical_girls+data.ii_pre_enginering_girls+data.ii_commerce_girls}}
+										</span></td>
+									<td class="text-center fw-700"><span
+											class="num">{{data.iix_arts_general_boys+data.iix_arts_general_girls}}
+										</span></td>
+									<td class="text-center fw-700"><span
+											class="num">{{data.iix_computer_boys+data.iix_computer_girls}}
+										</span></td>
+									<td class="text-center fw-700"><span class="num">
+											{{data.iix_pre_medical_boys+data.iix_pre_medical_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num">
+											{{data.iix_pre_enginering_boys+data.iix_pre_enginering_girls}}</span>
+									</td>
+									<td class="text-center fw-700"><span class="num">
+											{{data.iix_commerce_boys+data.iix_commerce_girls}}</span></td>
+									<td class="text-center fw-700"><span class="num">
+											{{data.iix_arts_general_boys+data.iix_computer_boys+data.iix_pre_medical_boys+data.iix_pre_enginering_boys+data.iix_commerce_boys+data.iix_arts_general_girls+data.iix_computer_girls+data.iix_pre_medical_girls+data.iix_pre_enginering_girls+data.iix_commerce_girls}}</span>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				{% endif %}
+
+				{% endif %}
+				{% endif %}
+
+				{% if data.reason != "School does not exist" %}
+				<div class="row">
+					<div class="col-md-6">
+						<h5 class="fs-5 fw-600 mb-0 mt-3">SMC Funds</h5>
+						<div class="i-card">
+							<div class="card-body-district ">
+								<table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+									cellspacing="0">
+									<tbody>
+
+										<tr>
+											<th>
+												<i class="fa-solid fa-check school-level-img text-orange fs-2 mr-3"
+													aria-hidden="true"></i>
+												<span>Received</span>
+											</th>
+											{% if data.smc_received == "Yes" %}
+											<td class="text-right"><span class="num text-muted">Yes</span></td>
+											{% else %}
+											<td class="text-right"><span class="num text-muted">No</span></td>
+											{% endif %}
+
+										</tr>
+										<tr>
+											<th>
+												<img src="/assets/semis_theme/img/amount-recieved.png"
+													class="fac-img mr-2">
+												<span>Amount Received</span>
+											</th>
+											{% if data.amount_received > 0%}
+											<td class="text-right"><span class="num text-muted">Rs {{
+													data.amount_received.toLocaleString("en-US")
+													}}</span></td>
+											{% endif %}
+
+											{% if data.amount_received == 0%}
+											<td class="text-right"><span class="num text-muted">-</span></td>
+											{% endif %}
+										</tr>
+
+
+										<tr>
+											<th>
+												<i
+													class="fa-solid fa-list-check school-level-img text-orange fs-3 mr-3"></i>
+												<span>Total Utilized</span>
+											</th>
+											{% if data.total_utilized > 0%}
+											<td class="text-right" style="width: 90px;"><span class="num text-muted">Rs
+													{{
+													data.total_utilized.toLocaleString("en-US") }}</span></td>
+											{% endif %}
+											{% if data.total_utilized == 0%}
+											<td class="text-right" style="width: 90px;"><span
+													class="num text-muted">-</span>
+											</td>
+											{% endif %}
+										</tr>
+
+									</tbody>
+								</table>
+
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h5 class="fs-5 fw-600 mb-0 mt-3">Principal/ HM /Data Provider</h5>
+						<div class="i-card">
+							<div class="card-body-district">
+								<table class="table data-list mt-1" width="100%" border="0" cellpadding="0"
+									cellspacing="0">
+									<tbody>
+										<tr>
+											<th>
+												<i
+													class="fas fa-user-circle school-level-img text-primary mr-2 fs-2"></i>
+												Name
+											</th>
+											<td class="text-right"><span class="num text-muted">{{ data.hm_name
+													}}</span></td>
+										</tr>
+										<tr>
+											<th>
+												<img src="/assets/semis_theme/img/designation.png" width="30"
+													class="mr-2" alt="designation">
+												Designation
+											</th>
+											<td class="text-right"><span class="num text-muted">{{ data.hm_designation
+													}}</span>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<i
+													class="fa-solid fa-phone  school-level-img text-primary mr-2 fs-2"></i>
+												Contact
+											</th>
+											<td class="text-right"><span class="num text-muted">{{data.hm_phone}}</span>
+											</td>
+										</tr>
+
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% endif %}
+				<h5 class="fs-5 fw-600 mb-0 mt-3 page-breaks">ADP Scheme Details</h5>
+				{% if data.adp_data != 0 %}
+
+				<div class="dashboard-table designation-tbl">
+					<div class="table-responsive">
+						<table class="table" width="100%">
+							<tbody>
+								<tr class="print-bg-green" style="background-color:#309975 !important;">
+									<td class="text-center fw-700 text-white"><span class="num"> ADP No.</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> Description</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> Package</span></td>
+									<td class="text-center fw-700 text-white"><span class="num"> Progress</span></td>
+								</tr>
+								{% for enrol in data.adp_data %}
+								<tr>
+									<td class="text-center"><span class="fs-12">{{enrol.adp_no}}</span></td>
+									<td class="text-center"><span class="fs-12">{{enrol.adp_description}}</span></td>
+									<td class="text-center"><span class="fs-12">{{enrol.adp_package}}</span></td>
+									<td class="text-center"><span class="fs-12">{{enrol.adp_progress}}</span></td>
+								</tr>
+								{% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% else %}
+				<div class="i-card">
+					<div class="card-body-district">
+						<h5 class="fs-6 fw-600 mb-0 mt-0 page-breaks text-center">No Scheme</h5>
+					</div>
+				</div>
+				{% endif %}
+				<hr />
+				<div class="row">
+					<div class="col-md-9 col-sm-12">
+						<h4 class="text-dark fs-12 mb-1 mt-1"> Data Source: Annual School Census {{data.year}}
+							Reform Support
+							Unit</h4>
+					</div>
+
+					<div class="col-md-3 col-sm-12 text-right">
+						<h4 class="date" id="set_date">Printed on <span>{{data.date_}}</span></h4>
+					</div>
+
+				</div>
+
+
+
+
+				{% endfor %}
+			</div>
+			<div class="tab-pane fade" id="visit-section" role="tabpanel" aria-labelledby="visit-section-tab">
+				<!-- <div class="row">
+		<div class="col-md-12">
+				<h5 class="fs-5 fw-600 mt-3 page-breaks">Summary</h5>
+				<div class="school-facilities-card furniture-tbl">
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+										<img src="/assets/semis_theme/img/teacher.png" style="filter: invert(1);">
+										</div>
+										Total Teachers
+										<span class="text-center fs-5 num text-orange d-block">200</span>
+						
+					</div>
+					</div>
+					
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-present-teachers.png">
+										</div>
+										Total Teachers Present
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-absent-teachers.png" >
+										</div>
+										Total Teachers Absent
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+					
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/teachers-on-leave.png">
+										</div>
+										Total Teachers on Leave
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+					
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/absconder.png">
+										</div>
+										Total Absconder Teachers
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+					
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/">
+										</div>
+										empty
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+					
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-male-present.png">
+										</div>
+										Total Male Present
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-female-present.png" >
+										</div>
+										Total Female Present
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-male-absent.png">
+										</div>
+										Total Male Absent
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/total-female-absent.png">
+										</div>
+										Total Female Absent
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/enroll-student.png" >
+										</div>
+										Total Boys Enrolment
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+
+					<div class="i-card">
+					<div class="card-body">
+										<div class="me-visit-icon ">
+											<img src="/assets/semis_theme/img/woman.png">
+										</div>
+										Total Girls Enrolment
+										<span class="text-center fs-5 num text-orange d-block">100</span>
+					</div>
+					</div>
+					
+					
+				</div>
+				
+		</div>
+		</div>-->
+				{% if data.teachers_data != 0 %}
+				<div class="dashboard-table taluka_tbl">
+					<h5 class="fs-5 fw-bold mb-0 mt-3 ">Teacher Attendance Table</h5>
+					<div class="table-responsive">
+						<table class="table" width="100%">
+							<tbody>
+								<tr class="print-bg-green" style="background-color: #309975 !important;">
+									<td class="text-center fw-bold text-white">Personal ID</td>
+									<td class="text-center fw-bold text-white">Name</td>
+									<td class="text-center fw-bold text-white">CNIC</td>
+									<td class="text-center fw-bold text-white">Status</td>
+								</tr>
+								{% for enrol in data.teachers_data %}
+								<tr>
+									<td class="text-center fw-bold">{{enrol.Employee_Id}}</td>
+									<td class="text-center fw-bold">{{enrol.Employee_Name}}</td>
+									<td class="text-center fw-bold">{{enrol.Employee_CNIC}}</td>
+									{% if enrol.Present == "Yes" %}
+									<td class="text-center fw-bold">Present</td>
+									{% else %}
+									<td class="text-center fw-bold">{{enrol.Absent_Reason}}</td>
+									{% endif %}
+								</tr>
+								{% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% endif %}
+				{% if data.student_data != 0 %}
+				<div class="dashboard-table taluka_tbl">
+					<h5 class="fs-5 fw-bold mb-0 mt-3 ">Student Attendance Table</h5>
+					<div class="table-responsive">
+						<table class="table" width="100%">
+							<tbody>
+								<tr class="bg-dark-blue" style="background-color: #454d66 !important;">
+									<td class="text-center fw-bold text-white">Class</td>
+									<td class="text-center fw-bold text-white">Boys Enrollment</td>
+									<td class="text-center fw-bold text-white">Girls Enrollment</td>
+									<td class="text-center fw-bold text-white">Total Enrollment</td>
+									<td class="text-center fw-bold text-white">Boys Present</td>
+									<td class="text-center fw-bold text-white">Girls Present</td>
+									<td class="text-center fw-bold text-white">Total Present</td>
+								</tr>
+								{% for enrol in data.student_data %}
+								<tr>
+									<td class="text-center fw-bold">{{enrol.class}}</td>
+									<td class="text-center fw-bold">{{enrol.male_enroll}}</td>
+									<td class="text-center fw-bold">{{enrol.female_enroll}}</td>
+									<td class="text-center fw-bold">{{enrol.total_enroll}}</td>
+									<td class="text-center fw-bold">{{enrol.male_p}}</td>
+									<td class="text-center fw-bold">{{enrol.female_p}}</td>
+									<td class="text-center fw-bold">{{enrol.total_p}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% endif %}
+				<!--
+<h5 class="fs-5 fw-600 mt-3">Items</h5>
+<div class="school-facilities-card furniture-tbl">
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+						<img src="/assets/semis_theme/img/blackboard.png">
+						</div>
+						Black Boards
+						{% if data.blackboard > 0 %}
+						<span
+							class="text-center fs-5 num text-orange d-block">{{data.blackboard}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block"> - </span>
+						{% endif %}
+	</div>
+	</div>
+	
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/whiteboard.png">
+						</div>
+						White Boards
+						{% if data.whiteboard > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.whiteboard}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/teacherchair.png" >
+						</div>
+						Student Chairs
+						{% if data.student_chairs > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.student_chairs}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/desk.png">
+						</div>
+						Student Dual Desks
+						{% if data.student_desks > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.student_desks}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+
+						{% endif %}
+	</div>
+	</div>
+	
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/bench.png">
+						</div>
+						Student Benches
+						{% if data.bench>0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{ data.bench}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+
+						{% endif %}
+	</div>
+	</div>
+	
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/teacher-table.png">
+						</div>
+						Teacher Tables
+						{% if data.teacher_tables>0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.teacher_tables}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/teacherchair.png">
+						</div>
+						Teacher Chairs
+						{% if data.teacher_chairs>0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.teacher_chairs}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/closet.png" >
+						</div>
+						Almirahs
+						{% if data.almirah>0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{
+							data.almirah}}</span>
+						{% else %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/comp-orange.png">
+						</div>
+						Computers
+						{% if data.comp > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{data.comp}}</span>
+						{% endif %}
+						{% if data.comp == 0 %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/projector-orange.png">
+						</div>
+						Projectors
+						{% if data.projector > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{data.projector}}</span>
+						{% endif %}
+						{% if data.projector == 0 %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/fan-orange.png" >
+						</div>
+						Electric Fans
+						{% if data.fans > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{data.fans}}</span>
+						{% endif %}
+						{% if data.fans == 0 %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	<div class="i-card">
+	<div class="card-body">
+						<div class="furniture-icon">
+							<img src="/assets/semis_theme/img/LED-orange.png">
+						</div>
+						LED/TV
+						{% if data.tv > 0 %}
+						<span class="text-center fs-5 num text-orange d-block">{{data.tv}}</span>
+						{% endif %}
+						{% if data.tv == 0 %}
+						<span class="text-center fs-5 num text-orange d-block">-</span>
+						{% endif %}
+	</div>
+	</div>
+	
+	
+</div>
+		 
+-->
+			</div>
+		</div>
+
+
+
+
+	</section>
+</body>
+
+</html>

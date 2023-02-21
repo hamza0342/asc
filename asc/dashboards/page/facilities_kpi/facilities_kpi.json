@@ -1,0 +1,22 @@
+{
+    "content": null,
+    "creation": "2022-08-15 12:11:41.294663",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-08-15 12:11:41.294663",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "facilities-kpi",
+    "owner": "Administrator",
+    "page_name": "Facilities KPI",
+    "roles": [
+        {
+            "role": "SEMIS Manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0
+}

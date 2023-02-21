@@ -1,0 +1,242 @@
+{% if reason != "School does not exist" %}
+<div class="col-md-12">
+    <h5 class="fs-5 fw-600 mt-3">Basic Facilities</h5>
+    <div class="school-facilities-card">
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/drinking-water.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Drinking Water
+                        {% if drinking_water == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            drinking_water }}</span>
+                        {% endif %}
+
+                        {% if drinking_water == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            drinking_water }}</span>
+                        {% endif %}
+
+                        {% if drinking_water == "" %}
+                        <span class="text-center fs-6 num text-danger d-block">No</span>
+                        {% endif %}
+
+                        {% if drinking_water == "-" %}
+                        <span class="text-center fs-6 num text-danger d-block">-</span>
+                        {% endif %}
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/toilet.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Toilets
+                        {% if toilets == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            toilets}}
+                            ({{no_toilets}})</span>
+                        {% endif %}
+
+                        {% if toilets == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            toilets}}</span>
+                        {% endif %}
+
+                        {% if toilets == "" %}
+                        <span class="text-center fs-6 num text-danger d-block">No</span>
+                        {% endif %}
+
+                        {% if toilets == "-" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            toilets}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/handwash.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Hand Wash
+                        {% if hand_wash == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{hand_wash}}</span>
+                        {% endif %}
+
+                        {% if hand_wash == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{hand_wash}}</span>
+                        {% endif %}
+
+                        {% if hand_wash == "" %}
+                        <span class="text-center fs-6 num text-danger d-block">No</span>
+                        {% endif %}
+
+                        {% if hand_wash == "-" %}
+                        <span class="text-center fs-6 num text-danger d-block">-</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/soap.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Soap
+                        {% if soap == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{soap}}</span>
+                        {% endif %}
+                        {% if soap == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{soap}}</span>
+                        {% endif %}
+                        {% if soap == "" %}
+                        <span class="text-center fs-6 num text-danger d-block">No</span>
+                        {% endif %}
+                        {% if soap == "-" %}
+                        <span class="text-center fs-6 num text-danger d-block">-</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/electricity.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Electricity
+                        {% if electricity == "WAPDA/KE" %}
+                        <span class="text-center fs-6  num text-success d-block">Yes</span>
+                        {% endif %}
+                        {% if electricity == "Solar System" %}
+                        <span class="text-center fs-6  num text-success d-block">Yes</span>
+                        {% endif %}
+                        {% if electricity == "No Electricity Connection" %}
+                        <span class="text-center fs-6 num text-danger d-block">No</span>
+                        {% endif %}
+                        {% if electricity == "-" || electricity == "" %}
+                        <span class="text-center fs-6 num text-danger d-block">-</span>
+                        {% endif %}
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/boundry-wall.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Boundary Wall
+                        {% if boundary_wall == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            boundary_wall}}</span>
+                        {% endif %}
+                        {% if boundary_wall == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            boundary_wall}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/science-lab.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Lab/Sci.Lab
+                        {% if science_lab == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            science_lab}}</span>
+                        {% endif %}
+
+                        {% if science_lab == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            science_lab}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/library.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Library
+                        {% if library == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            library}}</span>
+                        {% endif %}
+                        {% if library == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            library}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/computer-teal.png" class="fac-img-schoolprofile">
+                    <p class="fw-600 mb-0 mt-0">Computer Lab
+                        {% if computer_lab == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            computer_lab}}</span>
+                        {% endif %}
+                        {% if computer_lab == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            computer_lab}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="i-card fac-card-schoolprofile">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="/assets/semis_theme/img/playground-teal.png" class="fac-img-schoolprofile">
+                    <span class="fw-600 fs-6 "></span>
+                    <p class="fw-600 mb-0 mt-0">Play Ground
+                        {% if play_ground == "Yes" %}
+                        <span class="text-center fs-6  num text-success d-block">{{
+                            play_ground}}
+                            ({{play_ground_area.toLocaleString("en-US")}})</span>
+                        {% endif %}
+                        {% if play_ground == "No" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            play_ground}}</span>
+                        {% endif %}
+                        {% if play_ground == "-" %}
+                        <span class="text-center fs-6 num text-danger d-block">{{
+                            play_ground}}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endif %}

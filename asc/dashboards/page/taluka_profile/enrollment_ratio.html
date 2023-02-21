@@ -1,0 +1,73 @@
+<div class="d-flex flex-col">
+    <div class="medium-wise-card">
+        <div class="i-card medium-wise-printcard" style="border:none;">
+            <div class="card-body iconfont text-center">
+                <h2 class="fw-700 mb-2 fs-2 text-dark-green">
+                    {{sindhi.toLocaleString("en-US")}}</h2>
+                <h5 class="text-dark fs-7 fw-700 mb-0 d-block">Sindhi Medium Enrollment</h5>
+            </div>
+
+        </div>
+        <div class="i-card medium-wise-printcard" style="border:none;">
+            <div class="card-body iconfont text-center">
+                <h2 class="fw-700 mb-2 fs-2 text-dark-green">
+                    {{urdu.toLocaleString("en-US")}}</h2>
+                <h5 class="text-dark fs-7 fw-700 mb-0 d-block">Urdu Medium <br />Enrollment</h5>
+            </div>
+        </div>
+
+        <div class="i-card medium-wise-printcard" style="border:none;">
+            <div class="card-body iconfont text-center">
+                <h2 class="fw-700 mb-2 fs-2 text-dark-green">
+                    {{english.toLocaleString("en-US")}}</h2>
+                <h5 class="text-dark fs-7 fw-700 mb-0 d-block">English Medium Enrollment</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="medium-wise-card mt-4">
+        <div class="rounded text-center donut-charts mt-4">
+            <div class="d-inline-block position-relative mb-1">
+                <span class="donut-lg2">{{Students_Per_Classrooms}}</span>
+                <img src="/assets/semis_theme/img/classroom-black.png">
+            </div>
+
+            <span class="text d-block text-dark fw-600 fs-6"><small
+                    class="d-block fs-3 fw-bold">{{Students_Per_Classrooms}}</small>
+                Students/Classroom Ratio</span>
+        </div>
+
+        <div class="rounded text-center donut-charts mt-4">
+            <div class="d-inline-block position-relative mb-1">
+                <span class="donut-lg">{{Students_Per_Teacher}}</span>
+                <img src="/assets/semis_theme/img/teacher.png">
+            </div>
+            <span class="text d-block text-dark fw-600 fs-6"><small
+                    class="d-block fs-3 fw-bold">{{Students_Per_Teacher}}</small>
+                Students/Teacher <br />Ratio
+            </span>
+        </div>
+
+        <div class="rounded text-center donut-charts mt-4">
+            <div class="d-inline-block position-relative mb-1">
+                <span class="donut-lg3">{{Students_Per_School}}</span>
+                <img src="/assets/semis_theme/img/school.png">
+            </div>
+
+            <span class="text d-block text-dark fw-600 fs-6"><small
+                    class="d-block fs-3 fw-bold">{{Students_Per_School}}</small>
+                Students/School <br />Ratio</span>
+        </div>
+
+        <div class="rounded text-center donut-charts mt-4">
+            <div class="d-inline-block position-relative mb-1">
+                <span class="donut-lg4">{{Teachers_Per_School}}</span>
+                <img src="/assets/semis_theme/img/teacher-school.png">
+            </div>
+
+            <span class="text d-block text-dark fw-600 fs-6"><small
+                    class="d-block fs-3 fw-bold">{{Teachers_Per_School}}</small>
+                Teachers/School <br /> Ratio</span>
+        </div>
+    </div>
+</div>

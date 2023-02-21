@@ -1,0 +1,298 @@
+<div class="row">
+
+    <div class="col-md-12 col-sm-12">
+        <div class="ajrak-bg"></div>
+    </div>
+
+    <div class="col-md-9 line-h-13 col-sm-12">
+        <div class="d-flex flow-row mb-4">
+            <img style="width:67px;" src="/assets/frappe/images/rsu_logo.png">
+            <div class="mt-2">
+                <h5 class="rsu-title">REFORM SUPPORT UNIT </h5>
+                <span class="school-education d-block">School Education & Literacy Department, </span>
+                <span class="school-education d-block">Government of Sindh</span>
+            </div>
+        </div>
+
+        <span class="anual-cesus2">{{ school_name }}<p class="mb-0 mt-0 ms-2 d-inline fs-8 text-theme-green">
+                ({{semis_code}})</p> </span>
+        <p class="text-success d-block mb-0 fw-600">{{ address }}
+            <span>({{ phone }})</span>
+        </p>
+
+    </div>
+
+    <div class="col-md-3 col-sm-12">
+        <div class="card-header-district mt-1 d-none d-sm-block">
+            <div class="card-body-district">
+                <table width="100%" class="district-header-tbl">
+                    <tbody>
+                        <tr>
+                            <th>
+                                <h5 class="mb-0 fs-6 text-danger fw-600"> SEMIS Code:</h5>
+                            </th>
+                            <td>
+                                <h5 class="text-dark fw-600 mb-0">{{ semis_code }}</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <h5 class="mb-0 fs-6 text-danger fw-600"> District:</h5>
+                            </th>
+                            <td>
+                                <h5 class="text-dark fw-600 mb-0">{{ district }}</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <h5 class="mb-0 fs-6 text-danger fw-600"> Taluka:</h5>
+                            </th>
+                            <td>
+                                <h5 class="text-dark fw-600 mb-0">{{ taluka }}</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <h5 class="mb-0 fs-6 text-danger fw-600"> UC/TC/MC:</h5>
+                            </th>
+                            <td>
+                                <h5 class="text-dark fw-600 mb-0">{{ union_council }}</h5>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<hr>
+<div class="table-responsive">
+    <table class="main-table">
+        <tbody>
+
+            <tr>
+                <td>
+                    <h5 class="fs-5 fw-600 mb-0 mt-2">School Details</h5>
+                    <div class="i-card" style="border:none !important;">
+                        <div class="card-body-district p-0">
+                            <table class="table data-list table-striped mt-0 mb-3 school-detail" width="100%" border="0"
+                                cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <th class="fw-500 fs-6">Location</th>
+                                        <td><span class="num text-muted fs-7">{{location}}</span></td>
+                                        <th class="fw-500 fs-6">Level</th>
+                                        <td><span class="num text-muted fs-7">{{ level }}</span></td>
+                                        <th class="fw-500 fs-6"> Gender</th>
+                                        <td><span class="num text-muted fs-7">{{ school_gender }}</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th class="fw-500 fs-6"> Medium</th>
+                                        <td><span class="num text-muted fs-7">{{school_medium}}</span></td>
+                                        {% if school_medium %}
+
+                                        {% if sindhi_enrollment > 0 && school_medium =="Sindhi" %}
+                                        <th class="fw-500 fs-6"> Sindhi Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{sindhi_enrollment}}</span></td>
+                                        {% endif %}
+
+                                        {% if urdu_enrollment > 0 && school_medium =="Urdu" %}
+                                        <th class="fw-500 fs-6"> Urdu Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{urdu_enrollment}}</span></td>
+                                        {% endif %}
+
+                                        {% if english_enrollment > 0 && school_medium == "English" %}
+                                        <th class="fw-500 fs-6"> English Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{english_enrollment}}</span>
+                                        </td>
+                                        {% endif %}
+
+
+                                        {% if school_medium == "Mixed" %}
+
+                                        {% check = 0 %}
+
+                                        <th class="fw-500 fs-6"> Sindhi Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{sindhi_enrollment}}</span>
+                                        </td>
+
+
+                                        <th class="fw-500 fs-6"> Urdu Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{urdu_enrollment}}</span>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <th class="fw-500 fs-6"> English Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{english_enrollment}}</span>
+                                        </td>
+
+                                        <th class="fw-500 fs-6"> Total Enrollment</th>
+                                        <td><span class="num text-muted fs-7">{{enrollments}}</span>
+                                        </td>
+
+                                        {% endif %}
+
+
+
+                                        {% endif %}
+                                        <th class="fw-500 fs-6">Shift</th>
+                                        <td><span class="num text-muted fs-7">{{ shift }}</span></td>
+                                    </tr>
+
+
+
+                                    {% if status == "Closed"%}
+                                    <tr>
+                                        <th class="fw-500 fs-6"> Status</th>
+                                        <td><span class="num text-muted fs-7">{{ status }}</span></td>
+                                        <th class="fw-500 fs-6">Duration of Closure</th>
+                                        <td><span class="num text-muted fs-7">{{duration}}</span></td>
+                                        <th class="fw-500 fs-6"> Reason of Closure </th>
+                                        <td><span class="num text-muted fs-7">{{reason}}</span></td>
+                                    </tr>
+                                    <tr>
+
+                                        <th class="fw-500 fs-6">School Administration</th>
+                                        <td><span class="num text-muted fs-7">{{admin}}</span></td>
+                                        <th class="fw-500 fs-6"> DDO Cost Center </th>
+                                        <td><span class="num text-muted fs-7">{{ddo}}</span></td>
+                                        <th class="fw-500 fs-6">Is Campus</th>
+                                        <td><span class="num text-muted fs-7">{{is_campus_school}}</span></td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <th class="fw-500 fs-6"> Status</th>
+                                        <td><span class="num text-muted fs-7">{{ status }}</span></td>
+                                        <th class="fw-500 fs-6">School Administration</th>
+                                        <td><span class="num text-muted fs-7">{{admin}}</span></td>
+                                        <th class="fw-500 fs-6"> DDO Cost Center </th>
+                                        <td><span class="num text-muted fs-7">{{ddo}}</span></td>
+                                    </tr>
+                                    {% endif %}
+
+                                    <tr>
+                                        <th class="fw-500 fs-6">Total Surrounding Schools</th>
+                                        <td><span class="num text-muted fs-7">{{surrounding}}</span></td>
+                                        <th class="fw-500 fs-6">Adopted School</th>
+                                        <td><span class="num text-muted fs-7">{{adopted_school}}</span></td>
+                                        {% if adopted_school == "Yes" %}
+                                        <th class="fw-500 fs-6">Adopter Name</th>
+                                        <td><span class="num text-muted fs-7">{{adopter_name}}</span></td>
+                                        {% if status != "Closed"%}
+                                    </tr>
+                                    <tr>
+                                        <th class="fw-500 fs-6">Is Campus</th>
+                                        <td><span class="num text-muted fs-7">{{is_campus_school}}</span></td>
+
+                                        <th class="fw-500 fs-6"></th>
+                                        <td><span class="num text-muted fs-7"></span></td>
+
+                                        <th class="fw-500 fs-6"></th>
+                                        <td><span class="num text-muted fs-7"></span></td>
+                                        {% endif %}
+
+
+                                        {% else %}
+                                        {% if status != "Closed"%}
+                                        <th class="fw-500 fs-6">Is Campus</th>
+                                        <td><span class="num text-muted fs-7">{{is_campus_school}}</span></td>
+                                        {% endif %}
+
+                                        {% endif %}
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </td>
+
+                {% if reason == "School does not exist" %}
+                <td style="width:460px;">
+                    <h5 class="fs-5 fw-600 mt-2 mb-0">Principal/ HM /Data Provider</h5>
+                    <div class="i-card">
+                        <div class="card-body-district">
+                            <table class="table data-list" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <i class="fas fa-user-circle school-level-img text-primary mr-2 fs-2"></i>
+                                            Name
+                                        </th>
+                                        {% if hm_name == "" %}
+                                        {% hm_name = "-" %}
+                                        {% endif %}
+                                        <td class="text-right"><span class="num text-muted">{{ hm_name
+                                                }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <i
+                                                class="fa-solid fa-address-book school-level-img text-primary mr-2 fs-2"></i>
+                                            Designation
+                                        </th>
+                                        {% if hm_designation == "" %}
+                                        {% hm_designation = "-" %}
+                                        {% endif %}
+                                        <td class="text-right"><span class="num text-muted">{{ hm_designation
+                                                }}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <i class="fa-solid fa-phone  school-level-img text-primary mr-2 fs-2"></i>
+                                            Contact
+                                        </th>
+
+                                        {% if hm_phone == "" %}
+                                        {% hm_phone = "-" %}
+                                        {% endif %}
+
+                                        <td class="text-right"><span class="num text-muted">{{hm_phone}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+                {% endif %}
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+{% if reason == "School does not exist" %}
+<div class="row">
+    <div class="col-md-9 col-sm-12">
+        <h4 class="text-dark fs-12 mb-1 mt-1"> Data Source: Annual School Census {{year}}
+            Reform Support
+            Unit</h4>
+    </div>
+
+    <div class="col-md-3 col-sm-12 text-right">
+        <h4 class="date" id="set_date">Printed on <span>{{date}}</span></h4>
+    </div>
+
+</div>
+{% endif %}

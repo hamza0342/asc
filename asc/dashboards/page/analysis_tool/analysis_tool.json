@@ -1,0 +1,24 @@
+{
+    "content": null,
+    "creation": "2022-03-08 15:17:47.986826",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-03-08 15:17:47.986826",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "analysis-tool",
+    "owner": "Administrator",
+    "page_name": "Analysis Tool",
+    "restrict_to_domain": "Education",
+    "roles": [
+        {
+            "role": "RSU manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Analysis Tool"
+}

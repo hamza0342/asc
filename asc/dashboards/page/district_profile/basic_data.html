@@ -1,0 +1,367 @@
+<div class="row">
+
+    <div class="col-md-12 col-sm-12">
+        <div class="ajrak-bg"></div>
+    </div>
+    <div class="col-md-9 line-h-13 col-sm-12">
+        <div class="d-flex flow-row">
+            <img style="width:67px;" src="/assets/semis_theme/img/rsu_logo.png">
+            <div class="mt-2">
+                <h5 class="rsu-title">REFORM SUPPORT UNIT </h5>
+                <span class="school-education d-block">School Education & Literacy Department, </span>
+                <span class="school-education d-block">Government of Sindh</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-sm-12">
+
+        <h5 class="district-name text-danger">District <span>{{district}}</span></h5>
+        <span class="anual-cesus">Annual School Census (ASC) <span>{{year}}</span></span>
+
+    </div>
+
+    <div class="col-md-9 col-sm-12">
+        <p class="district-descrip">
+            District <strong class="text-blue">{{district}} </strong> has <strong class="text-blue">{{
+                Total_Schools.toLocaleString("en-US") }} </strong>schools in total out of which <strong
+                class="text-blue">
+                {{Functional}}</strong> schools are functional. The student enrollment is <strong class="text-blue">{{
+                Enrolments.toLocaleString("en-US") }}
+            </strong> and <strong class="text-blue">{{ Teachers.toLocaleString("en-US")
+                }} </strong> teachers are deployed.</strong>
+        </p>
+    </div>
+    <div class="col-md-3 d-none d-sm-block">
+        <div class="card-district" style="width: 236px;float: right;">
+            <div class="card-body-district d-flex justify-space-between">
+                <div>
+                    <h5 class="body-heading"> <i class="fas fa-school main-top-icons" aria-hidden="true"></i>Schools
+                    </h5>
+                    <h5 class="body-heading"> <img src="/assets/semis_theme/img/enrollment.png" width="18px"
+                            class="head-img">Enrollment</h5>
+                    <h5 class="body-heading"> <i class="fas fa-users main-top-icons" aria-hidden="true"></i>Teachers
+                    </h5>
+                </div>
+
+                <div>
+                    <h5 class="total-num">{{ Total_Schools.toLocaleString("en-US") }}</h5>
+                    <h5 class="total-num">{{ Enrolments.toLocaleString("en-US") }} </h5>
+                    <h5 class="total-num"> {{ Teachers.toLocaleString("en-US") }} </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-3 padding-print">
+        <div class="i-card">
+            <div class="card-body-district p-2">
+
+                <h5 class="level mb-2 ps-2">Schools By Status</h5>
+                <div class="widget-content p-0 d-flex flow-row justify-space-around">
+
+                    <div class="text-center">
+                        <img src="/assets/semis_theme/img/functionalschool.png"
+                            class="rounded-circle avatar-md img-thumbnail m-auto object-cover" />
+                        <h6 class="text-center mt-2 fs-6 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title=" Schools that are conducting classes regularly and where both teachers and students are recorded in the census data.">
+                            Functional</h6>
+                        <p class="text-center fs-5 fw-bold mb-0">{{Functional.toLocaleString("en-US")}}
+                            <span class="text-success d-inline-block fs-14 fw-500">({{func_percentage}}%)</span>
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="/assets/semis_theme/img/closed-schools-icon.png"
+                            class="rounded-circle avatar-md img-thumbnail m-auto object-cover" />
+                        <h6 class="text-center mt-2 fs-6 mb-0">Closed</h6>
+                        <p class="text-center fs-5 fw-bold mb-0">{{Closed.toLocaleString("en-US")}}
+                            <span class="text-success d-inline-block fs-14 fw-500">({{closed_percentage}}%)</span>
+                        </p>
+                    </div>
+                </div>
+                <hr class="mt-14 mb-3" />
+                <h5 class="level mb-0 ps-2">Closed Reasons:</h5>
+                <div class="close-reason">
+                    <div class="d-flex flow-row justify-space-between align-items-baseline">
+                        <p class="mb-1 fw-500 fs-14">No Teacher</p>
+                        <span class="fw-bold fs-12">{{no_teacher}}
+                            <span class="num text-muted fs-12">
+                                ({{no_teacher_percentage}}%)</span></span>
+                    </div>
+
+                    <div class="d-flex flow-row justify-space-between align-items-baseline">
+                        <p class="mb-1 fw-500 fs-14">No Enrollment</p>
+                        <span class="fw-bold fs-12">{{no_enrollment}}
+                            <span class="num text-muted fs-12">
+                                ({{no_enrollment_percentage}}%)</span></span>
+                    </div>
+
+                    <div class="d-flex flow-row justify-space-between align-items-baseline">
+                        <p class="mb-1 fw-500 fs-14">Other</p>
+                        <span class="fw-bold fs-12">{{other_closure_reason}}
+                            <span class="num text-muted fs-12">
+                                ({{other_closure_reason_percentage}}%)</span></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 padding-print">
+        <div class="i-card">
+            <div class="card-body-district">
+                <div>
+                    <h5 class="level mb-2  ">Schools By Gender</h5>
+
+                    <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th><i class="fa fa-male boy school-level-img fs-" aria-hidden="true"
+                                        style="min-width:unset !important"></i>
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" Schools under administrative authority of District Education Officers (Male), generally having boys enrollment. ">
+                                        Boys</p>
+                                </th>
+                                <td class="text-right">{{Boys.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{boys_percentage}}%)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-female girl school-level-img" aria-hidden="true"
+                                        style="min-width:unset !important"></i>
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" Schools under administrative authority of District Education Officers (female), generally having girls enrollment. ">
+                                        Girls</p>
+                                </th>
+                                <td class="text-right">{{Girls.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{girls_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/mixed-final.png" width="15">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" Schools having mixed enrollment of boys and girls both, under the jurisdiction of District Education Male.">
+                                        Mixed</p>
+                                </th>
+
+                                <td class="text-right">{{Mixed.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{mixed_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+                            <tr style="border:none !important;">
+                                <th colspan="2">
+                                    <h5 class="level mb-0">School By Category</h5>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <i class="fas fa-university text-tealgreen fs-5"></i>
+                                    <p class="ps-1" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" The single school under whom various schools are merged under School Consolidation Policy.">
+                                        Campus</p>
+                                </th>
+                                <td class="text-right">
+                                    {{Campus.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{campus_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    <i class="fas fa-school text-tealgreen fs-5"></i>
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top" title="Adoption of a public school through public private partnership for improving the 
+physical condtion and standard of learning outcomes of students through quality 
+education.">Adopted</p>
+                                </th>
+                                <td class="text-right">
+                                    {{adopted_school.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{adopted_school_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    <i class="fa fa-building-o text-tealgreen fs-4"></i>
+                                    <p style="margin: 0 0 0 12px;" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Schools opened as a Branch of some other high or higher secondary school and 
+administratively report to the parent school. Only teachers are provided by the education 
+department, and all other facilities are arranged and maintained by the community. ">Branch</p>
+                                </th>
+                                <td class="text-right">
+                                    {{Branch.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{branch_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 padding-print">
+        <div class="i-card print-level-card" style="min-height: 325px;">
+            <div class="card-body-district">
+                <div>
+                    <h5 class="level mb-3">Schools By Level</h5>
+                    <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/primary.png" class="school-level-img w-35">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" A school where children receive pre-primary/ECE till class V from the age of about four to nine,and before middle school.">
+                                        Primary</p>
+                                </th>
+
+                                <td class="text-right">
+                                    {{primary_school.toLocaleString("en-US")}}
+                                    <span class="num text-muted fs-12">({{primary_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/elementary.png" class="school-level-img w-35">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=" The level school from Pre-primary/ECE to Eight class.">
+                                        Elementary</p>
+                                </th>
+                                <td class="text-right">
+                                    {{Elementary}}
+                                    <span class="num text-muted fs-12">({{elementary_percentage}}%)</span>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/middle.png" class="school-level-img w-35">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="The Level of School from Class Six to Class Eight.">
+                                        Middle</p>
+                                </th>
+
+                                <td class="text-right">
+                                    {{Middle}}
+                                    <span class="num text-muted fs-12">({{middle_percentage}}%)</span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/secondary.png" class="school-level-img w-35">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="The level of school from Class Katchi to Class 10, or Class 6 to Class 10, or it can be only class 9 & Class 10.">
+                                        Secondary</p>
+                                </th>
+
+                                <td class="text-right">
+                                    {{Secondary}}
+                                    <span class="num text-muted fs-12">({{secondary_percentage}}%)</span>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th><img src="/assets/semis_theme/img/highersec.png" class="school-level-img w-35">
+                                    <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Schools offering grades 11 and 12. These intermediate classes are also offered by the colleges, which are not included.">
+                                        Higher Sec</p>
+                                </th>
+                                <td class="text-right">
+                                    {{higher_secondary}}
+                                    <span class="num text-muted fs-12">({{high_sec_percentage}}%)</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 padding-print">
+        <div class="i-card print-level-card" style="min-height: 325px;">
+            <div class="card-body-district">
+                <h5 class="level mb-3">Schools By Building</h5>
+                <table class="table data-list" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+
+                        <tr>
+                            <th>
+                                <img src="/assets/semis_theme/img/have-building.png" class="school-level-img w-35  ">
+                                <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="A building is a structure that has a roof and walls">Building
+                                </p>
+                            </th>
+                            <td class="text-right">
+                                {{having_building.toLocaleString("en-US")}}
+                                <span class="num text-muted fs-12">({{having_building_percentage}}%)</span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <img src="/assets/semis_theme/img/closed-schools.png" class="school-level-img w-35  ">
+                                <p data-bs-toggle="tooltip" data-bs-placement="top" title="Schools conducting classes in open-air and having no building and no branch school. 
+also schools which are operating in rental buildings.">Shelterless</p>
+                            </th>
+                            <td class="text-right">
+                                {{Shelterless.toLocaleString("en-US")}}
+                                <span class="num text-muted fs-12">({{Shelterless_percentage}}%)</span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <th><img src="/assets/semis_theme/img/rooms.png" class="school-level-img w-35  ">
+                                <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="a part or division of a building enclosed by walls, floor, and ceiling	.">
+                                    Rooms</p>
+                            </th>
+                            <td class="text-right">
+                                {{Rooms.toLocaleString("en-US")}}
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th><img src="/assets/semis_theme/img/classroom.png" class="school-level-img w-35  ">
+                                <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="A room in which a class of pupils or students is taught.">
+                                    Classrooms</p>
+                            </th>
+                            <td class="text-right">
+                                {{Classrooms.toLocaleString("en-US")}}
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><img src="/assets/semis_theme/img/washroom.png" class="school-level-img w-35  ">
+                                <p>Washrooms</p>
+                            </th>
+                            <td class="text-right">
+                                {{Toilet.toLocaleString("en-US")}}
+                                <span class="num text-muted fs-12">({{toilet_percentage}}%)</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

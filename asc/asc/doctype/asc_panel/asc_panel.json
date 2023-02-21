@@ -1,0 +1,167 @@
+{
+    "actions": [],
+    "allow_copy": 1,
+    "allow_rename": 1,
+    "creation": "2022-03-06 01:07:36.306848",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "reference_date",
+        "default_year",
+        "from_date",
+        "to_date",
+        "section_break_3",
+        "drinking_water",
+        "section_break_5",
+        "electricity",
+        "section_break_7",
+        "building",
+        "section_break_9",
+        "boundary_wall",
+        "section_break_11",
+        "toilet",
+        "section_break_13",
+        "hand_wash",
+        "section_break_15",
+        "soap",
+        "section_break_17",
+        "mhm_disposal"
+    ],
+    "fields": [
+        {
+            "fieldname": "reference_date",
+            "fieldtype": "Date",
+            "label": "Reference Date"
+        },
+        {
+            "fieldname": "default_year",
+            "fieldtype": "Link",
+            "label": "Default Year",
+            "options": "Year"
+        },
+        {
+            "fieldname": "drinking_water",
+            "fieldtype": "Table",
+            "label": "Drinking Water(Color Indication)",
+            "options": "Color Indication",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "section_break_3",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "section_break_5",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "electricity",
+            "fieldtype": "Table",
+            "label": "Electricity(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_7",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "building",
+            "fieldtype": "Table",
+            "label": "Building(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_9",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "boundary_wall",
+            "fieldtype": "Table",
+            "label": "Boundary Wall(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_11",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "toilet",
+            "fieldtype": "Table",
+            "label": "Toilet(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_13",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "hand_wash",
+            "fieldtype": "Table",
+            "label": "Hand Wash(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_15",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "soap",
+            "fieldtype": "Table",
+            "label": "Soap(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "section_break_17",
+            "fieldtype": "Section Break",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "mhm_disposal",
+            "fieldtype": "Table",
+            "label": "MHM Disposal(Color Indication)",
+            "options": "Color Indication"
+        },
+        {
+            "fieldname": "from_date",
+            "fieldtype": "Date",
+            "label": "From Date"
+        },
+        {
+            "fieldname": "to_date",
+            "fieldtype": "Date",
+            "label": "To Date"
+        }
+    ],
+    "hide_toolbar": 1,
+    "index_web_pages_for_search": 1,
+    "issingle": 1,
+    "links": [],
+    "modified": "2022-08-05 18:19:51.597924",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC Panel",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

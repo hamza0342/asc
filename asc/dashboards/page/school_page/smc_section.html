@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-md-6">
+        <h5 class="fs-5 fw-600 mb-0 mt-3">SMC Funds</h5>
+        <div class="i-card">
+            <div class="card-body-district ">
+                <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+
+                        <tr>
+                            <th>
+                                <i class="fa-solid fa-check school-level-img text-orange fs-2 mr-3"
+                                    aria-hidden="true"></i>
+                                <span>Received</span>
+                            </th>
+                            {% if smc_received == "Yes" %}
+                            <td class="text-right"><span class="num text-muted">Yes</span></td>
+                            {% else %}
+                            <td class="text-right"><span class="num text-muted">No</span></td>
+                            {% endif %}
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <img src="/assets/semis_theme/img/amount-recieved.png" class="fac-img mr-2">
+                                <span>Amount Received</span>
+                            </th>
+                            {% if amount_received > 0%}
+                            <td class="text-right"><span class="num text-muted">Rs {{
+                                    amount_received.toLocaleString("en-US")
+                                    }}</span></td>
+                            {% endif %}
+
+                            {% if amount_received == 0%}
+                            <td class="text-right"><span class="num text-muted">-</span></td>
+                            {% endif %}
+                        </tr>
+
+
+                        <tr>
+                            <th>
+                                <i class="fa-solid fa-list-check school-level-img text-orange fs-3 mr-3"></i>
+                                <span>Total Utilized</span>
+                            </th>
+                            {% if total_utilized > 0%}
+                            <td class="text-right" style="width: 90px;"><span class="num text-muted">Rs
+                                    {{
+                                    total_utilized.toLocaleString("en-US") }}</span></td>
+                            {% endif %}
+                            {% if total_utilized == 0%}
+                            <td class="text-right" style="width: 90px;"><span class="num text-muted">-</span>
+                            </td>
+                            {% endif %}
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h5 class="fs-5 fw-600 mb-0 mt-3">Principal/ HM /Data Provider</h5>
+        <div class="i-card">
+            <div class="card-body-district">
+                <table class="table data-list mt-1" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th>
+                                <i class="fas fa-user-circle school-level-img text-primary mr-2 fs-2"></i>
+                                Name
+                            </th>
+                            <td class="text-right"><span class="num text-muted">{{ hm_name
+                                    }}</span></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <img src="/assets/semis_theme/img/designation.png" width="30" class="mr-2"
+                                    alt="designation">
+                                Designation
+                            </th>
+                            <td class="text-right"><span class="num text-muted">{{ hm_designation
+                                    }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <i class="fa-solid fa-phone  school-level-img text-primary mr-2 fs-2"></i>
+                                Contact
+                            </th>
+                            <td class="text-right"><span class="num text-muted">{{hm_phone}}</span>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h5 class="fs-5 fw-600 mb-0 mt-3">ADP Scheme Details</h5>
+{% if adp_data != 0 %}
+
+<div class="dashboard-table designation-tbl">
+    <div class="table-responsive">
+        <table class="table" width="100%">
+            <tbody>
+                <tr class="print-bg-green" style="background-color:#309975 !important;">
+                    <td class="text-center fw-700 text-white"><span class="num"> ADP No.</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> Description</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> Package</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> Progress</span></td>
+                </tr>
+                {% for enrol in adp_data %}
+                <tr>
+                    <td class="text-center"><span class="fs-12">{{enrol.adp_no}}</span></td>
+                    <td class="text-center"><span class="fs-12">{{enrol.adp_description}}</span></td>
+                    <td class="text-center"><span class="fs-12">{{enrol.adp_package}}</span></td>
+                    <td class="text-center"><span class="fs-12">{{enrol.adp_progress}}</span></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="i-card">
+    <div class="card-body-district">
+        <h5 class="fs-6 fw-600 mb-0 mt-0 page-breaks text-center">No Scheme</h5>
+    </div>
+</div>
+{% endif %}
+<hr />
+<div class="row">
+    <div class="col-md-9 col-sm-12">
+        <h4 class="text-dark fs-12 mb-1 mt-1"> Data Source: Annual School Census {{year}}
+            Reform Support
+            Unit</h4>
+    </div>
+
+    <div class="col-md-3 col-sm-12 text-right">
+        <h4 class="date" id="set_date">Printed on <span>{{date}}</span></h4>
+    </div>
+
+</div>

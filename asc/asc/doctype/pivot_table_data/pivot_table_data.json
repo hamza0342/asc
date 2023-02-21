@@ -1,0 +1,96 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:report_name",
+    "creation": "2022-09-16 15:29:04.252344",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "report_name",
+        "status",
+        "user",
+        "year",
+        "last_five_years",
+        "pivot_options",
+        "pivot_columns"
+    ],
+    "fields": [
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "\nPublic\nPrivate",
+            "reqd": 1
+        },
+        {
+            "fieldname": "user",
+            "fieldtype": "Data",
+            "label": "User",
+            "read_only": 1
+        },
+        {
+            "fieldname": "pivot_options",
+            "fieldtype": "Long Text",
+            "hidden": 1,
+            "label": "Pivot Options",
+            "read_only": 1
+        },
+        {
+            "fieldname": "pivot_columns",
+            "fieldtype": "Long Text",
+            "hidden": 1,
+            "label": "Pivot Columns",
+            "read_only": 1
+        },
+        {
+            "fieldname": "report_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Report Name",
+            "read_only": 1,
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "label": "Year",
+            "options": "Year",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "last_five_years",
+            "fieldtype": "Check",
+            "label": "Last Five Years",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-09-20 15:57:19.611009",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Pivot Table Data",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

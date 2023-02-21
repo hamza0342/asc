@@ -1,0 +1,26 @@
+{
+    "content": null,
+    "creation": "2021-12-31 11:55:01.921910",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-03-01 17:51:49.396260",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "main-dashboard",
+    "owner": "Administrator",
+    "page_name": "Main Dashboard",
+    "roles": [
+        {
+            "role": "RSU manager"
+        },
+        {
+            "role": "LSU"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Main Dashboard"
+}

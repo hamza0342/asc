@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="en" id="test">
+<style>
+    @keyframes skeleton-loading {
+        0% {
+            background-color: hsl(200, 20%, 80%);
+        }
+
+        100% {
+            background-color: hsl(200, 20%, 95%);
+        }
+    }
+
+    .skeleton-text {
+        width: 100%;
+        height: 0.7rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.25rem;
+        padding: 5px;
+    }
+
+    .skeleton-text__body {
+        width: 75%;
+    }
+
+    .skeleton-footer {
+        width: 30%;
+    }
+	.dashboard-table .skeleton-text
+	{
+		width: unset;
+	}
+</style>
+
+<body>
+
+
+    <section class="district-content" id="districtProfile">
+
+        <div id="basic_data">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="card__header header__img skeleton"></div>
+                </div>
+                <div class="col-md-9 line-h-13 col-sm-12">
+                    <div class="d-flex flow-row">
+                        <img class="card__header header__img skeleton" style="width:67px;">
+                        <div class="mt-2">
+                            <h5 class="rsu-title skeleton skeleton-text"> </h5>
+                            <span class="school-education skeleton skeleton-text"></span>
+                            <span class="school-education skeleton skeleton-text"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+
+                    <h5 class="district-name skeleton skeleton-text"> <span></span></h5>
+                    <span class="anual-cesus skeleton skeleton-text"> <span></span></span>
+
+                </div>
+
+                <div class="col-md-9 col-sm-12">
+                    <p class="district-descrip skeleton skeleton-text">
+
+                    </p>
+                </div>
+                <div class="col-md-3 d-none d-sm-block">
+                    <div class="card-district" style="width: 236px;float: right;     background: #f9fafa;">
+                        <div class="card-body-district d-flex justify-space-between">
+                            <div>
+                                <h5 class="body-heading skeleton skeleton-text"> <i
+                                        class="card__header header__img skeleton main-top-icons" aria-hidden="true"></i>
+                                </h5>
+                                <h5 class="body-heading skeleton skeleton-text"> <img
+                                        class="card__header header__img skeleton main-top-icons" src="" width="18px"
+                                        class="skeleton skeleton-text"></h5>
+                                <h5 class="body-heading skeleton skeleton-text"> <i
+                                        class="card__header header__img skeleton main-top-icons" aria-hidden="true"></i>
+                                </h5>
+                            </div>
+
+                            <div>
+                                <h5 class="total-num skeleton skeleton-text"></h5>
+                                <h5 class="total-num skeleton skeleton-text"> </h5>
+                                <h5 class="total-num skeleton skeleton-text"> </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 padding-print">
+                    <div class="i-card">
+                        <div class="card-body-district p-2">
+
+                            <h5 class="level mb-2 ps-2 skeleton skeleton-text"></h5>
+                            <div class="widget-content p-0 d-flex flow-row justify-space-around">
+
+                                <div class="text-center">
+                                    <div
+                                        class="rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                    <h6 class="text-center mt-2 fs-6 mb-0 skeleton skeleton-text"></h6>
+                                    <p class="text-center fs-5 fw-bold mb-0 skeleton skeleton-text">
+
+                                    </p>
+                                </div>
+
+                                <div class="text-center">
+                                    <div
+                                        class="rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                    <h6 class="text-center mt-2 fs-6 mb-0 skeleton skeleton-text"></h6>
+                                    <p class="text-center fs-5 fw-bold mb-0 skeleton skeleton-text">
+
+                                    </p>
+                                </div>
+                            </div>
+                            <hr class="mt-14 mb-3" />
+                            <h5 class="level mb-0 ps-2 skeleton skeleton-text"></h5>
+                            <div class="close-reason">
+                                <div class="d-flex flow-row justify-space-between align-items-baseline">
+                                    <p class="mb-1 skeleton skeleton-text"></p>
+                                    <span class="skeleton skeleton-text">
+                                    </span>
+                                </div>
+
+                                <div class="d-flex flow-row justify-space-between align-items-baseline">
+                                    <p class="mb-1 skeleton skeleton-text"></p>
+                                    <span class="skeleton skeleton-text">
+                                    </span>
+                                </div>
+
+                                <div class="d-flex flow-row justify-space-between align-items-baseline">
+                                    <p class="mb-1 skeleton skeleton-text"></p>
+                                    <span class="skeleton skeleton-text"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 padding-print">
+                    <div class="i-card">
+                        <div class="card-body-district">
+                            <div>
+                                <h5 class="level mb-2  skeleton skeleton-text"></h5>
+
+                                <table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+                                    cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <th><i class="card__header header__img skeleton school-level-img"
+                                                    aria-hidden="true" style="min-width:unset !important"></i>
+                                                <p class="skeleton skeleton-text">
+                                                </p>
+                                            </th>
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><i class="card__header header__img skeleton school-level-img"></i>
+                                                <p class="skeleton skeleton-text">
+                                                </p>
+                                            </th>
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <th><img class="card__header header__img skeleton school-level-img">
+                                                <p class="skeleton skeleton-text">
+                                                </p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr style="border:none !important;">
+                                            <th colspan="2">
+                                                <h5 class="level mb-0 skeleton skeleton-text"></h5>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <i class="card__header header__img skeleton school-level-img"></i>
+                                                <p class="skeleton skeleton-text">
+                                                </p>
+                                            </th>
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <i class="card__header header__img skeleton school-level-img"></i>
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <i class="card__header header__img skeleton school-level-img"></i>
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 padding-print">
+                    <div class="i-card print-level-card" style="min-height: 325px;">
+                        <div class="card-body-district">
+                            <div>
+                                <h5 class="level mb-3 skeleton skeleton-text"></h5>
+                                <table class="table data-list mt-0" width="100%" border="0" cellpadding="0"
+                                    cellspacing="0">
+                                    <tbody>
+
+                                        <tr>
+                                            <th><img src=""
+                                                    class="school-level-img w-35 card__header header__img skeleton">
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th><img src=""
+                                                    class="school-level-img w-35 card__header header__img skeleton">
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th><img src=""
+                                                    class="school-level-img w-35 card__header header__img skeleton">
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <th><img src=""
+                                                    class="school-level-img w-35 card__header header__img skeleton">
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th><img src=""
+                                                    class="school-level-img w-35 card__header header__img skeleton">
+                                                <p class="skeleton skeleton-text"></p>
+                                            </th>
+
+                                            <td class="text-right skeleton skeleton-text">
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 padding-print">
+                    <div class="i-card print-level-card" style="min-height: 325px;">
+                        <div class="card-body-district">
+                            <h5 class="level mb-3 skeleton skeleton-text"></h5>
+                            <table class="table data-list" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+
+                                    <tr>
+                                        <th>
+                                            <img src="" class="school-level-img card__header header__img skeleton">
+                                            <p class="skeleton skeleton-text">
+                                            </p>
+                                        </th>
+                                        <td class="text-right skeleton skeleton-text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <img src="" class="school-level-img card__header header__img skeleton">
+                                            <p class="skeleton skeleton-text">
+                                            </p>
+                                        </th>
+                                        <td class="text-right skeleton skeleton-text">
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            <img src="" class="school-level-img card__header header__img skeleton">
+                                            <p class="skeleton skeleton-text">
+                                            </p>
+                                        </th>
+                                        <td class="text-right skeleton skeleton-text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <img src="" class="school-level-img card__header header__img skeleton">
+                                            <p class="skeleton skeleton-text">
+                                            </p>
+                                        </th>
+                                        <td class="text-right skeleton skeleton-text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <img src="" class="school-level-img card__header header__img skeleton">
+                                            <p class="skeleton skeleton-text">
+                                            </p>
+                                        </th>
+                                        <td class="text-right skeleton skeleton-text">
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="enrollment_data">
+            <div class="dashboard-table genderwise-tbl">
+                <h5 class="fs-5 fw-bold mb-0 mt-3  skeleton skeleton-text" style="width: 20px !important;"></h5>
+                <div class="table-responsive">
+                    <table class="table" width="100%">
+                        <thead>
+                            <tr>
+                                <td class="text-center skeleton skeleton-text "></td>
+
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"></td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"></td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"></td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"></td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"></td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text " style="border: none !important;"> </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"></td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                                <td class="text-center skeleton skeleton-text" style="border: none !important;"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="facilities_data">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="fs-5 fw-bold mb-0 mt-3 skeleton skeleton-text"></h5>
+                </div>
+            </div>
+            <div class="school-facilities-card">
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card fac-card">
+                    <div class="card-body text-center">
+                        <div class="d-flex  align-end justify-space-even">
+                            <div
+                                class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                            </div>
+                            <span class="fw-600 fs-5 skeleton skeleton-text "></span>
+                        </div>
+                        <p class="fs-14  fw-500 mb-1 text-muted skeleton skeleton-text"></p>
+                        <div class="progress progress-sm mb-0 mt-1 skeleton skeleton-text">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="staff_data">
+            <div class="dashboard-table designation-tbl">
+                <h5 class="fs-5 fw-bold mb-0 mt-3 skeleton skeleton-text"></h5>
+                <div class="table-responsive">
+                    <table class="table" width="100%">
+                        <tbody>
+                            <tr class="print-bg-green" style="background-color:#ffff !important;">
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                                <td class="text-center fw-600 text-white skeleton skeleton-text"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="status_data">
+            <div class="row page-breaks">
+                <div class="col-md-4 padding-print">
+                    <div class="i-card">
+                        <div class="card-body-district">
+                            <div id="schoolcontainer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8" id="enrollment_ratio">
+                    <div class="d-flex flex-col">
+                        <div class="medium-wise-card">
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="medium-wise-card mt-4">
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+
+                            <div class="rounded text-center donut-charts mt-4">
+                                <div class="d-inline-block position-relative mb-1">
+                                    <div
+                                        class="fac-img rounded-circle avatar-md img-thumbnail m-auto object-cover card__header header__img skeleton">
+                                    </div>
+                                </div>
+                                <small class="d-block fs-3 fw-bold skeleton skeleton-text"></small>
+                                <span class="text d-block text-dark fw-600 fs-6 skeleton skeleton-text">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="dashboard-table taluka_tbl" id="taluka_data">
+            <h5 class="fs-5 fw-bold mb-0 mt-3 skeleton skeleton-text"></h5>
+            <div class="table-responsive">
+                <table class="table" width="100%">
+                    <tbody>
+                        <tr class="print-bg-green" style="background-color: #309975 !important;">
+                            <td rowspan="2" class="text-center fw-bold text-white skeleton skeleton-text"></td>
+                            <td colspan="4" class="text-center fw-bold text-white skeleton skeleton-text">
+
+                            </td>
+                            <td colspan="3" class="text-center fw-bold text-white skeleton skeleton-text">
+
+                            </td>
+                            <td colspan="3" class="text-center fw-bold text-white skeleton skeleton-text">
+
+                            </td>
+                            <td colspan="4" class="text-center fw-bold text-white skeleton skeleton-text">
+
+                            </td>
+                        </tr>
+                        <tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                        </tr>
+
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+
+        <div class="dashboard-table facility-table page-breaks" id="taluka_facility">
+            <h5 class="fs-5 fw-bold mb-0 mt-3 skeleton skeleton-text"></h5>
+            <div class="table-responsive">
+                <table width="100%" cellspacing="2" cellpadding="1" border="0" width="100%">
+                    <tbody>
+                        <tr class="bg-dark-blue" style="background-color: #ffffff !important;">
+                            <td rowspan="2" class="text-center fw-bold text-white skeleton skeleton-text"></td>
+                            <td colspan="14" class="text-center fw-bold text-white skeleton skeleton-text"></td>
+
+                        </tr>
+
+                        <tr class="bg-light-blue" style="background-color: #f9f9f970 !important;">
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span> </span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"><span></span></td>
+                        </tr>
+
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+                        <tr class="bg-light-gray" style="background-color: rgba(255, 255, 255, 0.15) !important;">
+
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+                            <td class="text-center fw-bold skeleton skeleton-text"></td>
+
+                        </tr>
+
+
+
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-6 col-sm-12">
+                <div class="i-card">
+                    <div class="card-body-district">
+                        <div id="teachercontainer" class="print-charts-div"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="i-card">
+                    <div class="card-body-district">
+                        <div id="enrollmentcontainer" class="print-charts-div"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <h4 class="text-dark fs-12 mb-1 mt-1"> Source: SEMIS Database of Annual School Census </h4>
+            </div>
+
+            <div class="col-md-3 col-sm-12 text-right">
+                <h4 class="date" id="set_date">Printed on <span id="date_area"></span></h4>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

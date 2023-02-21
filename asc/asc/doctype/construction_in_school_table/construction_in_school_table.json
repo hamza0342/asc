@@ -1,0 +1,31 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2021-11-12 10:05:03.199254",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "option"
+    ],
+    "fields": [
+        {
+            "fieldname": "option",
+            "fieldtype": "Link",
+            "label": "Name",
+            "options": "Construction in School"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2021-11-12 10:05:03.199254",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Construction in School Table",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

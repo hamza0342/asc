@@ -1,0 +1,300 @@
+<!-- <div class="tab-pane fade" id="visit-section" role="tabpanel" aria-labelledby="visit-section-tab"> -->
+{% if name == "Data not found due to network problem" %}
+<div class="i-card">
+	<div class="card-body justify-content-between" style=" padding: 24px">
+		<h5 class="fs-6 fw-600 mb-0 mt-0 page-breaks text-center">Data not found due to network problem</h5>
+	</div>
+</div>
+
+{% else %}
+
+
+
+{% boys = 0 %}
+{% girls = 0 %}
+{% boys_enrollment = 0 %}
+{% girls_enrollment = 0 %}
+
+{% if student_data != 0 %}
+{% for enrol in student_data %}
+{% boys = boys + enrol.male_enroll %}
+{% girls = girls + enrol.female_enroll %}
+{% boys_enrollment = boys_enrollment + enrol.male_p %}
+{% girls_enrollment = girls_enrollment + enrol.female_p %}
+{% endfor %}
+{% endif %}
+
+{% count = 0 %}
+{% present_teachers = 0 %}
+{% absent_teachers = 0 %}
+{% leave_teachers = 0 %}
+{% absconder_teachers = 0 %}
+{% other_teachers = 0 %}
+
+
+
+
+
+
+{% if teachers_data != 0 %}
+
+{% for enrol in teachers_data %}
+{% flag = 0 %}
+
+{% count = count +1 %}
+{% if enrol.Present == "Yes" %}
+{%flag = 1 %}
+{% present_teachers = present_teachers + 1 %}
+{% endif %}
+
+{% if enrol.Absent_Reason == "Absent" %}
+{%flag = 1 %}
+{% absent_teachers = absent_teachers + 1 %}
+{% endif %}
+
+{% if enrol.Absent_Reason == "On Leave" %}
+{%flag = 1 %}
+{% leave_teachers = leave_teachers + 1 %}
+{% endif %}
+
+{% if enrol.Absent_Reason == "Absconder" %}
+{%flag = 1 %}
+{% absconder_teachers = absconder_teachers + 1 %}
+{% endif %}
+
+{% if flag == 0 %}
+{% other_teachers = other_teachers + 1 %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h5 class="fs-5 fw-600 mt-3 page-breaks">Summary</h5>
+		<div class="school-facilities-card furniture-tbl">
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/teacher.png" style="filter: invert(1);">
+					</div>
+					Total Teachers
+					<span class="text-center fs-5 num text-success d-block">{{count}}</span>
+
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-present-teachers.png">
+					</div>
+					Total Teachers Present
+					<span class="text-center fs-5 num text-success d-block">{{present_teachers}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-absent-teachers.png">
+					</div>
+					Total Teachers Absent
+					<span class="text-center fs-5 num text-danger d-block">{{absent_teachers}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/teachers-on-leave.png">
+					</div>
+					Total Teachers on Leave
+					<span class="text-center fs-5 num text-danger d-block">{{leave_teachers}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/absconder.png">
+					</div>
+					Total Absconder Teachers
+					<span class="text-center fs-5 num text-danger d-block">{{absconder_teachers}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/other.png">
+					</div>
+					Others
+					<span class="text-center fs-5 num text-success d-block">{{other_teachers}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/enroll-student.png">
+					</div>
+					Total Boys Enrolment
+					<span class="text-center fs-5 num text-success d-block">{{boys}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/woman.png">
+					</div>
+					Total Girls Enrolment
+					<span class="text-center fs-5 num text-success d-block">{{girls}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-male-present.png">
+					</div>
+					Boys Students(Present)
+					<span class="text-center fs-5 num text-success d-block">{{boys_enrollment}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-female-present.png">
+					</div>
+					Girls Students(Present)
+					<span class="text-center fs-5 num text-success d-block">{{girls_enrollment}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-male-absent.png">
+					</div>
+					Boys Students(Absent)
+					<span class="text-center fs-5 num text-danger d-block">{{boys - boys_enrollment}}</span>
+				</div>
+			</div>
+
+			<div class="i-card">
+				<div class="card-body">
+					<div class="me-visit-icon ">
+						<img src="/assets/semis_theme/img/total-female-absent.png">
+					</div>
+					Girls Students(Absent)
+					<span class="text-center fs-5 num text-danger d-block">{{girls - girls_enrollment}}</span>
+				</div>
+			</div>
+
+
+
+
+
+
+		</div>
+
+	</div>
+</div>
+
+{% if student_data != 0 %}
+<div class="dashboard-table taluka_tbl">
+	<h5 class="fs-5 fw-bold mb-0 mt-3 ">Student Attendance Table</h5>
+	<div class="table-responsive">
+		<table class="table" width="100%">
+			<tbody>
+				<tr class="bg-dark-blue" style="background-color: #454d66 !important;">
+					<td class="text-center fw-bold text-white">Class</td>
+					<td class="text-center fw-bold text-white">Boys Enrollment</td>
+					<td class="text-center fw-bold text-white">Girls Enrollment</td>
+					<td class="text-center fw-bold text-white">Total Enrollment</td>
+					<td class="text-center fw-bold text-white">Boys Present</td>
+					<td class="text-center fw-bold text-white">Girls Present</td>
+					<td class="text-center fw-bold text-white">Total Present</td>
+				</tr>
+
+
+
+
+				{% for enrol in student_data %}
+				<tr>
+					<td class="text-left fw-bold">{{enrol.class}}</td>
+					<td class="text-right fw-bold">{{enrol.male_enroll}}</td>
+					<td class="text-right fw-bold">{{enrol.female_enroll}}</td>
+					<td class="text-right fw-bold">{{enrol.total_enroll}}</td>
+					<td class="text-right fw-bold">{{enrol.male_p}}</td>
+					<td class="text-right fw-bold">{{enrol.female_p}}</td>
+					<td class="text-right fw-bold">{{enrol.total_p}}</td>
+				</tr>
+				{% endfor %}
+
+				<tr>
+					<td class="text-left fw-bold">Total</td>
+					<td class="text-right fw-bold">{{ boys }}</td>
+					<td class="text-right fw-bold">{{ girls }}</td>
+					<td class="text-right fw-bold">{{ boys + girls }}</td>
+					<td class="text-right fw-bold">{{ boys_enrollment }}</td>
+					<td class="text-right fw-bold">{{girls_enrollment }}</td>
+					<td class="text-right fw-bold">{{boys_enrollment + girls_enrollment }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endif %}
+
+{% if teachers_data != 0 %}
+<div class="dashboard-table taluka_tbl page-breaks">
+	<h5 class="fs-5 fw-bold mb-0 mt-3 ">Teacher Attendance Table</h5>
+	<div class="table-responsive">
+		<table class="table" width="100%">
+			<tbody>
+				<tr class="print-bg-green" style="background-color: #309975 !important;">
+					<td class="text-center fw-bold text-white">Personal ID</td>
+					<td class="text-center fw-bold text-white">Name</td>
+					<td class="text-center fw-bold text-white">CNIC</td>
+					<td class="text-center fw-bold text-white">Status</td>
+				</tr>
+				{% for enrol in teachers_data %}
+				<tr>
+					<td class="text-left fw-bold">{{enrol.Employee_Id}}</td>
+					<td class="text-left fw-bold">{{enrol.Employee_Name}}</td>
+					<td class="text-right fw-bold">{{enrol.Employee_CNIC}}</td>
+					{% if enrol.Present == "Yes" %}
+					<td class="text-right fw-bold">Present</td>
+					{% else %}
+					<td class="text-right fw-bold">{{enrol.Absent_Reason}}</td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endif %}
+
+
+<div class="row">
+	<div class="col-md-9 col-sm-12">
+		<h4 class="text-dark fs-12 mb-1 mt-1"> Data Source: M&E,
+			Monitored By: {{monitored_by}} On: {{ date }} </h4>
+	</div>
+
+	<div class="col-md-3 col-sm-12 text-right">
+		<h4 class="date" id="set_date">Printed on <span>{{date_}}</span></h4>
+	</div>
+
+</div>
+
+{% endif %}

@@ -1,0 +1,73 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-04-08 12:20:26.763061",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "district",
+        "schools",
+        "total_asc_images",
+        "remaining",
+        "web",
+        "mobile",
+        "uploaded_images"
+    ],
+    "fields": [
+        {
+            "fieldname": "district",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "District"
+        },
+        {
+            "fieldname": "schools",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Schools"
+        },
+        {
+            "fieldname": "total_asc_images",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Total Images"
+        },
+        {
+            "fieldname": "remaining",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Remaining"
+        },
+        {
+            "fieldname": "web",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Web"
+        },
+        {
+            "fieldname": "mobile",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Mobile"
+        },
+        {
+            "fieldname": "uploaded_images",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Uploaded Images"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-04-11 09:58:38.764775",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "District Wise Images",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

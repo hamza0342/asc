@@ -1,0 +1,29 @@
+{
+    "content": null,
+    "creation": "2022-09-09 12:30:31.907801",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-09-20 10:19:14.062937",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "time-series-asc-data",
+    "owner": "Administrator",
+    "page_name": "Time Series ASC Data",
+    "roles": [
+        {
+            "role": "ASC Manager"
+        },
+        {
+            "role": "SEMIS Manager"
+        },
+        {
+            "role": "Guest User"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Time Series ASC Data"
+}

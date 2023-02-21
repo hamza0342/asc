@@ -1,0 +1,191 @@
+{% if reason != "School does not exist" %}
+
+<div class="col-md-12">
+    <h5 class="fs-5 fw-600 mt-3 ">Items</h5>
+    <div class="school-facilities-card furniture-tbl">
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/blackboard.png">
+                </div>
+                Black Boards
+                {% if blackboard > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{blackboard}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block"> - </span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/whiteboard.png">
+                </div>
+                White Boards
+                {% if whiteboard > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    whiteboard}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/teacherchair.png">
+                </div>
+                Student Chairs
+                {% if student_chairs > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    student_chairs}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/desk.png">
+                </div>
+                Student Dual Desks
+                {% if student_desks > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    student_desks}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/bench.png">
+                </div>
+                Student Benches
+                {% if bench>0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{ bench}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/teacher-table.png">
+                </div>
+                Teacher Tables
+                {% if teacher_tables>0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    teacher_tables}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/teacherchair.png">
+                </div>
+                Teacher Chairs
+                {% if teacher_chairs>0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    teacher_chairs}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/closet.png">
+                </div>
+                Almirahs
+                {% if almirah>0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{
+                    almirah}}</span>
+                {% else %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/comp-orange.png">
+                </div>
+                Computers
+                {% if comp > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{comp}}</span>
+                {% endif %}
+                {% if comp == 0 %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/projector-orange.png">
+                </div>
+                Projectors
+                {% if projector > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{projector}}</span>
+                {% endif %}
+                {% if projector == 0 %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/fan-orange.png">
+                </div>
+                Electric Fans
+                {% if fans > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{fans}}</span>
+                {% endif %}
+                {% if fans == 0 %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="i-card">
+            <div class="card-body">
+                <div class="furniture-icon">
+                    <img src="/assets/semis_theme/img/LED-orange.png">
+                </div>
+                LED/TV
+                {% if tv > 0 %}
+                <span class="text-center fs-5 num text-orange d-block">{{tv}}</span>
+                {% endif %}
+                {% if tv == 0 %}
+                <span class="text-center fs-5 num text-orange d-block">-</span>
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endif %}

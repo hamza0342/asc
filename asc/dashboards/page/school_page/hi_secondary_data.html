@@ -1,0 +1,145 @@
+{% if enrollments != 0 && level == "Higher Secondary" %}
+{% temp = ii_arts_general_boys + ii_computer_boys + ii_pre_medical_boys +
+ii_pre_enginering_boys + ii_commerce_boys +
+iix_arts_general_boys + iix_computer_boys + iix_pre_medical_boys +
+iix_pre_enginering_boys +
+iix_commerce_boys +
+ii_arts_general_girls + ii_computer_girls + ii_pre_medical_girls +
+ii_pre_enginering_girls +
+ii_commerce_girls +
+iix_arts_general_girls + iix_computer_girls + iix_pre_medical_girls +
+iix_pre_enginering_girls + iix_commerce_girls
+%}
+{% if temp>0 %}
+
+
+<div class="dashboard-table designation-tbl">
+    <div class="table-responsive">
+        <table class="table" width="100%">
+
+            <tbody>
+               
+ <tr class="print-bg-green" style="background-color: #309975 !important;">
+                    <td class="text-center fw-bold text-white">Class</td>
+                    <td class="text-center fw-bold text-white" colspan="5">XI</td>
+                    <td class="text-center fw-bold text-white" rowspan="3">Total</td>
+                    <td class="text-center fw-bold text-white" colspan="5">XII</td>
+                    <td class="text-center fw-bold text-white" rowspan="3">Total</td>
+
+                </tr>
+
+                <tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+                    <td class="text-center fw-bold" rowspan="2">Group</td>
+                    <td class="text-center fw-bold" rowspan="2">Arts/General</td>
+                    <td class="text-center fw-bold" colspan="3">Science</td>
+                    <td class="text-center fw-bold" rowspan="2">Commerce</td>
+                    <td class="text-center fw-bold" rowspan="2">Arts/General</td>
+                    <td class="text-center fw-bold" colspan="3">Science</td>
+                    <td class="text-center fw-bold" rowspan="2">Commerce</td>
+                </tr>
+
+                <tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+                    <td class="text-center fw-bold">Comp</td>
+                    <td class="text-center fw-bold">Pre-Med</td>
+                    <td class="text-center fw-bold">Pre-Eng</td>
+
+                    <td class="text-center fw-bold">Comp</td>
+                    <td class="text-center fw-bold">Pre-Med</td>
+                    <td class="text-center fw-bold">Pre-Eng</td>
+                </tr>
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Boys</span></td>
+                    <td class="text-right"><span class="num">{{ii_arts_general_boys}}
+                        </span></td>
+                    <td class="text-right"><span class="num">{{ii_computer_boys}} </span>
+                    </td>
+                    <td class="text-right"><span class="num">{{ii_pre_medical_boys}}
+                        </span></td>
+                    <td class="text-right"><span class="num">{{ii_pre_enginering_boys}}
+                        </span></td>
+                    <td class="text-right"><span class="num">{{ii_commerce_boys}} </span>
+                    </td>
+                    <td class="text-right fw-700"><span
+                            class="num">{{ii_arts_general_boys+ii_computer_boys+ii_pre_medical_boys+ii_pre_enginering_boys+ii_commerce_boys}}
+                        </span></td>
+                    <td class="text-right"><span class="num">{{iix_arts_general_boys}}</span></td>
+                    <td class="text-right"><span class="num">{{iix_computer_boys}}</span>
+                    </td>
+                    <td class="text-right"><span class="num">{{iix_pre_medical_boys}}</span></td>
+                    <td class="text-right"><span class="num">{{iix_pre_enginering_boys}}
+                        </span></td>
+                    <td class="text-right"><span class="num"> {{iix_commerce_boys}}</span>
+                    </td>
+                    <td class="text-right fw-700"><span
+                            class="num">{{iix_arts_general_boys+iix_computer_boys+iix_pre_medical_boys+iix_pre_enginering_boys+iix_commerce_boys}}
+                        </span></td>
+                </tr>
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Girls</span></td>
+                    <td class="text-right"><span class="num">{{ii_arts_general_girls}}</span></td>
+                    <td class="text-right"><span class="num"> {{ii_computer_girls}}</span>
+                    </td>
+                    <td class="text-right"><span class="num">{{ii_pre_medical_girls}}
+                        </span></td>
+                    <td class="text-right"><span class="num">
+                            {{ii_pre_enginering_girls}}</span></td>
+                    <td class="text-right"><span class="num">{{ii_commerce_girls}} </span>
+                    </td>
+                    <td class="text-right fw-700"><span
+                            class="num">{{ii_arts_general_girls+ii_computer_girls+ii_pre_medical_girls+ii_pre_enginering_girls+ii_commerce_girls}}
+                        </span></td>
+                    <td class="text-right"><span class="num">
+                            {{iix_arts_general_girls}}</span></td>
+                    <td class="text-right"><span class="num">
+                            {{iix_computer_girls}}</span></td>
+                    <td class="text-right"><span class="num">
+                            {{iix_pre_medical_girls}}</span></td>
+                    <td class="text-right"><span class="num">
+                            {{iix_pre_enginering_girls}}</span></td>
+                    <td class="text-right"><span class="num">
+                            {{iix_commerce_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num">
+                            {{iix_arts_general_girls+iix_computer_girls+iix_pre_medical_girls+iix_pre_enginering_girls+iix_commerce_girls}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left f fw-700"><span class="num"> Total</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ii_arts_general_boys +
+                            ii_arts_general_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ii_computer_boys +
+                            ii_computer_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ii_pre_medical_boys +
+                            ii_pre_medical_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ii_pre_enginering_boys +
+                            ii_pre_enginering_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ii_commerce_boys +
+                            ii_commerce_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num">{{ii_arts_general_boys +
+                            ii_computer_boys +
+                            ii_pre_medical_boys+ii_pre_enginering_boys+ii_commerce_boys+ii_arts_general_girls+ii_computer_girls+ii_pre_medical_girls+ii_pre_enginering_girls+ii_commerce_girls}}
+                        </span></td>
+                    <td class="text-right fw-700"><span class="num">{{iix_arts_general_boys+iix_arts_general_girls}}
+                        </span></td>
+                    <td class="text-right fw-700"><span class="num">{{iix_computer_boys+iix_computer_girls}}
+                        </span></td>
+                    <td class="text-right fw-700"><span class="num">
+                            {{iix_pre_medical_boys+iix_pre_medical_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num">
+                            {{iix_pre_enginering_boys+iix_pre_enginering_girls}}</span>
+                    </td>
+                    <td class="text-right fw-700"><span class="num">
+                            {{iix_commerce_boys+iix_commerce_girls}}</span></td>
+                    <td class="text-right fw-700"><span class="num">
+                            {{iix_arts_general_boys+iix_computer_boys+iix_pre_medical_boys+iix_pre_enginering_boys+iix_commerce_boys+iix_arts_general_girls+iix_computer_girls+iix_pre_medical_girls+iix_pre_enginering_girls+iix_commerce_girls}}</span>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endif %}
+
+{% endif %}

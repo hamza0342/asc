@@ -1,0 +1,106 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:year",
+    "creation": "2022-04-07 15:53:00.354325",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "year",
+        "total_schools",
+        "total_created",
+        "remaining",
+        "total_web",
+        "total_mobile",
+        "total_images",
+        "section_break_8",
+        "images_data",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "total_schools",
+            "fieldtype": "Data",
+            "label": "Total Schools"
+        },
+        {
+            "fieldname": "total_created",
+            "fieldtype": "Data",
+            "label": "Total Created"
+        },
+        {
+            "fieldname": "remaining",
+            "fieldtype": "Data",
+            "label": "Remaining"
+        },
+        {
+            "fieldname": "total_web",
+            "fieldtype": "Data",
+            "label": "Total Web"
+        },
+        {
+            "fieldname": "total_mobile",
+            "fieldtype": "Data",
+            "label": "Total Mobile"
+        },
+        {
+            "fieldname": "total_images",
+            "fieldtype": "Data",
+            "label": "Total Images"
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Year",
+            "options": "Year",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "ASC Images Key Indicator",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "images_data",
+            "fieldtype": "Table",
+            "label": "ASC Images Data",
+            "options": "District Wise Images"
+        },
+        {
+            "fieldname": "section_break_8",
+            "fieldtype": "Section Break"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2022-04-08 12:28:18.714987",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "ASC Images Key Indicator",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

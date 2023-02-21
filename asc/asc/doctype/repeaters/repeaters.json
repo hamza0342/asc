@@ -1,0 +1,57 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2021-11-12 11:53:32.673052",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "class",
+        "boys",
+        "girls",
+        "total"
+    ],
+    "fields": [
+        {
+            "allow_on_submit": 1,
+            "fieldname": "class",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Class",
+            "options": "Program"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "boys",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Boys"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "girls",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Girls"
+        },
+        {
+            "fieldname": "total",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Total",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-06-28 13:58:55.000590",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Repeaters",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

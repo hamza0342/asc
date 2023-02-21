@@ -1,0 +1,19 @@
+{
+    "content": null,
+    "creation": "2022-06-02 18:07:32.200607",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-06-02 18:07:32.200607",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "gis-dashboard",
+    "owner": "Administrator",
+    "page_name": "GIS Dashboard",
+    "roles": [],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "GIS Dashboard"
+}

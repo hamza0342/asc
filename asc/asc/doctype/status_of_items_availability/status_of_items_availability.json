@@ -1,0 +1,58 @@
+{
+    "actions": [],
+    "creation": "2021-11-05 14:47:14.285823",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "items",
+        "working",
+        "repairable",
+        "total"
+    ],
+    "fields": [
+        {
+            "allow_on_submit": 1,
+            "fieldname": "items",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Items",
+            "options": "Item",
+            "read_only": 1
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "total",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Total",
+            "read_only": 1
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "working",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Working"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "repairable",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Repairable"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-05-10 13:16:34.613527",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Status of Items availability",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

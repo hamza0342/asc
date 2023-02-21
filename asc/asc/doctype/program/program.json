@@ -1,0 +1,67 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:program_name",
+    "creation": "2021-11-10 17:36:50.729665",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "program_name",
+        "order_no",
+        "class",
+        "profile_order"
+    ],
+    "fields": [
+        {
+            "fieldname": "program_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Program Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "order_no",
+            "fieldtype": "Int",
+            "label": "Order_No",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "class",
+            "fieldtype": "Int",
+            "label": "Class",
+            "permlevel": 1
+        },
+        {
+            "fieldname": "profile_order",
+            "fieldtype": "Int",
+            "label": "Profile Order",
+            "permlevel": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-08-10 17:24:33.997393",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Program",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

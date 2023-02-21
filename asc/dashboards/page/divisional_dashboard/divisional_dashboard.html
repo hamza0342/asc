@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en" id="test">
+
+<body>
+
+
+	<section class="district-content divisional-sec" id="districtProfile">
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<div class="ajrak-bg"></div>
+			</div>
+			<div class="col-md-9 line-h-13 col-sm-12">
+				<div class="d-flex flow-row">
+					<img style="width:67px;" src="/assets/semis_theme/img/rsu_logo.png">
+					<div class="mt-2">
+						<h5 class="rsu-title">REFORM SUPPORT UNIT </h5>
+						<span class="school-education d-block">School Education & Literacy Department, </span>
+						<span class="school-education d-block">Government of Sindh</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+
+				<h5 class="district-name text-danger">Division <span>{{region}}</span></h5>
+				<span class="anual-cesus">Annual School Census (ASC) <span>{{year}}</span></span>
+
+			</div>
+
+			<div class="col-md-9 col-sm-12">
+				<p class="district-descrip">
+					Division <strong class="text-blue">{{region}} </strong> has <strong class="text-blue">{{
+						Total_Schools.toLocaleString("en-US") }} </strong>schools in total out of which <strong
+						class="text-blue">
+						{{Functional}}</strong> schools are functional. The student enrollment is <strong
+						class="text-blue">{{ Enrolments.toLocaleString("en-US") }}
+					</strong> and <strong class="text-blue">{{ Teachers.toLocaleString("en-US")
+						}} </strong> teachers are deployed.</strong>
+				</p>
+			</div>
+			<div class="col-md-3 d-none d-sm-block">
+				<div class="card-district" style="width: 236px;float: right;">
+					<div class="card-body-district d-flex justify-space-between">
+						<div>
+							<h5 class="body-heading"> <i class="fas fa-school main-top-icons"
+									aria-hidden="true"></i>Schools</h5>
+							<h5 class="body-heading"> <img src="/assets/semis_theme/img/enrollment.png" width="18px"
+									class="head-img">Enrollment</h5>
+							<h5 class="body-heading"> <i class="fas fa-users main-top-icons"
+									aria-hidden="true"></i>Teachers</h5>
+						</div>
+
+						<div>
+							<h5 class="total-num">{{ Total_Schools.toLocaleString("en-US") }}</h5>
+							<h5 class="total-num">{{ Enrolments.toLocaleString("en-US") }} </h5>
+							<h5 class="total-num"> {{ Teachers.toLocaleString("en-US") }} </h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-md-3 padding-print">
+				<div class="i-card">
+					<div class="card-body-district p-2">
+
+						<h5 class="level mb-2 ps-2">Schools By Status</h5>
+						<div class="widget-content p-0 d-flex flow-row justify-space-around">
+
+							<div class="text-center">
+								<img src="/assets/semis_theme/img/functionalschool.png"
+									class="rounded-circle avatar-md img-thumbnail m-auto object-cover" />
+								<h6 class="text-center mt-2 fs-6 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
+									title=" Schools that are conducting classes regularly and where both teachers and students are recorded in the census data.">
+									Functional</h6>
+								<p class="text-center fs-5 fw-bold mb-0">{{Functional.toLocaleString("en-US")}}
+									<span class="text-success d-inline-block fs-14 fw-500">({{func_percentage}}%)</span>
+								</p>
+							</div>
+
+							<div class="text-center">
+								<img src="/assets/semis_theme/img/closed-schools-icon.png"
+									class="rounded-circle avatar-md img-thumbnail m-auto object-cover" />
+								<h6 class="text-center mt-2 fs-6 mb-0">Closed</h6>
+								<p class="text-center fs-5 fw-bold mb-0">{{Closed.toLocaleString("en-US")}}
+									<span
+										class="text-success d-inline-block fs-14 fw-500">({{closed_percentage}}%)</span>
+								</p>
+							</div>
+						</div>
+						<hr class="mt-14 mb-3" />
+						<h5 class="level mb-0 ps-2">Closed Reasons:</h5>
+						<div class="close-reason">
+							<div class="d-flex flow-row justify-space-between align-items-baseline">
+								<p class="mb-1 fw-500 fs-14">No Teacher</p>
+								<span class="fw-bold fs-12">{{no_teacher}}
+									<span class="num text-muted fs-12">
+										({{no_teacher_percentage}}%)</span></span>
+							</div>
+
+							<div class="d-flex flow-row justify-space-between align-items-baseline">
+								<p class="mb-1 fw-500 fs-14">No Enrollment</p>
+								<span class="fw-bold fs-12">{{no_enrollment}}
+									<span class="num text-muted fs-12">
+										({{no_enrollment_percentage}}%)</span></span>
+							</div>
+
+							<div class="d-flex flow-row justify-space-between align-items-baseline">
+								<p class="mb-1 fw-500 fs-14">Other</p>
+								<span class="fw-bold fs-12">{{other_closure_reason}}
+									<span class="num text-muted fs-12">
+										({{other_closure_reason_percentage}}%)</span></span>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 padding-print">
+				<div class="i-card">
+					<div class="card-body-district">
+						<div>
+							<h5 class="level mb-2  ">Schools By Gender</h5>
+
+							<table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<th><i class="fa fa-male boy school-level-img fs-" aria-hidden="true"
+												style="min-width:unset !important"></i>
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" Schools under administrative authority of District Education Officers (Male), generally having boys enrollment. ">
+												Boys</p>
+										</th>
+										<td class="text-right">{{Boys.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{boys_percentage}}%)</span>
+										</td>
+									</tr>
+									<tr>
+										<th><i class="fa fa-female girl school-level-img" aria-hidden="true"
+												style="min-width:unset !important"></i>
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" Schools under administrative authority of District Education Officers (female), generally having girls enrollment. ">
+												Girls</p>
+										</th>
+										<td class="text-right">{{Girls.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{girls_percentage}}%)</span>
+										</td>
+
+									</tr>
+
+									<tr>
+										<th><img src="/assets/semis_theme/img/mixed-final.png" width="15">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" Schools having mixed enrollment of boys and girls both, under the jurisdiction of District Education Male.">
+												Mixed</p>
+										</th>
+
+										<td class="text-right">{{Mixed.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{mixed_percentage}}%)</span>
+										</td>
+
+									</tr>
+									<tr style="border:none !important;">
+										<th colspan="2">
+											<h5 class="level mb-0">School By Category</h5>
+										</th>
+									</tr>
+									<tr>
+										<th>
+											<i class="fas fa-university text-tealgreen fs-5"></i>
+											<p class="ps-1" data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" The single school under whom various schools are merged under School Consolidation Policy.">
+												Campus</p>
+										</th>
+										<td class="text-right">
+											{{Campus.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{campus_percentage}}%)</span>
+										</td>
+
+									</tr>
+									<tr>
+										<th>
+											<i class="fas fa-school text-tealgreen fs-5"></i>
+											<p data-bs-toggle="tooltip" data-bs-placement="top" title="Adoption of a public school through public private partnership for improving the 
+physical condtion and standard of learning outcomes of students through quality 
+education.">Adopted</p>
+										</th>
+										<td class="text-right">
+											{{adopted_school.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{adopted_school_percentage}}%)</span>
+										</td>
+
+									</tr>
+									<tr>
+										<th>
+											<i class="fa fa-building-o text-tealgreen fs-4"></i>
+											<p style="margin: 0 0 0 12px;" data-bs-toggle="tooltip"
+												data-bs-placement="top" title="Schools opened as a Branch of some other high or higher secondary school and 
+administratively report to the parent school. Only teachers are provided by the education 
+department, and all other facilities are arranged and maintained by the community. ">Branch</p>
+										</th>
+										<td class="text-right">
+											{{Branch.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{branch_percentage}}%)</span>
+										</td>
+
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 padding-print">
+				<div class="i-card print-level-card" style="min-height: 325px;">
+					<div class="card-body-district">
+						<div>
+							<h5 class="level mb-3">Schools By Level</h5>
+							<table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+
+									<tr>
+										<th><img src="/assets/semis_theme/img/primary.png"
+												class="school-level-img w-35">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" A school where children receive pre-primary/ECE till class V from the age of about four to nine,and before middle school.">
+												Primary</p>
+										</th>
+
+										<td class="text-right">
+											{{primary_school.toLocaleString("en-US")}}
+											<span class="num text-muted fs-12">({{primary_percentage}}%)</span>
+										</td>
+
+									</tr>
+									<tr>
+										<th><img src="/assets/semis_theme/img/elementary.png"
+												class="school-level-img w-35">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title=" The level school from Pre-primary/ECE to Eight class.">
+												Elementary</p>
+										</th>
+										<td class="text-right">
+											{{Elementary}}
+											<span class="num text-muted fs-12">({{elementary_percentage}}%)</span>
+										</td>
+
+
+									</tr>
+									<tr>
+										<th><img src="/assets/semis_theme/img/middle.png" class="school-level-img w-35">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title="The Level of School from Class Six to Class Eight.">
+												Middle</p>
+										</th>
+
+										<td class="text-right">
+											{{Middle}}
+											<span class="num text-muted fs-12">({{middle_percentage}}%)</span>
+										</td>
+
+									</tr>
+
+									<tr>
+										<th><img src="/assets/semis_theme/img/secondary.png"
+												class="school-level-img w-35">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title="The level of school from Class Katchi to Class 10, or Class 6 to Class 10, or it can be only class 9 & Class 10.">
+												Secondary</p>
+										</th>
+
+										<td class="text-right">
+											{{Secondary}}
+											<span class="num text-muted fs-12">({{secondary_percentage}}%)</span>
+										</td>
+
+
+									</tr>
+									<tr>
+										<th><img src="/assets/semis_theme/img/highersec.png"
+												class="school-level-img w-35">
+											<p data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Schools offering grades 11 and 12. These intermediate classes are also offered by the colleges, which are not included.">
+												Higher Sec</p>
+										</th>
+										<td class="text-right">
+											{{higher_secondary}}
+											<span class="num text-muted fs-12">({{high_sec_percentage}}%)</span>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 padding-print">
+				<div class="i-card print-level-card" style="min-height: 325px;">
+					<div class="card-body-district">
+						<h5 class="level mb-3">Schools By Building</h5>
+						<table class="table data-list" width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+
+								<tr>
+									<th>
+										<img src="/assets/semis_theme/img/have-building.png"
+											class="school-level-img w-35  ">
+										<p data-bs-toggle="tooltip" data-bs-placement="top"
+											title="A building is a structure that has a roof and walls">Building
+										</p>
+									</th>
+									<td class="text-right">
+										{{having_building.toLocaleString("en-US")}}
+										<span class="num text-muted fs-12">({{having_building_percentage}}%)</span>
+									</td>
+
+								</tr>
+								<tr>
+									<th>
+										<img src="/assets/semis_theme/img/closed-schools.png"
+											class="school-level-img w-35  ">
+										<p data-bs-toggle="tooltip" data-bs-placement="top" title="Schools conducting classes in open-air and having no building and no branch school. 
+also schools which are operating in rental buildings.">Shelterless</p>
+									</th>
+									<td class="text-right">
+										{{Shelterless.toLocaleString("en-US")}}
+										<span class="num text-muted fs-12">({{Shelterless_percentage}}%)</span>
+									</td>
+
+								</tr>
+
+								<tr>
+									<th><img src="/assets/semis_theme/img/rooms.png" class="school-level-img w-35  ">
+										<p data-bs-toggle="tooltip" data-bs-placement="top"
+											title="a part or division of a building enclosed by walls, floor, and ceiling	.">
+											Rooms</p>
+									</th>
+									<td class="text-right">
+										{{Rooms.toLocaleString("en-US")}}
+
+									</td>
+
+								</tr>
+								<tr>
+									<th><img src="/assets/semis_theme/img/classroom.png"
+											class="school-level-img w-35  ">
+										<p data-bs-toggle="tooltip" data-bs-placement="top"
+											title="A room in which a class of pupils or students is taught.">
+											Classrooms</p>
+									</th>
+									<td class="text-right">
+										{{Classrooms.toLocaleString("en-US")}}
+
+									</td>
+								</tr>
+								<tr>
+									<th><img src="/assets/semis_theme/img/washroom.png" class="school-level-img w-35  ">
+										<p>Washrooms</p>
+									</th>
+									<td class="text-right">
+										{{Toilet.toLocaleString("en-US")}}
+										<span class="num text-muted fs-12">({{toilet_percentage}}%)</span>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="dashboard-table genderwise-tbl">
+					<h5 class="fs-5 fw-bold mb-0 mt-3  ">Class and Gender wise Enrollment</h5>
+					<div class="table-responsive">
+						<table class="table" width="100%">
+							<thead>
+								<tr>
+									<th class="text-center"></th>
+									{% if year == "2021-22" %}
+									<th class="text-center"> ECCE</th>
+									{% endif %}
+									<th class="text-center"> Katchi</th>
+									<th class="text-center">I</th>
+									<th class="text-center"> II</th>
+									<th class="text-center"> III</th>
+									<th class="text-center"> IV</th>
+									<th class="text-center"> V</th>
+									<th class="text-center"> VI</th>
+									<th class="text-center"> VII</th>
+									<th class="text-center"> VIII</th>
+									<th class="text-center"> IX</th>
+									<th class="text-center"> X</th>
+									<th class="text-center"> XI</th>
+									<th class="text-center"> XII</th>
+									<th class="text-center">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center fw-bold text-primary">Boys</td>
+									{% boys = 0 %}
+									{% for e in enrols %}
+									<td class="text-center">{{e.boys.toLocaleString("en-US")}}</td>
+									{% boys = boys + e.boys %}
+									{% endfor %}
+									<td class="text-center fw-700">{{boys.toLocaleString("en-US")}}</td>
+
+
+								</tr>
+
+								<tr>
+									<td class="text-center fw-bold girl"> Girls</td>
+									{% girls = 0 %}
+									{% for e in enrols %}
+									<td class="text-center">{{e.girls.toLocaleString("en-US")}}</td>
+									{% girls = girls + e.girls %}
+									{% endfor %}
+									<td class="text-center fw-700">{{girls.toLocaleString("en-US")}}</td>
+								</tr>
+
+								<tr>
+									<td class="text-center fw-bold text-mixed">Total</td>
+									{% total = 0 %}
+									{% for e in enrols %}
+									<td class="text-center fw-700">{{(e.boys +
+										e.girls).toLocaleString("en-US")}}</td>
+									{% total = total + e.girls + e.boys %}
+									{% endfor %}
+									<td class="text-center text-success fw-700">{{total.toLocaleString("en-US")}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="fs-5 fw-bold mb-0 mt-3">Schools with Facilities</h5>
+			</div>
+		</div>
+		<div class="school-facilities-card">
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/drinking-water.png" class="fac-img">
+						<span class="fw-600 fs-5 ">{{drinking_water.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Drinking Water</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success " id="drinking_water" data-bs-toggle="tooltip"
+							data-bs-placement="bottom">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/electricity.png" class="fac-img">
+						<span class="fw-600 fs-5">{{Electricity.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Electricity</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="electricity" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/toilet.png" class="fac-img">
+						<span class="fw-600 fs-5">{{Toilet.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Toilet</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="toilet"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/boundry-wall.png" class="fac-img">
+						<span class="fw-600 fs-5">{{boundary_wall.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Boundary Wall</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="boundary_wall" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/science-lab.png" class="fac-img">
+						<span class="fw-600 fs-5">{{science_lab.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Lab/Sci.Lab</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="science_lab" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/library.png" class="fac-img">
+						<span class="fw-600 fs-5">{{library.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Library</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="library" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/computer-teal.png" class="fac-img">
+						<span class="fw-600 fs-5">{{computer_lab.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Computer Lab</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="computer_lab" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/handwash.png" class="fac-img">
+						<span class="fw-600 fs-5">{{hand_wash_facility}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Handwash</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="hand_wash_facility_" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/fan.png" class="fac-img">
+						<span class="fw-600 fs-5">{{fans.toLocaleString("en-US")}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Electric Fans</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="fans" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/soap.png" class="fac-img">
+						<span class="fw-600 fs-5">{{soap}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Soap</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="soap" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/LED.png" class="fac-img">
+						<span class="fw-600 fs-5">{{tv}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">LED/TV</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="tv" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/projector-teal.png" class="fac-img">
+						<span class="fw-600 fs-5">{{projector}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Projectors</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="projector" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/playground-teal.png" class="fac-img">
+						<span class="fw-600 fs-5">{{play_ground}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Play Ground</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="ground" data-bs-toggle="tooltip"
+							data-bs-placement="bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="i-card fac-card">
+				<div class="card-body text-center">
+					<div class="d-flex  align-end justify-space-even">
+						<img src="/assets/semis_theme/img/comp.png" class="fac-img">
+						<span class="fw-600 fs-5">{{comp}}</span>
+					</div>
+					<p class="fs-14  fw-500 mb-1 text-muted">Computers</p>
+					<div class="progress progress-sm mb-0 mt-1">
+						<div class="progress-bar bg-success" id="comp" data-bs-toggle="tooltip"
+							data-bs-placement="bottom"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="dashboard-table designation-tbl">
+			<h5 class="fs-5 fw-bold mb-0 mt-3">Designation wise Staff</h5>
+			<div class="table-responsive">
+				<table class="table" width="100%">
+					<tbody>
+						<tr class="print-bg-green" style="background-color:#309975 !important;">
+							<td class="text-center fw-600 text-white">Designation</td>
+							<td class="text-center fw-600 text-white">Male</td>
+							<td class="text-center fw-600 text-white">Female</td>
+							<td class="text-center fw-600 text-white">Total</td>
+							<td class="text-center fw-600 text-white">Designation</td>
+							<td class="text-center fw-600 text-white">Male</td>
+							<td class="text-center fw-600 text-white">Female</td>
+							<td class="text-center fw-600 text-white">Total</td>
+						</tr>
+						{% row = 0 %}
+						{% count = 0 %}
+						{% inner_count = 0 %}
+						{% male = 0 %}
+						{% female = 0 %}
+
+
+						{% for st in staff_data %}
+						{% skip_flag = 1 %}
+
+						<tr>
+							{% if count == 0 || count != inner_count %}
+							<td class="fw-700 text-center">{{st.designation}}</td>
+
+							{% if st.male_staff > 0 %}
+							<td class="text-center">{{(st.male_staff).toLocaleString("en-US")}}</td>
+							{% male = male + st.male_staff %}
+
+							{% endif %}
+
+							{% if st.male_staff == 0 %}
+							<td class="text-center">-</td>
+							{% endif %}
+
+							{% if st.female_staff > 0 %}
+							<td class="text-center">{{(st.female_staff).toLocaleString("en-US")}}</td>
+							{% female = female + st.female_staff %}
+
+							{% endif %}
+
+							{% if st.female_staff == 0 %}
+							<td class="text-center">-</td>
+							{% endif %}
+
+							<td class="text-center fw-600">{{(st.male_staff +
+								st.female_staff).toLocaleString("en-US")}}</td>
+							{% row = 1 %}
+
+							{% endif %}
+
+							{% if count == inner_count && count != 0 && inner_count != 0 %}
+							{% skip_flag = 0 %}
+							{% endif %}
+
+
+
+							{% if skip_flag == 1 %}
+
+							{% inner_count = 0 %}
+							{% for st in staff_data %}
+							{% if inner_count == count + 1 %}
+							<td class="fw-700 text-center">{{st.designation}}</td>
+							{% if st.male_staff > 0 %}
+							<td class="text-center">{{(st.male_staff).toLocaleString("en-US")}}</td>
+							{% male = male + st.male_staff %}
+
+							{% endif %}
+
+							{% if st.male_staff == 0 %}
+							<td class="text-center">-</td>
+							{% endif %}
+
+							{% if st.female_staff > 0 %}
+							<td class="text-center ">{{(st.female_staff).toLocaleString("en-US")}}</td>
+							{% female = female + st.female_staff %}
+
+							{% endif %}
+
+							{% if st.female_staff == 0 %}
+							<td class="text-center">-</td>
+							{% endif %}
+							<td class="text-center fw-600">{{(st.male_staff +
+								st.female_staff).toLocaleString("en-US")}}</td>
+							{% row = 2 %}
+							{% endif %}
+							{% inner_count = inner_count + 1 %}
+							{% endfor %}
+							{% inner_count = count + 1 %}
+
+							{% endif %}
+
+							{% count = count + 1 %}
+
+							{% if row == 2 %}
+						</tr>
+						{%endif%}
+
+						{% endfor %}
+
+						{% if row == 1 %}
+						<td class="fw-700 text-center">Total Teaching Staff</td>
+						<td class="text-center">{{male.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{female.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-600">{{(male + female).toLocaleString("en-US")}}</td>
+						</tr>
+						<tr>
+
+							<td class="fw-700 text-center">Non-Teaching Staff</td>
+							<td class="text-center">{{Non_Teaching_Male.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{Non_Teaching_Female.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-600">{{(Non_Teaching_Male +
+								Non_Teaching_Female).toLocaleString("en-US")}}
+							</td>
+
+							<td class="fw-700 text-center">Total Staff(Teaching and Non-Teaching)</td>
+							<td class="text-center fw-600">{{(male + Non_Teaching_Male).toLocaleString("en-US") }}</td>
+							<td class="text-center fw-600">{{(female + Non_Teaching_Female).toLocaleString("en-US")}}
+							</td>
+							<td class="fw-700 text-center">{{(male + female + Non_Teaching_Male +
+								Non_Teaching_Female).toLocaleString("en-US")}}</td>
+						</tr>
+						{%endif%}
+						{% if row == 2 %}
+						<tr>
+							<td class="fw-700 text-center">Total Teaching Staff</td>
+							<td class="text-center">{{male.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{female.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-600">{{(male + female).toLocaleString("en-US")}}</td>
+
+
+							<td class="fw-700 text-center">Non-Teaching Staff</td>
+							<td class="text-center">{{Non_Teaching_Male.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{Non_Teaching_Female.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-600">{{(Non_Teaching_Male +
+								Non_Teaching_Female).toLocaleString("en-US")}}
+							</td>
+
+
+						</tr>
+						<tr>
+							<td class="fw-700 text-center">Total Staff(Teaching and Non-Teaching)</td>
+							<td class="text-center fw-600">{{(male + Non_Teaching_Male ).toLocaleString("en-US") }}</td>
+							<td class="text-center fw-600">{{(female + Non_Teaching_Female).toLocaleString("en-US")}}
+							</td>
+							<td class="fw-700 text-center">{{(male + female + Non_Teaching_Male +
+								Non_Teaching_Female).toLocaleString("en-US")}}</td>
+
+
+
+						</tr>
+						{%endif%}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row page-breaks">
+			<div class="col-md-4 padding-print">
+				<div class="i-card">
+					<div class="card-body-district">
+						<div id="schoolcontainer"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="d-flex flex-col">
+					<div class="medium-wise-card">
+						<div class="i-card medium-wise-printcard" style="border:none;">
+							<div class="card-body iconfont text-center">
+								<h2 class="fw-700 mb-2 fs-2 text-dark-green">
+									{{sindhi.toLocaleString("en-US")}}</h2>
+								<h5 class="text-dark fs-7 fw-700 mb-0 d-block">Sindhi Medium Enrollment</h5>
+							</div>
+
+						</div>
+						<div class="i-card medium-wise-printcard" style="border:none;">
+							<div class="card-body iconfont text-center">
+								<h2 class="fw-700 mb-2 fs-2 text-dark-green">
+									{{urdu.toLocaleString("en-US")}}</h2>
+								<h5 class="text-dark fs-7 fw-700 mb-0 d-block">Urdu Medium Enrollment</h5>
+							</div>
+						</div>
+
+						<div class="i-card medium-wise-printcard" style="border:none;">
+							<div class="card-body iconfont text-center">
+								<h2 class="fw-700 mb-2 fs-2 text-dark-green">
+									{{english.toLocaleString("en-US")}}</h2>
+								<h5 class="text-dark fs-7 fw-700 mb-0 d-block">English Medium Enrollment</h5>
+							</div>
+						</div>
+					</div>
+
+					<div class="medium-wise-card mt-4">
+						<div class="rounded text-center donut-charts mt-4">
+							<div class="d-inline-block position-relative mb-1">
+								<span class="donut-lg2">7.7/10</span>
+								<img src="/assets/semis_theme/img/classroom-black.png">
+							</div>
+
+							<span class="text d-block text-dark fw-600 fs-6"><small
+									class="d-block fs-3 fw-bold">{{Students_Per_Classrooms}}</small>
+								Students/Classroom Ratio</span>
+						</div>
+
+						<div class="rounded text-center donut-charts mt-4">
+							<div class="d-inline-block position-relative mb-1">
+								<span class="donut-lg">5.7/10</span>
+								<img src="/assets/semis_theme/img/teacher.png">
+							</div>
+							<span class="text d-block text-dark fw-600 fs-6"><small
+									class="d-block fs-3 fw-bold">{{Students_Per_Teacher}}</small>
+								Students/Teacher <br />Ratio
+							</span>
+						</div>
+
+						<div class="rounded text-center donut-charts mt-4">
+							<div class="d-inline-block position-relative mb-1">
+								<span class="donut-lg3">7.7/10</span>
+								<img src="/assets/semis_theme/img/school.png">
+							</div>
+
+							<span class="text d-block text-dark fw-600 fs-6"><small
+									class="d-block fs-3 fw-bold">{{Students_Per_School}}</small>
+								Students/School <br />Ratio</span>
+						</div>
+
+						<div class="rounded text-center donut-charts mt-4">
+							<div class="d-inline-block position-relative mb-1">
+								<span class="donut-lg4">5.7/10</span>
+								<img src="/assets/semis_theme/img/teacher-school.png">
+							</div>
+
+							<span class="text d-block text-dark fw-600 fs-6"><small
+									class="d-block fs-3 fw-bold">{{Teachers_Per_School}}</small>
+								Teachers/School <br /> Ratio</span>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+		<div class="dashboard-table taluka_tbl">
+			<h5 class="fs-5 fw-bold mb-0 mt-3 ">District wise Schools, Enrollment and Teachers</h5>
+			<div class="table-responsive">
+				<table class="table" width="100%">
+					<tbody>
+						<tr class="print-bg-green" style="background-color: #309975 !important;">
+							<td rowspan="2" class="text-center fw-bold text-white">District</td>
+							<td colspan="4" class="text-center fw-bold text-white">
+								<i class="fa-solid fa-school mr-2"></i>Schools
+							</td>
+							<td colspan="3" class="text-center fw-bold text-white">
+								<img src="/assets/semis_theme/img/enrollment.png" width="20px"
+									style="filter: invert(11); vertical-align: bottom;"> Enrollment
+							</td>
+							<td colspan="3" class="text-center fw-bold text-white">
+								<img src="/assets/semis_theme/img/teacher.png" width="20px" class="mr-2"
+									style="filter: invert(11); vertical-align: bottom;">Teacher
+							</td>
+							<td colspan="4" class="text-center fw-bold text-white">
+								<img src="/assets/semis_theme/img/ger.png" width="20px" class="mr-2"
+									style="filter: invert(11); vertical-align: bottom;">Ratios
+							</td>
+						</tr>
+						<tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+							<td class="text-center fw-bold"><span>Functional</span></td>
+							<td class="text-center fw-bold"><span>Closed</span></td>
+							<td class="text-center fw-bold"><span>Total</span></td>
+							<td class="text-center fw-bold"><span>Have <br />Building</span></td>
+
+							<td class="text-center fw-bold"><span>Boys</span></td>
+							<td class="text-center fw-bold"><span>Girls</span></td>
+							<td class="text-center fw-bold"><span>Total</span></td>
+
+							<td class="text-center fw-bold"><span>Male</span></td>
+							<td class="text-center fw-bold"><span>Female</span></td>
+							<td class="text-center fw-bold"><span>Total</span></td>
+
+							<td class="text-center fw-bold"><span>Teacher/ <br>School Ratio</span></td>
+							<td class="text-center fw-bold"><span>Students/ <br>Teacher Ratio</span></td>
+							<td class="text-center fw-bold"><span>Students/ <br>Classroom Ratio</span></td>
+							<td class="text-center fw-bold"><span>Students/ <br>School Ratio</span></td>
+
+						</tr>
+
+
+						<tr style="background-color: rgb(35 40 47 / 15%) !important;">
+							{% functional = 0 %}
+							{% closed_ =0 %}
+							{% total_sch=0 %}
+							{% building=0 %}
+							{% boys=0 %}
+							{% girls=0 %}
+							{% total_enrol=0 %}
+							{% male=0 %}
+							{% female=0 %}
+							{% total_teacher=0 %}
+
+
+
+							{% for tal in taluka_data%}
+
+							{% functional = functional + tal.functional_schools %}
+							{% closed_ = closed_ + tal.closed_schools %}
+							{% total_sch = total_sch + tal.functional_schools + tal.closed_schools %}
+							{% building = building + tal.building_schools%}
+							{% boys = boys + tal.boys_enrol %}
+							{% girls = girls + tal.girls_enrol %}
+							{% total_enrol = total_enrol + tal.boys_enrol + tal.girls_enrol %}
+							{% male = male + tal.male_teachers %}
+							{% female = female + tal.female_teachers %}
+							{% total_teacher = total_teacher + tal.male_teachers + tal.female_teachers %}
+
+							{% endfor %}
+
+							<td class="text-center fw-bold">Total</td>
+							<td class="text-center fw-bold">{{functional.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{closed_.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{total_sch.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{building.toLocaleString("en-US")}}</td>
+
+							<td class="text-center fw-bold">{{boys.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{girls.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{total_enrol.toLocaleString("en-US")}}</td>
+
+							<td class="text-center fw-bold">{{male.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{female.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{total_teacher.toLocaleString("en-US")}}</td>
+
+							<td class="text-center fw-bold">{{Teachers_Per_School.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{Students_Per_Teacher.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{Students_Per_Classrooms.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{Students_Per_School.toLocaleString("en-US")}}</td>
+
+						</tr>
+
+						{% for tal in taluka_data%}
+
+						<tr>
+							<td class="text-center fw-700">{{tal.district}}</td>
+							<td class="text-center">{{tal.functional_schools.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{tal.closed_schools.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-700">
+								{{(tal.functional_schools+tal.closed_schools).toLocaleString("en-US")}}
+							</td>
+							<td class="text-center">
+								{{tal.building_schools.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{tal.boys_enrol.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{tal.girls_enrol.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-700">{{(tal.boys_enrol +
+								tal.girls_enrol).toLocaleString("en-US")}}
+							</td>
+							<td class="text-center">{{tal.male_teachers.toLocaleString("en-US")}}</td>
+							<td class="text-center">{{tal.female_teachers.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-700">{{(tal.male_teachers +
+								tal.female_teachers).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{tal.Teachers_Per_School}}</td>
+							<td class="text-center">{{tal.Students_Per_Teacher}}</td>
+							<td class="text-center">{{tal.Students_Per_Classrooms}}</td>
+							<td class="text-center">{{tal.Students_Per_School}}</td>
+
+						</tr>
+						{% endfor %}
+
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+
+
+
+		<div class="dashboard-table facility-table  page-breaks">
+			<h5 class="fs-5 fw-bold mb-0 mt-3 ">District wise Facilities</h5>
+			<div class="table-responsive">
+				<table width="100%" cellspacing="1" cellpadding="1" border="1" width="100%">
+					<tbody>
+						<tr class="bg-dark-blue" style="background-color: #454d66 !important;">
+							<td rowspan="2" class="text-center fw-bold text-white">District</td>
+							<td colspan="14" class="text-center fw-bold text-white">Facilities</td>
+
+						</tr>
+
+						<tr class="bg-light-blue" style="background-color: #a4b4e570 !important;">
+							<td class="text-center fw-bold"><span>Drinking Water</span></td>
+							<td class="text-center fw-bold"><span>Electricity</span></td>
+							<td class="text-center fw-bold"><span>Toilet</span></td>
+							<td class="text-center fw-bold"><span>Boundary Wall</span></td>
+							<td class="text-center fw-bold"><span>Lab/Sci.Lab</span></td>
+							<td class="text-center fw-bold"><span>Library</span></td>
+							<td class="text-center fw-bold"><span>Computer Lab</span></td>
+
+							<td class="text-center fw-bold"><span>Handwash</span></td>
+							<td class="text-center fw-bold"><span>Electric Fans</span></td>
+							<td class="text-center fw-bold"><span>Soap</span></td>
+
+							<td class="text-center fw-bold"><span>LED/TV</span></td>
+							<td class="text-center fw-bold"><span>Projectors</span></td>
+							<td class="text-center fw-bold"><span>Play Ground</span></td>
+							<td class="text-center fw-bold"><span>Computers</span></td>
+						</tr>
+
+						{% water = 0 %}
+						{% electricity = 0 %}
+						{% toilet = 0 %}
+						{% wall = 0 %}
+						{% lab = 0 %}
+						{% library = 0 %}
+						{% comp_lab = 0 %}
+						{% wash = 0 %}
+						{% fans = 0 %}
+						{% soap = 0 %}
+						{% tv = 0 %}
+						{% projector = 0 %}
+						{% ground = 0 %}
+						{% comp = 0 %}
+
+
+						{% for tal in taluka_fac %}
+
+						{% water = water + tal.drinking_water %}
+						{% electricity = electricity + tal.Electricity %}
+						{% toilet = toilet + tal.Toilet %}
+						{% wall = wall + tal.boundary_wall %}
+						{% lab = lab + tal.science_lab %}
+						{% library = library + tal.library %}
+						{% comp_lab = comp_lab + tal.computer_lab %}
+						{% wash = wash + tal.hand_wash_facility %}
+						{% fans = fans + tal.fans %}
+						{% soap = soap + tal.soap %}
+						{% tv = tv + tal.tv %}
+						{% projector = projector + tal.projector %}
+						{% ground = ground + tal.play_ground %}
+						{% comp = comp + tal.comp %}
+						{% endfor %}
+
+
+
+
+						<tr class="bg-light-gray" style="background-color: rgb(35 40 47 / 15%) !important;">
+							<td class="text-center fw-bold">Total</td>
+							<td class="text-center fw-bold">{{water.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{electricity.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{toilet.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{wall.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{lab.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{library.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{comp_lab.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{wash.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{fans.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{soap.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{tv.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{projector.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{ground.toLocaleString("en-US")}}</td>
+							<td class="text-center fw-bold">{{comp.toLocaleString("en-US")}}</td>
+						</tr>
+
+						{% for tal in taluka_fac %}
+						<tr>
+							<td class="text-center fw-700">{{tal.district}}</td>
+							<td class="text-center">{{(tal.drinking_water).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.Electricity).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.Toilet).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.boundary_wall).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.science_lab).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.library).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.computer_lab).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.hand_wash_facility).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.fans).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.soap).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.tv).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.projector).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.play_ground).toLocaleString("en-US")}}</td>
+							<td class="text-center">{{(tal.comp).toLocaleString("en-US")}}</td>
+						</tr>
+						{% endfor %}
+
+					</tbody>
+
+
+				</table>
+			</div>
+		</div>
+
+
+
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="i-card">
+					<div class="card-body-district">
+						<div id="teachercontainer" class="print-charts-div"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="i-card">
+					<div class="card-body-district">
+						<div id="enrollmentcontainer" class="print-charts-div"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9 col-sm-12">
+				<h4 class="text-dark fs-12 mb-1 mt-1"> Source: SEMIS Database of Annual School Census </h4>
+			</div>
+
+			<div class="col-md-3 col-sm-12 text-right">
+				<h4 class="date" id="set_date">Printed on <span>{{date_}}</span></h4>
+			</div>
+
+		</div>
+
+	</section>
+
+</body>
+
+</html>

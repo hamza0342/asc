@@ -1,0 +1,329 @@
+<div class="dashboard-table designation-tbl">
+
+    {% if reason != "School does not exist" %}
+
+    {% flag = 1 %}
+
+    {% for st in staf %}
+    {% if st.designation=="No Data" %}
+
+
+
+
+    <h5 class="fs-5 fw-600 mb-0 mt-3">Staff Detail</h5>
+    {%if reason != "Non availability of Teacher" %}
+
+    {%if have_building == "Yes" %}
+
+    <div class="i-card building-stats-card">
+        <div class="card-body-district ">
+            <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+
+                    <tr>
+                        <th>
+                            <p>Government Male Teacher(s)</p>
+                        </th>
+                        <td class="text-right"><span class="num">{{ ggggg}}</span></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Non Government Male Teacher(s)</p>
+                        </th>
+                        <td class="text-right"><span class="num">{{ non_govt_male_teachers}}</span></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Government Female Teacher(s)</p>
+                        </th>
+                        <td class="text-right">{{ govt_female_teachers}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Non Government Female Teacher(s)</p>
+                        </th>
+                        <td class="text-right">{{ non_govt_female_teachers}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% else %}
+    <div class="i-card building-stats-card">
+        <div class="card-body-district ">
+            <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+
+                    <tr>
+                        <th>
+                            <p>Government Male Teacher(s)</p>
+                        </th>
+                        <td class="text-right"><span class="num">{{ ggggg}}</span></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Non Government Male Teacher(s)</p>
+                        </th>
+                        <td class="text-right"><span class="num">{{ non_govt_male_teachers}}</span></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Government Female Teacher(s)</p>
+                        </th>
+                        <td class="text-right">{{ govt_female_teachers}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Non Government Female Teacher(s)</p>
+                        </th>
+                        <td class="text-right">{{ non_govt_female_teachers}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+
+
+    <div class="i-card">
+        <div class="card-body justify-content-between" style=" padding: 24px">
+            <img src="/assets/semis_theme/img/teacher-male.png" width="40">
+            <h5 class="fs-6 fw-600 mb-0 mt-0 page-breaks text-center">School is closed due to no availability of
+                teachers</h5>
+        </div>
+    </div>
+    <!-- end of code -->
+
+    {% endif %}
+
+
+
+
+
+    {% flag = 0 %}
+    {% endif %}
+    {% endfor %}
+
+
+
+    {% if flag =="1" %}
+
+    <h5 class="fs-5 fw-600 mb-0 mt-10">Designation wise Staff</h5>
+    <div class="table-responsive">
+        <table class="table" width="100%">
+            <tbody>
+                <tr class="print-bg-lightgreen" style="background-color: #e2f4e2 !important;">
+                    <td class="text-center fw-700 fs-12">Designation</td>
+                    <td class="text-center fw-700 fs-12">Male</td>
+                    <td class="text-center fw-700 fs-12">Female</td>
+                    <td class="text-center fw-700 fs-12">Total</td>
+                    <td class="text-center fw-700 fs-12">Designation</td>
+                    <td class="text-center fw-700 fs-12">Male</td>
+                    <td class="text-center fw-700 fs-12">Female</td>
+                    <td class="text-center fw-700 fs-12">Total</td>
+                </tr>
+                {% count = 0 %}
+                {% inner_count = 0 %}
+                {% row = 0 %}
+                {% male = 0 %}
+                {% female = 0 %}
+
+
+                {% for st in staf %}
+                {% if st.designation !="No Data" %}
+
+                {% skip_flag = 1 %}
+
+
+                <tr>
+                    {% if count == 0 || count != inner_count %}
+                    <td class="fw-500 text-center">{{st.designation}}</td>
+
+
+                    {% if st.male_staff > 0 %}
+                    <td class="text-center">{{st.male_staff}}</td>
+                    {% male = male + st.male_staff %}
+                    {% endif %}
+
+                    {% if st.male_staff == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% if st.female_staff > 0 %}
+                    <td class="text-center">{{st.female_staff}}</td>
+                    {% female = female + st.female_staff %}
+                    {% endif %}
+
+                    {% if st.female_staff == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+
+                    {% if (st.male_staff + st.female_staff) > 0 %}
+                    <td class="text-center">{{st.male_staff + st.female_staff}}</td>
+
+                    {% endif %}
+
+                    {% if (st.male_staff + st.female_staff) == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% row = 1 %}
+
+                    {% endif %}
+
+                    {% if count == inner_count && count != 0 && inner_count != 0 %}
+                    {% skip_flag = 0 %}
+                    {% endif %}
+
+
+
+                    {% if skip_flag == 1 %}
+
+                    {% inner_count = 0 %}
+
+                    {% for st in staf %}
+                    {% if inner_count == count + 1 %}
+                    <td class="fw-500 text-center">{{st.designation}}</td>
+
+
+                    {% if st.male_staff > 0 %}
+                    <td class="text-center">{{st.male_staff}}</td>
+                    {% male = male + st.male_staff %}
+                    {% endif %}
+
+                    {% if st.male_staff == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% if st.female_staff > 0 %}
+                    <td class="text-center">{{st.female_staff}}</td>
+                    {% female = female + st.female_staff %}
+                    {% endif %}
+
+                    {% if st.female_staff == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+
+                    {% if (st.male_staff + st.female_staff) > 0 %}
+                    <td class="text-center">{{st.male_staff + st.female_staff}}</td>
+
+                    {% endif %}
+
+                    {% if (st.male_staff + st.female_staff) == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% row = 2 %}
+                    {% endif %}
+                    {% inner_count = inner_count + 1 %}
+                    {% endfor %}
+                    {% inner_count = count + 1 %}
+
+                    {% endif %}
+
+                    {% count = count + 1 %}
+
+                    {% if row == 2 %}
+                </tr>
+                {%endif%}
+                {%endif%}
+
+                {% endfor %}
+
+                {% if row == 1 %}
+                <td class="fw-700 text-center">Total Teachers</td>
+                <td class="text-center">{{male}}</td>
+                <td class="text-center">{{female}}</td>
+                <td class="text-center">{{male + female}}</td>
+                </tr>
+                <tr>
+                    <td class="fw-500 text-center">Non Teaching</td>
+                    {% if Non_Teaching_Male > 0 %}
+                    <td class="text-center">{{Non_Teaching_Male}}</td>
+                    {% endif %}
+
+                    {% if Non_Teaching_Male == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% if Non_Teaching_Female > 0 %}
+                    <td class="text-center">{{Non_Teaching_Female}}</td>
+                    {% endif %}
+                    {% if Non_Teaching_Female == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% if (Non_Teaching_Male + Non_Teaching_Female) > 0 %}
+                    <td class="text-center">{{Non_Teaching_Male + Non_Teaching_Female}}
+                    </td>
+                    {% endif %}
+                    {% if (Non_Teaching_Male + Non_Teaching_Female) == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+
+                    <td class="fw-700 text-center">Total Staff(Teaching and Non-Teaching)</td>
+                    <td class="text-center fw-600">{{(male + Non_Teaching_Male ).toLocaleString("en-US") }}
+                    </td>
+                    <td class="text-center fw-600">{{(female + Non_Teaching_Female).toLocaleString("en-US")}}
+                    </td>
+                    <td class="fw-700 text-center">{{(male + female + Non_Teaching_Male +
+                        Non_Teaching_Female).toLocaleString("en-US")}}</td>
+
+
+
+
+
+                </tr>
+                {%endif%}
+
+                {% if row == 2 %}
+                <tr>
+                    <td class="fw-700 text-center">Total Teachers</td>
+                    <td class="text-center">{{male}}</td>
+                    <td class="text-center">{{female}}</td>
+                    <td class="text-center">{{male + female}}</td>
+
+
+                    <td class="fw-500 text-center">Non Teaching</td>
+                    {% if Non_Teaching_Male > 0 %}
+                    <td class="text-center">{{Non_Teaching_Male}}</td>
+                    {% endif %}
+
+                    {% if Non_Teaching_Male == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+
+                    {% if Non_Teaching_Female > 0 %}
+                    <td class="text-center">{{Non_Teaching_Female}}</td>
+                    {% endif %}
+                    {% if Non_Teaching_Female == 0 %}
+                    <td class="text-center">-</td>
+                    {% endif %}
+                    <td class="text-center">{{Non_Teaching_Male + Non_Teaching_Female}}
+                    </td>
+                </tr>
+                {%endif%}
+
+
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+    {% endif %}
+    {% endif%}
+
+</div>

@@ -1,0 +1,26 @@
+{
+    "content": null,
+    "creation": "2022-01-31 12:40:12.192329",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-03-01 17:51:39.452034",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "district-profile",
+    "owner": "Administrator",
+    "page_name": "District Profile",
+    "roles": [
+        {
+            "role": "RSU manager"
+        },
+        {
+            "role": "LSU"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "District Profile"
+}

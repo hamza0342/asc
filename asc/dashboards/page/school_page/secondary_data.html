@@ -1,0 +1,114 @@
+{% if enrollments != 0 && (level == "Higher Secondary" ||
+level == "Secondary" ) %}
+
+{% temp = ix_arts_general_boys + ix_computer_boys +
+ix_bio_boys + x_arts_general_boys + x_computer_boys +
+x_bio_boys + ix_arts_general_girls + ix_computer_girls +
+ix_bio_girls + x_arts_general_girls + x_computer_girls +
+x_bio_girls %}
+
+{% if temp > 0 %}
+
+<div class="dashboard-table genderwise-tbl print-bottom">
+    <h5 class="fs-5 fw-600 mb-0 mt-3">Subject wise Details</h5>
+    <div class="table-responsive">
+        <table class="table" width="100%">
+
+            <tbody>
+                <tr class="bg-dark-blue" style="background: #454d66 !important">
+                    <td class="text-center fw-bold text-white">Class</td>
+                    <td class="text-center fw-bold text-white" colspan="3">IX</td>
+                    <td class="text-center fw-bold text-white" rowspan="3">Total</td>
+                    <td class="text-center fw-bold text-white" colspan="3">X</td>
+                    <td class="text-center fw-bold text-white" rowspan="3">Total</td>
+
+                </tr>
+
+                <tr class="print-bg-light-purple" style="background: #eef2ff !important;">
+                    <td class="text-center fw-bold" rowspan="2">Group</td>
+                    <td class="text-center fw-bold" rowspan="2">Arts/General</td>
+                    <td class="text-center fw-bold" colspan="2">Science</td>
+                    <td class="text-center fw-bold" rowspan="2">Arts/General</td>
+                    <td class="text-center fw-bold" colspan="2">Science</td>
+                </tr>
+
+                <tr class="print-bg-light-purple" style="background: #eef2ff !important;">
+                    <td class="text-center fw-bold">Computer</td>
+                    <td class="text-center fw-bold">Biology</td>
+                    <td class="text-center fw-bold">Computer</td>
+                    <td class="text-center fw-bold">Biology</td>
+                </tr>
+
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Boys</span></td>
+                    <td class="text-right"><span class="num">{{ix_arts_general_boys}}</span></td>
+                    <td class="text-right"><span class="num">{{ix_computer_boys}} </span>
+                    </td>
+                    <td class="text-right"><span class="num">{{ix_bio_boys}} </span></td>
+                    {% boys_ix_class = 0 %}
+                    {% boys_ix_class = ix_arts_general_boys + ix_computer_boys +
+                    ix_bio_boys%}
+                    <td class="text-right fw-700"><span class="num"> {{boys_ix_class}}</span></td>
+                    <td class="text-right"><span class="num">{{x_arts_general_boys}}</span></td>
+                    <td class="text-right"><span class="num">{{x_computer_boys}} </span>
+                    </td>
+                    <td class="text-right"><span class="num"> {{x_bio_boys}}</span></td>
+                    {% boys_x_class = 0 %}
+                    {% boys_x_class= x_arts_general_boys + x_computer_boys +
+                    x_bio_boys%}
+                    <td class="text-right fw-700"><span class="num"> {{boys_x_class}} </span></td>
+                </tr>
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Girls</span></td>
+                    <td class="text-right"><span class="num">{{ix_arts_general_girls}}</span></td>
+                    <td class="text-right"><span class="num"> {{ix_computer_girls}}</span>
+                    </td>
+                    <td class="text-right"><span class="num"> {{ix_bio_girls}}</span></td>
+                    {% girls_ix_class = 0 %}
+                    {% girls_ix_class = ix_arts_general_girls + ix_computer_girls +
+                    ix_bio_girls%}
+                    <td class="text-right fw-700"><span class="num"> {{girls_ix_class}}</span></td>
+                    <td class="text-right"><span class="num">
+                            {{x_arts_general_girls}}</span></td>
+                    <td class="text-right"><span class="num"> {{x_computer_girls}}</span>
+                    </td>
+                    <td class="text-right"><span class="num">{{x_bio_girls}} </span></td>
+                    {% girls_x_class = 0 %}
+                    {% girls_x_class = x_arts_general_girls + x_computer_girls +
+                    x_bio_girls%}
+                    <td class="text-right fw-700"><span class="num"> {{girls_x_class}}</span></td>
+                </tr>
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Total</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ix_arts_general_girls +
+                            ix_arts_general_boys}}</span></td>
+                    <td class="text-right fw-700"><span class="num">{{ix_computer_girls +
+                            ix_computer_boys}} </span></td>
+                    <td class="text-right fw-700"><span class="num"> {{ix_bio_girls +
+                            ix_bio_boys}}</span></td>
+                    <td class="text-right fw-700"><span class="num"></span>{{ix_arts_general_boys
+                        + ix_computer_boys + ix_bio_boys+ix_arts_general_girls +
+                        ix_computer_girls + ix_bio_girls}}</td>
+                    <td class="text-right fw-700"><span class="num"> {{x_arts_general_girls +
+                            x_arts_general_boys}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{x_computer_girls +
+                            x_computer_boys}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{x_bio_girls +
+                            x_bio_boys}}</span></td>
+                    <td class="text-right fw-700"><span class="num"> {{x_arts_general_boys +
+                            x_computer_boys +x_bio_boys+x_arts_general_girls +
+                            x_computer_girls + x_bio_girls}}</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endif %}

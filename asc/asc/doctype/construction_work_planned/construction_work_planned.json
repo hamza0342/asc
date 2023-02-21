@@ -1,0 +1,50 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:name1",
+    "creation": "2021-12-23 12:09:17.133921",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "name1",
+        "list_order"
+    ],
+    "fields": [
+        {
+            "fieldname": "name1",
+            "fieldtype": "Data",
+            "label": "Name",
+            "unique": 1
+        },
+        {
+            "fieldname": "list_order",
+            "fieldtype": "Int",
+            "label": "List Order"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-03-15 03:36:06.781388",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "construction work planned",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

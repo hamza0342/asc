@@ -1,0 +1,45 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-04-13 11:50:13.846265",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "district",
+        "total_school_count",
+        "total_school_percentage"
+    ],
+    "fields": [
+        {
+            "fieldname": "district",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "District"
+        },
+        {
+            "fieldname": "total_school_count",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Total School Count"
+        },
+        {
+            "fieldname": "total_school_percentage",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Total School Percentage"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-04-13 11:50:13.846265",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "District Table Indicator",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

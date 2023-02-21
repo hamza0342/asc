@@ -1,0 +1,23 @@
+{
+    "content": null,
+    "creation": "2022-01-28 14:53:10.523977",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-02-16 09:58:02.557897",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "school-page",
+    "owner": "Administrator",
+    "page_name": "school-page",
+    "roles": [
+        {
+            "role": "RSU manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "School Profile"
+}

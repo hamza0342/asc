@@ -1,0 +1,19 @@
+{
+    "content": null,
+    "creation": "2022-04-12 10:29:14.733072",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-04-12 10:38:31.321184",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "test-dashboard",
+    "owner": "Administrator",
+    "page_name": "Test Dashboard",
+    "roles": [],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Test Dashboard"
+}

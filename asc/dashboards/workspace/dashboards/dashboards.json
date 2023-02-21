@@ -1,0 +1,103 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dashboard Links</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Provincial Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Divisional Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District Profile\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Taluka Profile\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Profile\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Indicators Analysis\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"RSU Performance Dashboard\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ECCE Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Facilities Map\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Location\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Time Series \",\"col\":3}}]",
+ "creation": "2022-09-23 14:33:18.563857",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expand",
+ "idx": 0,
+ "label": "Dashboards",
+ "links": [],
+ "modified": "2022-09-27 17:15:12.948504",
+ "modified_by": "Administrator",
+ "module": "Dashboards",
+ "name": "Dashboards",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Indicators Analysis",
+   "link_to": "Indicators Trend Analysis",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Divisional Dashboard",
+   "link_to": "divisional-dashboard",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Provincial Dashboard",
+   "link_to": "provincial-dashboard",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "District Profile",
+   "link_to": "district-profile",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Taluka Profile",
+   "link_to": "taluka-profile",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Profile",
+   "link_to": "school-page",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "RSU Performance Dashboard",
+   "link_to": "RSU Performance Dashboard",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ECCE Dashboard",
+   "link_to": "ecce-dashboard",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Facilities Map",
+   "link_to": "facilities-map",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Location",
+   "link_to": "school-location",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Time Series ",
+   "link_to": "time-series-asc-data",
+   "type": "Page"
+  }
+ ],
+ "title": "Dashboards"
+}

@@ -1,0 +1,35 @@
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title fw-bold">District wise Summary</h5>
+		<div class="table-responsive">
+			<table width="100%" cellspacing="1" cellpadding="1" border="1" width="100%">
+				<tbody>
+					<tr class="bg-light-blue" style="background-color: #a4b4e570 !important;">
+						<!-- <td class="fw-bold"><span>Region</span></td> -->
+						<td class="fw-bold"><span>District</span></td>
+						<td class="text-center fw-bold"><span>Total Schools</span></td>
+						<td class="text-center fw-bold"><span>Area of Province/District</span></td>
+						<td class="text-center fw-bold"><span>Maximum flood water extent</span></td>
+						<td class="text-center fw-bold"><span>Total population in Province/ District</span></td>
+						<td class="text-center fw-bold"><span>Population potentially exposed</span></td>
+						<td class="text-center fw-bold"><span>Population potentially exposed (%)</span></td>
+					</tr>
+
+					{% for d in data %}
+					<tr>
+						<!-- <td class="fw-700">{{d.region}}</td> -->
+						<td class=" fw-700">{{d.name}}</td>
+						<td class="text-center">{{d.totalschool.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.area.toFixed(2)}}</td>
+						<td class="text-center">{{d.under_water.toLocaleString("en-US") }}</td>
+						<td class="text-center">{{d.papulation.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.exposed_papulation.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.exposed_papulation_percent}}</td>
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

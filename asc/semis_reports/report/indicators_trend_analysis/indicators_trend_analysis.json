@@ -1,0 +1,27 @@
+{
+    "add_total_row": 1,
+    "columns": [],
+    "creation": "2022-06-07 09:45:13.986080",
+    "disable_prepared_report": 1,
+    "disabled": 0,
+    "docstatus": 0,
+    "doctype": "Report",
+    "filters": [],
+    "idx": 0,
+    "is_standard": "Yes",
+    "modified": "2022-06-07 09:45:13.986080",
+    "modified_by": "Administrator",
+    "module": "SEMIS Reports",
+    "name": "Indicators Trend Analysis",
+    "owner": "Administrator",
+    "prepared_report": 0,
+    "query": "",
+    "ref_doctype": "ASC",
+    "report_name": "Indicators Trend Analysis",
+    "report_type": "Script Report",
+    "roles": [
+        {
+            "role": "System Manager"
+        }
+    ]
+}

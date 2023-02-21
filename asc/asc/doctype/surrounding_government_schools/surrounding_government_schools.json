@@ -1,0 +1,57 @@
+{
+    "actions": [],
+    "creation": "2021-11-04 14:26:56.183578",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "semis_code",
+        "school_name_prefix_and_name",
+        "type_of_school_see_codes",
+        "distance_in_meters"
+    ],
+    "fields": [
+        {
+            "allow_on_submit": 1,
+            "fieldname": "semis_code",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "SEMIS Code"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "school_name_prefix_and_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "School Name (Prefix And Name) "
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "type_of_school_see_codes",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Type of School",
+            "options": "\nSame Premises\nAdjacent\nWithin 500 Meters"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "distance_in_meters",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Distance in meters"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-07-03 16:56:01.461529",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Surrounding Government Schools",
+    "owner": "Administrator",
+    "permissions": [],
+    "quick_entry": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

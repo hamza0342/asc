@@ -1,0 +1,177 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SEMIS Summary Report</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Summary\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Summary - Shift wise\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Summary - Gender wise\",\"col\":5}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Summary - Status wise\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Special Students - Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Single Teacher Report\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Facilities in Schools\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Single and No Room Schools\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Building Types\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drinking Water - Sources\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Facilities Report - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift wise Report - Level Summary\",\"col\":3}},{\"type\":\"paragraph\",\"data\":{\"text\":\"Detailed Reports\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Status Report - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Special Students - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Single Teacher - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Single and No Room - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Building - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Drinking Water - Level Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"School Wise Enrollment\",\"col\":3}},{\"type\":\"card\",\"data\":{\"card_name\":\"Test\",\"col\":4}}]",
+ "creation": "2022-09-23 15:43:00.261731",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "label": "SEMIS Reports",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Test",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "test",
+   "link_count": 0,
+   "link_to": "School Building Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-09-27 15:53:24.924379",
+ "modified_by": "Administrator",
+ "module": "SEMIS Reports",
+ "name": "SEMIS Reports",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Summary - Gender wise",
+   "link_to": "Gender Wise Summary",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Facilities in Schools",
+   "link_to": "Facilities Summary Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Drinking Water - Sources",
+   "link_to": "Availability of Water in Schools",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Summary",
+   "link_to": "Level School Summary",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Summary - Status wise",
+   "link_to": "Functional and Non Functional Schools by District and Level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Summary - Shift wise",
+   "link_to": "Shift wise school Summary",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Single and No Room Schools",
+   "link_to": "Single or No Room",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Facilities Report - Level Summary",
+   "link_to": "Facilities Summary with levels",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Special Students - Summary",
+   "link_to": "Special Students Summary",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Building Types",
+   "link_to": "School Building Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Shift wise Report - Level Summary",
+   "link_to": "Shift Gender Summary with levels",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Single Teacher Report",
+   "link_to": "Single Teacher Report",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Status Report - Level Summary",
+   "link_to": "Functional and Non Functional Schools Level wise",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Special Students - Level Summary",
+   "link_to": "Special Students Summary With Level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Single Teacher - Level Summary",
+   "link_to": "Single Teacher Report with Level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Single and No Room - Level Summary",
+   "link_to": "Single Room Schools with Level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Building - Level Summary",
+   "link_to": "School Building Report with Level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Drinking Water - Level Summary",
+   "link_to": "Availability of Water in Schools with level",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "School Wise Enrollment",
+   "link_to": "School and Class wise Enrollment",
+   "type": "Report"
+  }
+ ],
+ "title": "SEMIS Reports"
+}

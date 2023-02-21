@@ -1,0 +1,206 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">ASC Quick Links</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Assigned Schools\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Roster\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Configuration Panel\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC List\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"NEW ASC\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Performance Dashboard\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"System Listing\",\"col\":4}}]",
+ "creation": "2022-09-23 15:04:01.100070",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "label": "ASC Module",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "System Listing",
+   "link_count": 13,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Water Resources",
+   "link_count": 0,
+   "link_to": "water sources",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Registers",
+   "link_count": 0,
+   "link_to": "Types of Registers",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Designations",
+   "link_count": 0,
+   "link_to": "Designation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "What Was Constructed",
+   "link_count": 0,
+   "link_to": "what was constructed in School",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Construction planning",
+   "link_count": 0,
+   "link_to": "construction work planned",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Building Condition",
+   "link_count": 0,
+   "link_to": "Condition of Building",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Building Type",
+   "link_count": 0,
+   "link_to": "Type of building",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Case In Availability of Building",
+   "link_count": 0,
+   "link_to": "Case In Availability of Building",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reason Of closure",
+   "link_count": 0,
+   "link_to": "Write major reason for closure",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Source Of Information",
+   "link_count": 0,
+   "link_to": "Source of information of closure of School",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Administration",
+   "link_count": 0,
+   "link_to": "School administration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Level",
+   "link_count": 0,
+   "link_to": "Level",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Year",
+   "link_count": 0,
+   "link_to": "Year",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-09-27 12:49:36.569038",
+ "modified_by": "Administrator",
+ "module": "ASC",
+ "name": "ASC Module",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC List",
+   "link_to": "ASC",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Roster",
+   "link_to": "ASC Roster",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Assigned Schools",
+   "link_to": "Assigned Schools",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "NEW ASC",
+   "link_to": "ASC",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Configuration Panel",
+   "link_to": "ASC Panel",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Performance Dashboard",
+   "link_to": "RSU Performance Dashboard",
+   "type": "DocType"
+  }
+ ],
+ "title": "ASC Module"
+}

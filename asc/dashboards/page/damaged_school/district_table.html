@@ -1,0 +1,103 @@
+<div class="card">
+	<div class="card-body">
+		<div>
+			<button type="button" onclick="downloadtable()"  class="btn btn-primary btn-sm pull-right">Export</button>
+		</div>
+		<div class="table-responsive">
+			<table width="100%" class="table table-bordered border-primary table-striped" id="flooddetail">
+				<thead>
+					<tr class="bg-light-blue" style="background-color: #a4b4e570 !important;">
+						<td class="fw-bold" width="200" rowspan="2"><span>Region</span></td>
+						<td class="fw-bold" width="250" rowspan="2"><span>District</span></td>
+
+						<td class="text-center fw-bold" rowspan="2"><span>Total Population</span></td>
+						<td class="text-center fw-bold" rowspan="2"><span>Population Potentially Exposed</span></td>
+						<td class="text-center fw-bold" rowspan="2"><span> Percentage of Exposed Population</span></td>
+						<td class="text-center fw-bold" rowspan="2"><span>Total Schools</span></td>
+						<td class="text-center fw-bold" colspan="4"><span>No. of Schools Damaged</span></td>
+						<td class="text-center fw-bold" colspan="3"><span>IDP Camps</span></td>
+						<!-- <td class="text-center fw-bold" rowspan="2"><span>Overall(%)</span></td> -->
+
+						<!-- <td class="text-center fw-bold" rowspan="2"><span>Area of Province/District</span></td> -->
+						<!-- <td class="text-center fw-bold" rowspan="2"><span>Maximum flood water extent</span></td> -->
+						<!-- <td class="text-center fw-bold" colspan="3"><span>Demographic Data</span></td> -->
+
+
+					</tr>
+					<tr class="bg-light-blue" style="background-color: #a4b4e570 !important;">
+
+						<td class="text-center fw-bold"><span>Fully</span></td>
+						<td class="text-center fw-bold"><span>Partially</span></td>
+						<td class="text-center fw-bold"><span>Total</span></td>
+						<td class="text-center fw-bold"><span>%</span></td>
+
+						<td class="text-center fw-bold"><span>No. of Schools</span></td>
+						<td class="text-center fw-bold"><span>No. of Families</span></td>
+						<td class="text-center fw-bold"><span>Affected Population</span></td>
+
+
+
+					</tr>
+				</thead>
+
+				<tbody class="table-group-divider">
+					{% total_population = 0 %}
+					{% total_population_exposed = 0 %}
+					{% total_schools = 0 %}
+					{% total_fully = 0 %}
+					{% total_partial = 0 %}
+					{% total_idp = 0 %}
+					{% total_families = 0 %}
+					{% total_population_affected = 0 %}
+
+
+					{% for d in data %}
+
+					{% total_population = d.papulation + total_population %}
+					{% total_population_exposed = d.exposed_papulation + total_population_exposed %}
+					{% total_schools = d.totalschool + total_schools %}
+					{% total_fully = d.fulvalue + total_fully %}
+					{% total_partial = d.parvalue + total_partial %}
+					{% total_idp = d.idpvalue + total_idp %}
+					{% total_families = d.no_of_families+ total_families %}
+					{% total_population_affected = d.population_accomodated + total_population_affected %}
+					<tr>
+						<td>{{d.region}}</td>
+						<td>{{d.name}}</td>
+						<td class="text-center">{{d.papulation.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.exposed_papulation.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.exposed_papulation_percent}}</td>
+						<td class="text-center">{{d.totalschool.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.fulvalue.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.parvalue.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{(d.parvalue+d.fulvalue).toLocaleString("en-US")}}</td>
+						<td class="text-center">{{(((d.parvalue+d.fulvalue) / d.totalschool ) * 100).toFixed(1)}}</td>
+						<td class="text-center">{{d.idpvalue}}</td>
+						<td class="text-center">{{d.no_of_families.toLocaleString("en-US")}}</td>
+						<td class="text-center">{{d.population_accomodated.toLocaleString("en-US")}}</td>
+					</tr>
+					{% endfor %}
+
+					<tr>
+						<td class=" fw-bold" colspan="2">Total</td>
+						<td class="text-center fw-bold">{{ total_population.toLocaleString("en-US") }}</td>
+						<td class="text-center fw-bold">{{total_population_exposed.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{(total_population_exposed / total_population * 100
+							).toFixed(0)}}</td>
+						<td class="text-center fw-bold">{{total_schools.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{total_fully.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{total_partial.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{(total_fully + total_partial).toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{(((total_fully + total_partial) / total_schools ) *
+							100).toFixed(1)}}
+						</td>
+						<td class="text-center fw-bold">{{total_idp}}</td>
+						<td class="text-center fw-bold">{{total_families.toLocaleString("en-US")}}</td>
+						<td class="text-center fw-bold">{{total_population_affected.toLocaleString("en-US")}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

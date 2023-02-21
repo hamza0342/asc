@@ -1,0 +1,24 @@
+{
+    "content": null,
+    "creation": "2022-09-13 12:37:50.136875",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-09-13 12:38:00.117456",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "pivot-table",
+    "owner": "Administrator",
+    "page_name": "Pivot Table",
+    "restrict_to_domain": "Education",
+    "roles": [
+        {
+            "role": "SEMIS Manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Pivot Table"
+}

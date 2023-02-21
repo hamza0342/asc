@@ -1,0 +1,97 @@
+{% if have_building == "Yes" %}
+<h5 class="fs-5 fw-600 mb-0 mt-3">Building Status</h5>
+<div class="i-card building-stats-card">
+    <div class="card-body-district ">
+        <table class="table data-list mt-0" width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+
+                <tr>
+                    <th>
+                        <img src="/assets/semis_theme/img/building.png" class="school-level-img" width="20">
+                        <p>Having Building</p>
+                    </th>
+                    <td class="text-right"><span class="num text-success">{{ have_building
+                            }}</span></td>
+                </tr>
+                <tr>
+                    <th style="    width: 102px;"><i class="fa fa-id-card-o text-light-blue school-level-img "
+                            aria-hidden="true"></i>
+                        <p>Ownership</p>
+                    </th>
+                    <td class="text-right"><span class="num text-muted">{{ ownership
+                            }}</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th><img src="/assets/semis_theme/img/building-type.png" class="school-level-img" width="20">
+                        <p>Construction Type</p>
+                    </th>
+                    <td class="text-right"><span class="num text-muted">{{
+                            construction_type }}</span></td>
+                </tr>
+                <tr>
+                    <th><img src="/assets/semis_theme/img/building-condition.png" class="school-level-img" width="20">
+                        <p>Building Condition</p>
+                    </th>
+                    <td class="text-right" style="width: 90px;"><span class="num text-muted">{{
+                            condition_ }}</span></td>
+                </tr>
+                <tr>
+                    <th><img src="/assets/semis_theme/img/room.png" class="school-level-img" width="20">
+                        <p>Total Rooms</p>
+                    </th>
+                    <td class="text-right"><span class="num text-muted">{{ total_rooms
+                            }}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th><img src="/assets/semis_theme/img/classroom-blue.png" class="school-level-img " width="20">
+                        <p>ClassRooms</p>
+                    </th>
+                    <td class="text-right"><span class="num text-muted">{{ classrooms
+                            }}</span>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <th><img src="/assets/semis_theme/img/area.png" class="school-level-img " width="20">
+                        <p style="margin: 0 0 0 8px;">Area</p>
+                    </th>
+                    <td class="text-right"><span class="num text-danger">{{
+                            area.toLocaleString("en-US")
+                            }} sqft</span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% if reason != "School does not exist" %}
+{% if have_building == "No" %}
+<h5 class="fs-5 fw-600 mb-0 mt-3">Building Status</h5>
+<div class="i-card" style="height: 97px;">
+    <div class="card-body-district d-flex flex-row align-items-center">
+
+        <i class="fa fa-building text-light-blue school-level-img fs-2  me-2" aria-hidden="true"></i>
+        <p class="fw-500 mb-0 fs-6">This School has no building working temporarily under {{
+            no_relevant_code}}.</p>
+        <!-- <span class="num text-danger fw-600">{{ have_building}}</span> -->
+
+
+        <!-- <div>
+									<i class="fas fa-info-circle text-light-blue school-level-img fs-2"
+										aria-hidden="true"></i>
+									<p class="fw-600 mb-0 fs-6">Other Building Detail</p>
+									<span class="num text-danger fw-600">{{no_relevant_code}}</span>
+								</div> -->
+
+    </div>
+</div>
+{% endif %}
+{% endif %}

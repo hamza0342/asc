@@ -1,0 +1,59 @@
+{
+    "actions": [],
+    "creation": "2021-11-05 15:51:06.189349",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "class",
+        "boys",
+        "girls",
+        "total_class"
+    ],
+    "fields": [
+        {
+            "allow_on_submit": 1,
+            "fieldname": "class",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Class",
+            "options": "Program",
+            "read_only": 1,
+            "search_index": 1
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "boys",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Boys"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "girls",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Girls"
+        },
+        {
+            "allow_on_submit": 1,
+            "fieldname": "total_class",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Total Class",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-06-28 13:29:41.113999",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Enrolment Class and Gender wise",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

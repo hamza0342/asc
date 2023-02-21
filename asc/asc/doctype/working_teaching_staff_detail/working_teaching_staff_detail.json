@@ -1,0 +1,247 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-09-26 15:52:35.114896",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "asc",
+        "year",
+        "district",
+        "import_code",
+        "teacher",
+        "t_t_staff",
+        "full_n",
+        "cnic",
+        "d_o_b",
+        "designation_code",
+        "gender",
+        "contact_no",
+        "b_registered",
+        "entry_date",
+        "h_academic_qualification",
+        "bps_time_appointment",
+        "bps_current",
+        "p_num_ag_office",
+        "code_for_post",
+        "detailment",
+        "bs_per_time_scale",
+        "prof_training_code",
+        "s_s_code",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "allow_on_submit": 1,
+            "columns": 3,
+            "fieldname": "asc",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "ASC",
+            "options": "ASC",
+            "reqd": 1
+        },
+        {
+            "columns": 2,
+            "fetch_from": "teacher.gender",
+            "fieldname": "gender",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Gender",
+            "options": "Gender"
+        },
+        {
+            "columns": 2,
+            "fetch_from": "teacher.designation",
+            "fieldname": "designation_code",
+            "fieldtype": "Data",
+            "label": "Designation code"
+        },
+        {
+            "columns": 2,
+            "fetch_from": "teacher.contact_no",
+            "fieldname": "contact_no",
+            "fieldtype": "Data",
+            "label": "Contact no"
+        },
+        {
+            "columns": 3,
+            "fieldname": "t_t_staff",
+            "fieldtype": "Data",
+            "hidden": 1,
+            "label": "write Total No.of Teaching Staff"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.full_name",
+            "fieldname": "full_n",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Full Name"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.cnic",
+            "fieldname": "cnic",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "CNIC Number"
+        },
+        {
+            "columns": 3,
+            "fetch_from": "teacher.per_number",
+            "fieldname": "p_num_ag_office",
+            "fieldtype": "Data",
+            "label": "Personal Number from AG office"
+        },
+        {
+            "columns": 2,
+            "fetch_from": "teacher.date_of_birth",
+            "fieldname": "d_o_b",
+            "fieldtype": "Data",
+            "label": "Date of Birth"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.bps_appointment",
+            "fieldname": "bps_time_appointment",
+            "fieldtype": "Data",
+            "label": "BPS (at the time of appointment)"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.bps_current",
+            "fieldname": "bps_current",
+            "fieldtype": "Data",
+            "label": "BPS(Current Actual Scale)"
+        },
+        {
+            "columns": 3,
+            "fetch_from": "teacher.bs_per_time_scale",
+            "fieldname": "bs_per_time_scale",
+            "fieldtype": "Data",
+            "label": "BS(As per Time Scale) "
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.entry_date",
+            "fieldname": "entry_date",
+            "fieldtype": "Data",
+            "label": "Date of Entry in this Government Service"
+        },
+        {
+            "columns": 3,
+            "fieldname": "code_for_post",
+            "fieldtype": "Data",
+            "label": "Code for type of post"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.heighest_academic_qualification",
+            "fieldname": "h_academic_qualification",
+            "fieldtype": "Data",
+            "label": "Heighest Academic Qualification"
+        },
+        {
+            "columns": 3,
+            "fetch_from": "teacher.subject_specialization_code",
+            "fieldname": "s_s_code",
+            "fieldtype": "Data",
+            "label": "Subject Specialization Code"
+        },
+        {
+            "columns": 3,
+            "fetch_from": "teacher.professional_qualification_training_code",
+            "fieldname": "prof_training_code",
+            "fieldtype": "Data",
+            "label": "Professional Qualification Training Code"
+        },
+        {
+            "columns": 3,
+            "fetch_from": "teacher.on_detailment",
+            "fieldname": "detailment",
+            "fieldtype": "Data",
+            "label": "On Detailment"
+        },
+        {
+            "columns": 4,
+            "fetch_from": "teacher.is_bio",
+            "fieldname": "b_registered",
+            "fieldtype": "Select",
+            "label": "Is Biometrically registered?",
+            "options": "Yes\nNo"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Working Teaching Staff Detail",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "columns": 2,
+            "fieldname": "teacher",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Teacher",
+            "options": "Teacher"
+        },
+        {
+            "columns": 2,
+            "fetch_from": "asc.year",
+            "fieldname": "year",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Year",
+            "options": "Year"
+        },
+        {
+            "columns": 2,
+            "fieldname": "import_code",
+            "fieldtype": "Data",
+            "label": "Import Code",
+            "unique": 1
+        },
+        {
+            "allow_on_submit": 1,
+            "columns": 3,
+            "fetch_from": "asc.district",
+            "fieldname": "district",
+            "fieldtype": "Link",
+            "label": "District",
+            "options": "District"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_custom_form": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2022-09-26 15:52:35.114896",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Working Teaching Staff Detail",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

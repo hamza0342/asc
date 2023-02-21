@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<title>Facility Map</title>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	<style>
+		#mapContainer {
+			min-height: 948px;
+			margin: 0 auto;
+		}
+
+		#barContainer2 {
+			min-height: 948px;
+		}
+	</style>
+
+</head>
+<div id="mainBody">
+	<div class="row">
+		<div class="col-12">
+			<h3 class="mainMap-head mt-3"><span>{{type}}</span> Facility</h3>
+		</div>
+		<div class="col-sm-8">
+			<div id="mapContainer"></div>
+		</div>
+
+		<div class="col-sm-4" id="taluka_container">
+			<div class="facilityMap-sidebar" id="profile_items">
+				<div class="row">
+					<div class="col-10">
+						<h3 id="district_name"></h3>
+					</div>
+					<div class="col-2 text-right" id="close_btn">
+						<i class="fa fa-times text-dark fs-5" aria-hidden="true"></i>
+					</div>
+				</div>
+
+
+				<div class="d-flex justify-space-between">
+					<div class="d-flex">
+						<h5 class="fs-14 fw-600 mb-0 mt-1 me-1"> Schools</h5>
+						<h5 class="total-num text-muted fw-700 fs-6" id="school"></h5>
+					</div>
+
+					<div class="d-flex">
+						<h5 class="fs-14 fw-600 mb-0 mt-1 me-1"> Functional</h5>
+						<h5 class="total-num text-muted fw-700 fs-6" id="functional"></h5>
+					</div>
+
+					<div class="d-flex">
+						<h5 class="fs-14 fw-600 mb-0 mt-1 me-1">Closed</h5>
+						<h5 class="total-num text-muted fw-700 fs-6" id="closed"></h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="i-card mt-1">
+							<div class="card-body p-1">
+
+								<div class="d-flex justify-space-around align-items-center">
+									<div>
+										<p class="fs-14 fw-600 mb-0 text-right">Enrollment</p>
+										<span class="fw-600 fs-6 text-muted" id="enrollment"></span>
+									</div>
+
+									<div class="d-flex flex-col">
+										<div class="d-inline">
+											<i class="fa fa-male boy fs-14  mr-1 vertical-align-middle"
+												aria-hidden="true"></i>
+											<span class="fw-600 fs-12 text-muted" id="male_enrollment"></span>
+										</div>
+
+										<div class="d-inline">
+											<i class="fa fa-female girl fs-14  mr-1 vertical-align-middle"
+												aria-hidden="true" id="male_enrollment"></i>
+											<span class="fw-600 fs-12 text-muted" id="female_enrollment"></span>
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="i-card mt-1">
+							<div class="card-body p-1">
+
+								<div class="d-flex justify-space-around align-items-center">
+									<div>
+										<p class="fs-14 fw-600 mb-0 text-right">Teachers</p>
+										<span class="fw-600 fs-6 text-muted" id="teachers"></span>
+									</div>
+
+									<div class="d-flex flex-col">
+										<div class="d-inline">
+											<i class="fa fa-male boy fs-14  mr-1 vertical-align-middle"
+												aria-hidden="true"></i>
+											<span class="fw-600 fs-12 text-muted" id="male_teachers"></span>
+										</div>
+
+										<div class="d-inline">
+											<i class="fa fa-female girl fs-14  mr-1 vertical-align-middle"
+												aria-hidden="true"></i>
+											<span class="fw-600 fs-12 text-muted" id="female_teachers"></span>
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-12">
+						<h5 class="text-dark fs-6 fw-700 mb-1 d-block mt-2">Schools By Level</h5>
+					</div>
+
+					<div class="col-sm-12">
+						<ul class="list-group list-group-vertical">
+							<li class="list-group-item">Primary
+								<span class="d-inline float-right fw-500" id="primary"></span>
+							</li>
+							<li class="list-group-item">Elementary
+								<span class="d-inline float-right fw-500" id="elementary"></span>
+							</li>
+							<li class="list-group-item">Middle
+								<span class="d-inline float-right fw-500" id="middle"></span>
+								</span>
+							</li>
+							<li class="list-group-item">Secondary
+								<span class="d-inline float-right fw-500" id="secondary"></span>
+							</li>
+							<li class="list-group-item">Higher Sec
+								<span class="d-inline float-right fw-500" id="higher_secondary"></span>
+
+
+
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-sm-12">
+						<h5 class="text-dark fs-6 fw-700 mb-2 d-block mt-2">Schools By Gender</h5>
+					</div>
+					<div class="col-12">
+						<div class="i-card mt-0">
+							<div class="card-body text-center pt-1 px-2 pb-0">
+								<div class="d-flex justify-space-around align-items-center">
+									<div class="school-by-gender">
+										<p class="mb-1 mt-0 fw-500">Boys</p>
+										<i class="fa fa-male boy fs-2" aria-hidden="true"></i>
+										<p id="boys"></p>
+									</div>
+									<div class="school-by-gender">
+										<p class="mb-1 mt-0 fw-500">Girls</p>
+										<i class="fa fa-female girl fs-2" aria-hidden="true"></i>
+										<p id="girls"></p>
+									</div>
+									<div>
+										<p class="mb-1 mt-0 fw-500">Mixed</p>
+										<img src="/assets/semis_theme/img/mixed-final.png" width="17">
+										<p id="mixed"></p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+
+
+					<div class="col-sm-12">
+						<h5 class="text-dark fs-6 fw-700 mb-1 d-block mt-2">Other Facilities</h5>
+					</div>
+					<div class="col-sm-12">
+						<ul class="list-group list-group-horizontal">
+							<li class="list-group-item text-center fs-12 fw-500">Drinking Water <span
+									class="d-block fw-700 text-success fs-14" id="water_percentage"></span></span></li>
+							<li class="list-group-item text-center fs-12 fw-500">Boundary Wall <span
+									class="d-block fw-700 text-success fs-14"
+									id="boundary_wall_percentage"></span></span>
+							</li>
+							<li class="list-group-item text-center fs-12 fw-500">Hand wash <span
+									class="d-block fw-700 text-success fs-14" id="hand_wash_percentage"></span></span>
+							</li>
+							<li class="list-group-item text-center fs-12 fw-500">MHM Disposal <span
+									class="d-block fw-700 text-success fs-14" id="mhm_percentage"></span></span></li>
+
+						</ul>
+						<ul class="list-group list-group-horizontal mt-1">
+							<li class="list-group-item text-center fs-12 border-b-none ms-3 fw-500">Building <span
+									class="d-block fw-700 text-success fs-14" id="building_percentage"></span></span>
+							</li>
+							<li class="list-group-item text-center fs-12 border-b-none ms-5 fw-500">Toilet <span
+									class="d-block fw-700 text-success fs-14" id="toilet_percentage"></span></span></li>
+							<li class="list-group-item text-center fs-12 border-b-none ms-4 fw-500">Electricity <span
+									class="d-block fw-700 text-success fs-14" id="electricity_percentage"></span></span>
+							</li>
+							<li class="list-group-item text-center fs-12 border-b-none ms-4 fw-500">Soap <span
+									class="d-block fw-700 text-success fs-14" id="soap_percentage"></span></span></li>
+
+						</ul>
+					</div>
+
+
+
+				</div>
+
+			</div>
+
+			<div id="barContainer"></div>
+
+			<div id="barContainer2"></div>
+		</div>
+
+
+
+	</div>
+
+
+</div>
+
+
+</div>
+
+</html>

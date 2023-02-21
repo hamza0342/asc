@@ -1,0 +1,23 @@
+{
+    "content": null,
+    "creation": "2022-06-28 11:38:14.092448",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-08-10 17:35:45.174621",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "ecce-dashboard",
+    "owner": "Administrator",
+    "page_name": "ECCE Dashboard",
+    "roles": [
+        {
+            "role": "SEMIS Manager"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "ECCE Dashboard"
+}

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<style>
+.schooldistance .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.schooldistance .panel-body {
+    padding: 15px;
+}
+.schooldistance .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.schooldistance .panel-success>.panel-heading {
+    color: #fff;
+    background-color: #4a9957;
+    border-color: #337ab7;
+}
+.schooldistance .form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.schooldistance .form-group {
+    margin-bottom: 15px;
+}
+.schooldistance .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.schooldistance .panel-footer {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.schooldistance .col-sm-2 {
+    width: 16.66666667%;
+}
+.schooldistance .col-sm-4 {
+    width: 33.33333333%;
+}
+path.leaflet-interactive { 
+    fill: transparent;
+}
+</style>
+<div class="schooldistance"> 
+	<div class="row">
+		<div class="col-sm-12" id="result_div">
+			<div id="ContentPlaceHolder1_result_div" class="alert alert-success">
+				<strong>Ready for search</strong>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="ContentPlaceHolder1_div_info" class="alert alert-info"> <strong>Instructions</strong>
+				<ul class="">
+					<li class="">Distance between two schools can be searched by choosing <strong>Find School Distance</strong> option through SEMIS Codes.</li>
+					<li class="">Distance of other sorrounding schools from source school can be searched by choosing <strong>Find Nearby School</strong> option through SEMIS Code and defining range in meters.</li>
+					<li class="">The unit of distance mentioned above, are in <strong>meters</strong>.</li> 
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

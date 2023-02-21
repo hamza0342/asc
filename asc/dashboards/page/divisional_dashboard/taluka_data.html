@@ -1,0 +1,127 @@
+<h5 class="fs-5 fw-bold mb-0 mt-3 ">District wise Schools, Enrollment and Teachers</h5>
+<div class="table-responsive">
+    <table class="table" width="100%">
+        <tbody>
+            <tr class="print-bg-green" style="background-color: #309975 !important;">
+                <td rowspan="2" class="text-center fw-bold text-white">Taluka</td>
+                <td colspan="4" class="text-center fw-bold text-white">
+                    <i class="fa-solid fa-school mr-2"></i>Schools
+                </td>
+                <td colspan="3" class="text-center fw-bold text-white">
+                    <img src="/assets/semis_theme/img/enrollment.png" width="20px"
+                        style="filter: invert(11); vertical-align: bottom;"> Enrollment
+                </td>
+                <td colspan="3" class="text-center fw-bold text-white">
+                    <img src="/assets/semis_theme/img/teacher.png" width="20px" class="mr-2"
+                        style="filter: invert(11); vertical-align: bottom;">Teacher
+                </td>
+                <td colspan="4" class="text-center fw-bold text-white">
+                    <img src="/assets/semis_theme/img/ger.png" width="20px" class="mr-2"
+                        style="filter: invert(11); vertical-align: bottom;">Ratios
+                </td>
+            </tr>
+            <tr class="print-bg-lightgreen" style="background-color: #dffff1 !important;">
+                <td class="text-center fw-bold"><span>Functional</span></td>
+                <td class="text-center fw-bold"><span>Closed</span></td>
+                <td class="text-center fw-bold"><span>Total</span></td>
+                <td class="text-center fw-bold"><span>Have <br />Building</span></td>
+
+                <td class="text-center fw-bold"><span>Boys</span></td>
+                <td class="text-center fw-bold"><span>Girls</span></td>
+                <td class="text-center fw-bold"><span>Total</span></td>
+
+                <td class="text-center fw-bold"><span>Male</span></td>
+                <td class="text-center fw-bold"><span>Female</span></td>
+                <td class="text-center fw-bold"><span>Total</span></td>
+
+                <td class="text-center fw-bold"><span>Teacher/ <br>School Ratio</span></td>
+                <td class="text-center fw-bold"><span>Students/ <br>Teacher Ratio</span></td>
+                <td class="text-center fw-bold"><span>Students/ <br>Classroom Ratio</span></td>
+                <td class="text-center fw-bold"><span>Students/ <br>School Ratio</span></td>
+
+            </tr>
+
+
+            <tr class="bg-light-gray" style="background-color: rgb(35 40 47 / 15%) !important;">
+                {% functional = 0 %}
+                {% closed_ = 0 %}
+                {% total_sch = 0 %}
+                {% building=0 %}
+                {% boys=0 %}
+                {% girls=0 %}
+                {% total_enrol=0 %}
+                {% male=0 %}
+                {% female=0 %}
+                {% total_teacher=0 %}
+
+
+
+                {% for tal in taluka_data%}
+
+                {% functional = functional + tal.functional_schools %}
+                {% closed_ = closed_ + tal.closed_schools %}
+                {% total_sch = total_sch + tal.functional_schools + tal.closed_schools %}
+                {% building = building + tal.building_schools%}
+                {% boys = boys + tal.boys_enrol %}
+                {% girls = girls + tal.girls_enrol %}
+                {% total_enrol = total_enrol + tal.boys_enrol + tal.girls_enrol %}
+                {% male = male + tal.male_teachers %}
+                {% female = female + tal.female_teachers %}
+                {% total_teacher = total_teacher + tal.male_teachers + tal.female_teachers %}
+
+                {% endfor %}
+
+                <td class="text-left fw-bold">Total</td>
+                <td class="text-right fw-bold">{{functional.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{closed_.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{total_sch.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{building.toLocaleString("en-US")}}</td>
+
+                <td class="text-right fw-bold">{{boys.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{girls.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{total_enrol.toLocaleString("en-US")}}</td>
+
+                <td class="text-right fw-bold">{{male.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{female.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{total_teacher.toLocaleString("en-US")}}</td>
+
+                <td class="text-right fw-bold">{{Teachers_Per_School.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{Students_Per_Teacher.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{Students_Per_Classrooms.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-bold">{{Students_Per_School.toLocaleString("en-US")}}</td>
+
+            </tr>
+
+            {% for tal in taluka_data%}
+
+            <tr>
+                <td class="text-left fw-700">{{tal.district}}</td>
+                <td class="text-right">{{tal.functional_schools.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.closed_schools.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-700">
+                    {{(tal.functional_schools+tal.closed_schools).toLocaleString("en-US")}}
+                </td>
+                <td class="text-right">
+                    {{tal.building_schools}}</td>
+                <td class="text-right">{{tal.boys_enrol.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.girls_enrol.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-700">{{(tal.boys_enrol +
+                    tal.girls_enrol).toLocaleString("en-US")}}
+                </td>
+                <td class="text-right">{{tal.male_teachers.toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.female_teachers.toLocaleString("en-US")}}</td>
+                <td class="text-right fw-700">{{(tal.male_teachers +
+                    tal.female_teachers).toLocaleString("en-US")}}</td>
+                <td class="text-right">{{tal.Teachers_Per_School}}</td>
+                <td class="text-right">{{tal.Students_Per_Teacher}}</td>
+                <td class="text-right">{{tal.Students_Per_Classrooms}}</td>
+                <td class="text-right">{{tal.Students_Per_School}}</td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+
+    </table>
+</div>

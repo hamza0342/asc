@@ -1,0 +1,79 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:ASC-{date}",
+    "creation": "2022-08-22 10:37:19.973896",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "date",
+        "school_info",
+        "teachers",
+        "enrollment",
+        "campus",
+        "facilities",
+        "surrounding"
+    ],
+    "fields": [
+        {
+            "fieldname": "date",
+            "fieldtype": "Date",
+            "label": "Date"
+        },
+        {
+            "fieldname": "school_info",
+            "fieldtype": "Text Editor",
+            "label": "School Info"
+        },
+        {
+            "fieldname": "teachers",
+            "fieldtype": "Text Editor",
+            "label": "Teachers"
+        },
+        {
+            "fieldname": "enrollment",
+            "fieldtype": "Text Editor",
+            "label": "Enrollment"
+        },
+        {
+            "fieldname": "campus",
+            "fieldtype": "Text Editor",
+            "label": "Campus"
+        },
+        {
+            "fieldname": "facilities",
+            "fieldtype": "Text Editor",
+            "label": "Facilities"
+        },
+        {
+            "fieldname": "surrounding",
+            "fieldtype": "Text Editor",
+            "label": "Surrounding"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2022-08-22 10:37:19.973896",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Update Data By Date",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

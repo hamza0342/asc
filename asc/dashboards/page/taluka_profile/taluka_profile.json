@@ -1,0 +1,26 @@
+{
+    "content": null,
+    "creation": "2022-07-19 17:17:27.488487",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-08-13 16:41:08.656471",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "taluka-profile",
+    "owner": "Administrator",
+    "page_name": "Taluka Profile",
+    "roles": [
+        {
+            "role": "SEMIS Manager"
+        },
+        {
+            "role": "LSU"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Taluka Profile"
+}

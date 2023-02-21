@@ -1,0 +1,26 @@
+{
+    "content": null,
+    "creation": "2022-07-19 15:32:50.033695",
+    "docstatus": 0,
+    "doctype": "Page",
+    "idx": 0,
+    "modified": "2022-07-19 15:32:50.033695",
+    "modified_by": "Administrator",
+    "module": "Dashboards",
+    "name": "divisional-dashboard",
+    "owner": "Administrator",
+    "page_name": "Divisional Dashboard",
+    "roles": [
+        {
+            "role": "RSU manager"
+        },
+        {
+            "role": "LSU"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Divisional Dashboard"
+}

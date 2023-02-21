@@ -1,0 +1,116 @@
+{% if enrollments != 0 %}
+<h5 class="fs-5 fw-600 mb-0 mt-3 ">Enrollment</h5>
+<div class="dashboard-table designation-tbl">
+    <div class="table-responsive">
+        <table class="table" width="100%">
+            <tbody>
+                <tr class="print-bg-green" style="background-color:#309975 !important;">
+
+                    <td></td>
+                    {% if year == "2021-22"%}
+                    <td colspan="2" class="text-center text-white">
+                        <span class="num fw-700"> Pre-Primary Classes</span>
+                    </td>
+                    {% endif %}
+                    {% if year != "2021-22"%}
+                    <td class="text-center text-white">
+                        <span class="num fw-700"> Pre-Primary Classes</span>
+                    </td>
+                    {% endif %}
+
+                    <td colspan="5" class="text-center text-white">
+                        <span class="num fw-700"> Primary Classes</span>
+                    </td>
+                    {% if level != "Primary" %}
+                    <td colspan="3" class="text-center text-white">
+                        <span class="num fw-700"> Middle Classes</span>
+                    </td>
+                    {% endif %}
+
+
+                    <td rowspan="2" class="text-center text-white">
+                        <span class="num fw-700"> Total</span>
+                    </td>
+                </tr>
+
+                <tr class="print-bg-green" style="background-color:#309975 !important;">
+                    <td class="text-center fw-700 text-white"><span class="num"> Grade</span></td>
+                    {% if year == "2021-22"%}
+                    <td class="text-center fw-700 text-white"><span class="num"> ECCE</span></td>
+                    {% endif %}
+                    <td class="text-center fw-700 text-white"><span class="num"> Katchi</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> I</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> II</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> III</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> IV</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> V</span></td>
+                    {% if level != "Primary" %}
+                    <td class="text-center fw-700 text-white"><span class="num"> VI</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> VII</span></td>
+                    <td class="text-center fw-700 text-white"><span class="num"> VIII</span></td>
+                    {% endif %}
+
+                </tr>
+
+                {% if year == "2021-22"%}
+                {% loop_control = 9 %}
+                {% endif %}
+
+                {% if year != "2021-22"%}
+                {% loop_control = 8 %}
+                {% endif %}
+
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Boys</span></td>
+
+                    {% boys = 0 %}
+                    {% index = 0 %}
+                    {% for enrol in enrollment %}
+                    {% if index <= loop_control %} <td class="text-right"><span class="fs-12">
+                            {{enrol.boys}}</span>
+                        </td>
+                        {% boys = boys + enrol.boys %}
+                        {% endif %}
+                        {% index = index + 1 %}
+                        {% endfor %}
+
+                        <td class="text-right fw-700"><span class="fs-12"> {{boys}}</span></td>
+                </tr>
+
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Girls</span></td>
+                    {% index = 0 %}
+                    {% girls = 0 %}
+                    {% for enrol in enrollment %}
+                    {% if index <= loop_control %} <td class="text-right"><span class="fs-12">{{enrol.girls}}</span>
+                        </td>
+                        {% girls = girls + enrol.girls %}
+                        {% endif %}
+                        {% index = index + 1 %}
+                        {% endfor %}
+
+                        <td class="text-right fw-700"><span class="fs-12"> {{girls}}</span></td>
+                </tr>
+
+                <tr>
+                    <td class="text-left fw-700"><span class="num"> Total</span></td>
+                    {% total = 0 %}
+                    {% index = 0 %}
+
+                    {% for enrol in enrollment %}
+                    {% if index <= loop_control %} <td class="text-right fw-700"><span class="fs-12">
+                            {{enrol.total}}</span>
+                        </td>
+                        {% total = total + enrol.total%}
+                        {% endif %}
+                        {% index = index + 1 %}
+
+                        {% endfor %}
+
+                        <td class="text-right fw-700"><span class="fs-12"> {{total}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}

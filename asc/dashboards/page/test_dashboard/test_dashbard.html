@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>RSU Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <section class="school-dash" id="test_dashboard">
+        <div class="row box-shadow mb-3">
+            <div class="col-md-2 mt-5">
+                <div class="stat-info">
+
+                    <div class="stat-icon bg-success-transparent text-success">
+                        <i class="fa fa-building-o text-white" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="numplace text-center">{{ total_school.toLocaleString("en-US") }}</h2>
+                    <label class="label text-center">School Census</label>
+
+                </div>
+
+                <div class="mt-1 ms-1">
+                    <strong class="fs-6 text-light-black me-2">Girls</strong>
+                    <span class="float-right">{{girls.toLocaleString("en-US")}}</span>
+                    <div class="progress ">
+                        <div class="progress-bar  bg-girl" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">{{girls_percentage}}%</div>
+                    </div>
+                </div>
+                <div class="mt-3 ms-1">
+                    <strong class="fs-6 text-light-black me-2">Boys</strong>
+                    <span class="float-right">{{boys.toLocaleString("en-US")}}</span>
+                    <div class="progress">
+                        <div class="progress-bar  bg-boy" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">{{boys_percentage}}%</div>
+                    </div>
+                </div>
+                <div class="mt-3 ms-1">
+                    <strong class="fs-6 text-light-black me-2">Mixed </strong>
+                    <span class="float-right">{{mixed.toLocaleString("en-US")}}</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-mixed" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">{{mixed_percentage}}%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="container" style="width: 800px;"></div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div id="containerpiefunc" style="width:380px; margin: -15px 0 0;"></div>
+            </div>
+        </div>
+
+
+        <h3 class="school-heads fw-bold">Gender and Shift wise Schools</h3>
+        <div class="row box-shadow mb-3">
+
+            <div class="col-md-2">
+                <img src="/assets/semis_theme/img/001-sun.png" width="120" class="spin">
+                <h4 class="text-muted fw-normal fs-14 mt-1 mb-0">Morning Shift</h4> <span
+                    class="d-block text-dark fw-bold">{{Morning.toLocaleString("en-US")}} <small
+                        class="fw-normal fs-7">( {{Morning_percentage}}% )</small></span>
+            </div>
+
+            <div class="col-md-2">
+                <div class="d-flex flow-row">
+                    <i class="fa fa-male boy  mt-2 fs-1" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Boys</strong>
+                        <small class="fs-6"> ( {{Morning_Boys.toLocaleString("en-US")}} )</small>
+                    </div>
+
+                </div>
+                <div class="d-flex flow-row mt-2">
+                    <i class="fa fa-female girl mt-2 fs-1" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Girls</strong>
+                        <small class="fs-6"> {{Morning_Girls.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+                <div class="d-flex flow-row mt-2">
+                    <img src="/assets/semis_theme/img/mixed.png" class="object-fit" width="28">
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Mixed</strong>
+                        <small class="fs-6">{{Morning_Mixed.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <img src="/assets/semis_theme/img/001-clouds.png" width="120" class="spinc">
+                <h4 class="text-muted fw-normal fs-14 mt-1 mb-0">Afternoon Shift</h4><span
+                    class="d-block text-dark fw-bold ms-1">{{Afternoon.toLocaleString("en-US")}} <small
+                        class="fw-normal fs-7">{{Afternoon_percentage}}%</p></small>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class="d-flex flow-row">
+                    <i class="fa fa-male boy text-danger mt-2 fs-2 me-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Boys</strong>
+                        <small class="fs-6"> {{Afternoon_Boys.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+                <div class="d-flex flow-row mt-2">
+                    <i class="fa fa-female girl mt-2 fs-2 me-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Girls</strong>
+                        <small class="fs-6"> {{Afternoon_Girls.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+                <div class="d-flex flow-row mt-2">
+                    <img src="/assets/semis_theme/img/mixed.png" class="object-fit" width="28">
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Mixed</strong>
+                        <small class="fs-6">{{Afternoon_Mixed.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <img src="/assets/semis_theme/img/001-afternoon.png" width="120" class="spinc">
+                <h4 class="text-muted fw-normal fs-14 ms-2 mt-1 mb-0">Both Shift</h4><span
+                    class="d-block text-dark fw-bold ms-2">{{Both.toLocaleString("en-US")}} <small
+                        class="fw-normal fs-7">{{Both_percentage}}%</small></span>
+            </div>
+
+            <div class="col-md-2">
+                <div class="d-flex flow-row">
+                    <i class="fa fa-male boy text-danger mt-2 fs-2 me-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Boys</strong>
+                        <small class="fs-6"> {{Both_Boys.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+                <div class="d-flex flow-row mt-2">
+                    <i class="fa fa-female  girl mt-2 fs-2 me-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Girls</strong>
+                        <small class="fs-6">{{Both_Girls.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+                <div class="d-flex flow-row mt-2">
+                    <img src="/assets/semis_theme/img/mixed.png" class="object-fit" width="28">
+                    <div class="d-flex flex-col ms-2">
+                        <strong class="fw-bold">Mixed</strong>
+                        <small class="fs-6">{{Both_Mixed.toLocaleString("en-US")}}</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <h3 class="school-heads fw-bold">Location and Gender wise Schools</h3>
+        <div class="row box-shadow mb-3">
+            <div class="col-md-5">
+                <div id="containerpie" style="height: 400px; width: 400px;"></div>
+            </div>
+            <div class="col-md-2">
+                <div class="stat-info">
+
+                    <div class="stat-icon bg-danger bg-gradient">
+                        <i class="fa fa-home text-white" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="numplace text-center text-danger">{{urban}}</h2>
+                    <label class="label text-center">Total in Urban ({{urban_percentage}}%)</label>
+                    <hr>
+                </div>
+                <div class="stat-info mt-2">
+
+                    <div class="stat-icon bg-warning bg-gradient">
+                        <i class="fa fa-building-o text-white" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="numplace text-center text-warning">{{rural}}</h2>
+                    <label class="label text-center">Total in Rural ({{rural_percentage}}%)</label>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div id="containerpie2" style="height: 400px; width: 450px;"></div>
+            </div>
+        </div>
+
+
+
+
+        <h3 class="school-heads fw-bold">Medium and Level wise Schools</h3>
+        <div class="row box-shadow mb-3">
+            <div class="col-md-12">
+                <div id="containercol"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row box-shadow mb-3">
+            <div class="col-md-3 mt-2">
+                <h3 class="school-heads fw-bold">Student Enrollment</h3>
+
+
+
+                <div class="total-enroll">
+                    <h4 class="text-dark mb-0 mt-31 fs-4">{{total_Enrollment}}</h4>
+                    <small class="fs-6">Total</small>
+                </div>
+
+
+
+                <div class="icon-bg">
+                    <i class="fa fa-male boy text-danger fs-1" aria-hidden="true"></i>
+                    <h3 class="fs-6 text-dark">{{boys_Enrollment}}</h3>
+                </div>
+
+                <div class="icon-bg-girl ">
+                    <i class="fa fa-female girl text-success fs-1" aria-hidden="true"></i>
+                    <h3 class="fs-6 text-dark">{{girls_Enrollment}}</h3>
+                </div>
+
+            </div>
+
+            <div class="col-md-9">
+                <div id="containergender"></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="row box-shadow mb-3">
+            <div class="col-md-3 mt-2">
+                <h3 class="school-heads fw-bold">Working Teachers</h3>
+
+
+
+                <div class="total-enroll">
+                    <h4 class="text-dark mb-0 mt-31 fs-4">{{total_teacher}}</h4>
+                    <small class="fs-6">Total</small>
+                </div>
+
+                <div class="icon-bg bg-primary text-white pt-2">
+                    <img src="/assets/semis_theme/img/001-teacher-pointing-a-board-with-a-stick.png" width="49"
+                        class="mr-2 teacher-img">
+                    <h3 class="fs-6">{{male_teachers}} </h3>
+                </div>
+
+                <div class="icon-bg-girl bg-warning text-white">
+                    <img src="/assets/semis_theme/img/002-teacher.png" width="38" class="teacher-img">
+                    <h3 class="fs-6 mt-1">{{female_teachers}}</h3>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-9">
+                <div id="containerteacher"></div>
+            </div>
+
+        </div>
+
+
+        <h3 class="school-heads mt-4 fw-bold">Avaiblibilty of Basic Facilities</h3>
+
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-primary-water-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fa fa-tint fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Drinking Water </span>
+                            <!--<button class="viewmore" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+				More details
+			  </button>-->
+                            <span class="fw-bold fs-5"> {{drinking_water_percentage}}% </span>
+                            <small class="text-white d-block fs-6">{{drinking_water.toLocaleString("en-US")}} </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-warning-elec-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fa fa-lightbulb-o fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Electricity </span>
+
+
+                            <span class="fw-bold fs-5"> {{electricity_percentage}}% </span>
+                            <small class="text-white d-block fs-6">{{Electricity.toLocaleString("en-US")}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-success-toilet-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fas fa-toilet fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Toilet</span>
+
+                            <span class="fw-bold fs-5"> {{toilet_percentage}}% </span>
+                            <small class="text-white d-block fs-6">{{toilet.toLocaleString("en-US")}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-danger-handwash-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fas fa-hand-holding-water fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Handwash</span>
+                            <span class="fw-bold fs-5"> {{hand_wash_facility_percentage}}% </span>
+                            <small
+                                class="text-white d-block fs-6">{{hand_wash_facility.toLocaleString("en-US")}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-purple-wall-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fas fa-dungeon fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Boundary Wall</span>
+
+                            <span class="fw-bold fs-5"> {{boundary_wall_percentage}}% </span>
+                            <small class="text-white d-block fs-6">{{boundary_wall.toLocaleString("en-US")}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-fac bg-secondary-ramp-gradient">
+                    <div class="card-body-fac">
+                        <div class="fac-icon">
+                            <i class="fa fa-wheelchair fs-2 facility-icon" aria-hidden="true"></i>
+                            <span class="fw-normal fs-6">Ramp</span>
+                            <span class="fw-bold fs-5"> {{ramp_facility_percentage}}% </span>
+                            <small class="text-white d-block fs-6">{{ramp_facility.toLocaleString("en-US")}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--<div class="col-md-3 mt-4">
+		<div class="collapse" id="collapseExample">
+		  <div class="card card-body more-detail">
+			<div class="d-flex flex-col">
+		<h4 class="fs-7 text-dark mt-1 mb-0 fw-bold">Drinking Water Provision</h4>
+			<span>Electric water Cooler <small class="text-info fw-bold">(257)</small></span>
+			<span>Simple water Cooler <small class="text-info fw-bold">(367)</small></span>
+			<span>Overhead water tank  <small class="text-info fw-bold">(111)</small></span>
+			<span>Pot/Matka <small class="text-info fw-bold">(6)</small></span>
+		<h4 class="fs-7 text-dark mt-1 mb-0 fw-bold">Drinking Water Sources</h4>
+			<span>Hand Pump <small class="text-info fw-bold">(257)</small></span>
+			<span>Bore/Machine <small class="text-info fw-bold">(367)</small></span>
+			<span>Piped Water Supply <small class="text-info fw-bold">(111)</small></span>
+			<span>Water Tanker <small class="text-info fw-bold">(6)</small></span>
+			<span>No Water <small class="text-info fw-bold">(8)</small></span>
+		</div>
+		  </div>
+		</div>
+		</div> -->
+
+
+
+
+
+        </div>
+
+
+
+
+        <div class="row  box-shadow mb-3">
+            <div class="col-md-3">
+                <h3 class="school-heads mb-0 mt-5 fs-5 text-center">Building Types</h3>
+
+
+                <div class="test">
+                </div>
+
+                <div class="build-type">
+                    <span class="text-darkpurple d-block fs-3 text-center">{{Kacha_building}}</span>
+                    <h3 class="text-darkpurple fs-7 text-center">Katcha</h3>
+                    <span class="d-block text-darkoranage fs-3 text-center">{{Pakka_building}}</span>
+                    <h3 class="text-darkoranage fs-7 text-center"> Partially Pakka & Katcha </h3>
+                    <span class="text-teal d-block fs-3 text-center">{{Mixed_building}}</span>
+                    <h3 class="text-teal fs-7 text-center">Pakka / RCC / Tier guarder </h3>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-9 d-flex flex-col">
+
+                <div class="building-stats">
+
+                    <div class="build-info">
+
+                        <h2 class="numplace fs-3 line-h34 text-center text-orange">
+                            {{percentage_shelterless_school}}%<small
+                                class="fs-7 ps-1 text-dark">({{shelterless_school.toLocaleString("en-US")}})</small>
+                        </h2>
+                        <label class="label mb-0 ">Shelterless Schools </label>
+
+                    </div>
+                    <div class="build-info pt-0">
+
+                        <h2 class="numplace fs-3 line-h34 text-center text-orange">{{percentage_school_with_one_room}}%
+                            <small class="fs-7 ps-1 text-dark">{{school_with_one_room.toLocaleString("en-US")}}</small>
+                        </h2>
+                        <label class="label mb-0 ">Schools with one Room</label>
+
+                    </div>
+
+                    <div class="build-info pt-0">
+                        <h2 class="numplace fs-3 line-h34 text-center text-orange">{{percentage_school_with_more_room}}%
+                            <small class="fs-7 ps-1 text-dark">{{school_with_more_room.toLocaleString("en-US")}}</small>
+                        </h2>
+                        <label class="label mb-0 ">Schools with more Rooms</label>
+
+                    </div>
+                </div>
+                <div class="tbl-res">
+                    <table class="table class-table table-teal  table-bordered">
+                        <thead>
+                            <tr>
+
+                                <th scope="col"></th>
+                                <th scope="col" class="text-center" colspan="6">Schools Building by Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>School Level</td>
+                                <td>Satisfactory (Govt)</td>
+                                <td> Needs Repair (Govt)</td>
+                                <td>Dangerous (Govt)</td>
+                                <td>Rented and Other Ownerships</td>
+                                <td>No Building / Shelterless</td>
+
+                            </tr>
+                            {% satisfac = 0 %}
+                            {% needRepair = 0 %}
+                            {% dangerous = 0 %}
+                            {% rent = 0 %}
+                            {% noBuilding = 0 %}
+                            <tr>
+                                <td>Primary</td>
+                                <td>{{Primary_Satisfactory.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Primary_Satisfactory_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Primary_Needs_Repair.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning-elec-gradient" role="progressbar"
+                                            style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                                            aria-valuemax="100">{{Primary_Needs_Repair_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Primary_Dangerous.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Primary_Dangerous_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Primary_Rented_Others.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Primary_Rented_Others_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Primary_No_Building.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Primary_No_Building_Percentage}}%</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>Middle/Elem.</td>
+                                <td>{{Middle_Elementary_Satisfactory.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Middle_Elementary_Satisfactory_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Middle_Elementary_Needs_Repair.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Middle_Elementary_Needs_Repair_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Middle_Elementary_Dangerous.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Middle_Elementary_Dangerous_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Middle_Elementary_Rented_Others.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                                            aria-valuemax="100">{{Middle_Elementary_Rented_Others_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Middle_Elementary_No_Building.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning-elec-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Middle_Elementary_No_Building_percentage}}%</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>Secondary</td>
+                                <td>{{Secondary_Satisfactory.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning-elec-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Secondary_Satisfactory_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Secondary_Needs_Repair.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Secondary_Needs_Repair_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Secondary_Dangerous.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                                            aria-valuemax="100">{{Secondary_Dangerous_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Secondary_Rented_Others.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Secondary_Rented_Others_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Secondary_No_Building.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary-water-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Secondary_No_Building_Percentage}}%</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>Higher Sec.</td>
+                                <td>{{Higher_Secondary_Satisfactory.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Higher_Secondary_Satisfactory_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Higher_Secondary_Needs_Repair.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Higher_Secondary_Needs_Repair_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Higher_Secondary_Dangerous.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Higher_Secondary_Dangerous_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Higher_Secondary_Rented_Others.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning-elec-gradient" role="progressbar"
+                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{Higher_Secondary_Rented_Others_percentage}}%</div>
+                                    </div>
+                                </td>
+                                <td>{{Higher_Secondary_No_Building.toLocaleString("en-US")}}
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success-toilet-gradient" role="progressbar"
+                                            style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                                            aria-valuemax="100">{{Higher_Secondary_No_Building_Percentage}}%</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            {% satisfac= Primary_Satisfactory + Secondary_Satisfactory + Higher_Secondary_Satisfactory +
+                            Middle_Elementary_Satisfactory %}
+                            {% needRepair = Secondary_Needs_Repair + Primary_Needs_Repair +
+                            Middle_Elementary_Needs_Repair + Higher_Secondary_Needs_Repair %}
+                            {% dangerous = Higher_Secondary_Dangerous + Middle_Elementary_Dangerous + Primary_Dangerous
+                            + Secondary_Dangerous %}
+                            {% rent = Higher_Secondary_Rented_Others + Middle_Elementary_Rented_Others +
+                            Primary_Rented_Others + Secondary_Rented_Others %}
+                            {% noBuilding = Higher_Secondary_No_Building + Middle_Elementary_No_Building +
+                            Primary_No_Building + Secondary_No_Building %}
+                            <tr class="total-tbl">
+                                <td class="text-center">Total</td>
+                                <td>{{satisfac}} </td>
+                                <td>{{needRepair}}</td>
+                                <td>{{dangerous}} </td>
+                                <td>{{rent}}</td>
+                                <td>{{noBuilding}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 class="school-heads fw-bold">Labs Available</h3>
+        <div class="row ">
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Internet</h4>
+                <img src="/assets/semis_theme/img/internet.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{internet}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Computer</h4>
+                <img src="/assets/semis_theme/img/computer.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{computer}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Science</h4>
+                <img src="/assets/semis_theme/img/science.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{science}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Chemistry</h4>
+                <img src="/assets/semis_theme/img/chemistry.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{chemistry}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Physics</h4>
+                <img src="/assets/semis_theme/img/physics.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{physics}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Biology</h4>
+                <img src="/assets/semis_theme/img/biology.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{biology}}</span>
+            </div>
+
+        </div>
+
+        <div class="row mt-4 box-shadow mb-3">
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Home Economics</h4>
+                <img src="/assets/semis_theme/img/home-economics.png" class="labs home-eco">
+                <span class="d-block text-center fs-5 text-muted fw-bold mt-2">{{homeeconomics}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Library</h4>
+                <img src="/assets/semis_theme/img/library.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{library}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center">Play Ground</h4>
+                <img src="/assets/semis_theme/img/play.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{play_gound}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center mb-3">Sports Equipment</h4>
+                <img src="/assets/semis_theme/img/sports.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{sports_equipment}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center mb-0">Medical/First Aid Box</h4>
+                <img src="/assets/semis_theme/img/first-aid.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{medical_aid_box}}</span>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-dark text-center mb-0">Land-line Phone connection</h4>
+                <img src="/assets/semis_theme/img/landline.png" class="labs">
+                <span class="d-block text-center fs-5 text-muted fw-bold">{{landline_phone}}</span>
+            </div>
+
+        </div>
+
+
+
+
+
+        <h3 class="school-heads  fw-bold">Student Teacher Ratio</h3>
+        <div class="row box-shadow mb-3">
+            <div class="col-md-12 d-flex">
+
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mx-3 mb-0">
+                        <i class="fa fa-circle text-orange fs-6 me-1" aria-hidden="true"></i>
+                        Student
+                    </h3>
+                    <small class="ms-3 ps-4 fs-6">{{total_student}}</small>
+                </div>
+
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mb-0"><i class="fa fa-circle text-secondary fs-6 me-1"
+                            aria-hidden="true"></i>Teacher</h3>
+                    <small class="ms-3 ps-1 fs-6">{{total_Teacher}}</small>
+                </div>
+
+                <i class="fa fa-long-arrow-right ms-4 fs-4 text-dark mt-1" aria-hidden="true"></i>
+                <p class="ms-3 fs-5 mb-0 mt-8"><span class=" fs-3 fw-bold">{{Students_Per_Teacher}} </span> Students per
+                    Teacher</p>
+            </div>
+
+            <div class="col-md-12 d-flex flow-row justify-center">
+
+                <div class="me-4 ms-5 mt-6">
+                    <p class="text-orange mb-0 ms-3 fw-bold">{{total_primary_student}}</p>
+                    <div class="bg-orange ratiocircle circle1">
+                        <p class="ratio-p">{{primary_teacher_per_student}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 fw-bold">{{total_primary_teacher}}</p>
+                    <h4 class="text-dark fs-6 ms-3 fw-normal">Primary</h4>
+                </div>
+
+                <div class="ms-5 mt4">
+                    <p class="text-orange mb-0 ms-4 ps-2 fw-bold">{{total_middle_student}}</p>
+                    <div class="bg-orange ratiocircle circle2">
+                        <p class="ratio-p">{{middle_teacher_per_student}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray1"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-3 fw-bold">{{total_middle_teacher}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-4 fw-normal">Middle</h4>
+                </div>
+
+                <div class="ms-5 mt-5">
+                    <p class="text-orange mb-0 ms-4 ps-4 fw-bold">{{total_elementary_student}}</p>
+                    <div class="bg-orange ratiocircle circle3">
+                        <p class="ratio-p pt-4">{{elementary_teacher_per_student}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray2"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-6 fw-bold">{{total_elementary_teacher}}</p>
+                    <h4 class="text-dark fs-6 ps-2 ms-4 fw-normal">Elementary</h4>
+                </div>
+
+                <div class="ms-5 mt-4">
+                    <p class="text-orange mb-0 ms-5 ps-3 fw-bold">{{total_secondary_student}}</p>
+                    <div class="bg-orange ratiocircle circle4">
+                        <p class="ratio-p pt-4">{{secondary_teacher_per_student}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray3"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-3 fw-bold">{{total_secondary_teacher}}</p>
+                    <h4 class="text-dark fs-6 ps-4 ms-4 fw-normal">Secondary</h4>
+                </div>
+
+                <div class="ms-5">
+                    <p class="text-orange mb-0 ms-5 ps-4 fw-bold">{{total_higher_secondary_student}}</p>
+                    <div class="bg-orange ratiocircle circle5">
+                        <p class="ratio-p pt-4">{{higher_secondary_teacher_per_student}}<span
+                                class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray4"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-6 fw-bold">{{total_higher_secondary_teacher}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-3 fw-normal">Higher Secondary</h4>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <h3 class="school-heads fw-bold">Student School Ratio</h3>
+        <div class="row box-shadow mb-3">
+            <div class="col-md-12 d-flex">
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mx-3 mb-0">
+                        <i class="fa fa-circle text-yellow fs-6 me-1" aria-hidden="true"></i>
+                        Student
+                    </h3>
+                    <small class="ms-3 ps-4 fs-6">{{total_student}}</small>
+                </div>
+
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mb-0"><i class="fa fa-circle text-secondary fs-6 me-1"
+                            aria-hidden="true"></i>School</h3>
+                    <small class="ms-3 ps-1 fs-6">{{total_school}}</small>
+                </div>
+
+                <i class="fa fa-long-arrow-right ms-4 fs-4 text-dark mt-1" aria-hidden="true"></i>
+                <p class="ms-3 fs-5 mb-0 mt-8"><span class=" fs-3 fw-bold">{{Students_Per_School}}</span> Students per
+                    School</p>
+            </div>
+
+            <div class="col-md-12 d-flex flow-row justify-center">
+
+                <div class="me-4 ms-5 mt-6">
+                    <p class="text-yellow mb-0 ms-3 fw-bold">{{total_primary_student_school}}</p>
+                    <div class="bg-yellow ratiocircle circle1">
+                        <p class="ratio-p">{{primary_teacher_per_student_school}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 fw-bold">{{total_primary_teacher_school}}</p>
+                    <h4 class="text-dark fs-6 ms-3 fw-normal">Primary</h4>
+                </div>
+
+                <div class="ms-5 mt4">
+                    <p class="text-yellow mb-0 ms-4 ps-2 fw-bold">{{total_middle_student_school}}</p>
+                    <div class="bg-yellow ratiocircle circle2">
+                        <p class="ratio-p">{{middle_teacher_per_student_school}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray1"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-3 fw-bold">{{total_middle_teacher_school}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-4 fw-normal">Middle</h4>
+                </div>
+
+                <div class="ms-5 mt-5">
+                    <p class="text-yellow mb-0 ms-4 ps-4 fw-bold">{{total_elementary_student_school}}</p>
+                    <div class="bg-yellow ratiocircle circle3">
+                        <p class="ratio-p pt-4">{{elementary_teacher_per_student_school}}<span
+                                class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray2"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-6 fw-bold">{{total_elementary_teacher_school}}</p>
+                    <h4 class="text-dark fs-6 ps-2 ms-4 fw-normal">Elementary</h4>
+                </div>
+
+                <div class="ms-5 mt-4">
+                    <p class="text-yellow mb-0 ms-5 ps-3 fw-bold">{{total_secondary_student_school}}</p>
+                    <div class="bg-yellow ratiocircle circle4">
+                        <p class="ratio-p pt-4">{{secondary_teacher_per_student_school}}<span
+                                class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray3"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-3 fw-bold">{{total_secondary_teacher_school}}</p>
+                    <h4 class="text-dark fs-6 ps-4 ms-4 fw-normal">Secondary</h4>
+                </div>
+
+                <div class="ms-5">
+                    <p class="text-yellow mb-0 ms-5 ps-4 fw-bold">{{total_higher_secondary_student_school}}</p>
+                    <div class="bg-yellow ratiocircle circle5">
+                        <p class="ratio-p pt-4">{{higher_secondary_teacher_per_student_school}}<span
+                                class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray4"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-6 fw-bold">{{total_higher_secondary_teacher_school}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-3 fw-normal">Higher Secondary</h4>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <h3 class="school-heads fw-bold">Student Classroom Ratio</h3>
+        <div class="row">
+            <div class="col-md-12 d-flex">
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mx-3 mb-0">
+                        <i class="fa fa-circle text-green fs-6 me-1" aria-hidden="true"></i>
+                        Student
+                    </h3>
+                    <small class="ms-3 ps-4 fs-6">{{total_student}}</small>
+                </div>
+
+                <div class="d-flex flex-col">
+                    <h3 class="text-dark fs-6 mb-0"><i class="fa fa-circle text-secondary fs-6 me-1"
+                            aria-hidden="true"></i>Classroom</h3>
+                    <small class="ms-3 ps-1 fs-6">{{total_classroom}}</small>
+                </div>
+
+                <i class="fa fa-long-arrow-right ms-4 fs-4 text-dark mt-1" aria-hidden="true"></i>
+                <p class="ms-3 fs-5 mb-0 mt-8"><span class=" fs-3 fw-bold">{{student_per_classroom}}</span> Students per
+                    Classroom</p>
+            </div>
+
+            <div class="col-md-12 d-flex flow-row justify-center">
+
+                <div class="me-4 ms-5 mt-6">
+                    <p class="text-green mb-0 ms-3 fw-bold">{{total_primary_student_classroom}}</p>
+                    <div class="bg-green ratiocircle circle1">
+                        <p class="ratio-p">{{primary_per_student_classroom}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 fw-bold">{{total_primary_classroom}}</p>
+                    <h4 class="text-dark fs-6 ms-3 fw-normal">Primary</h4>
+                </div>
+
+                <div class="ms-5 mt4">
+                    <p class="text-green mb-0 ms-4 ps-2 fw-bold">{{total_middle_student_classroom}}</p>
+                    <div class="bg-green ratiocircle circle2">
+                        <p class="ratio-p">{{middle_per_student_classroom}}<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray1"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-3 fw-bold">{{total_middle_classroom}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-4 fw-normal">Middle</h4>
+                </div>
+
+                <div class="ms-5 mt-5">
+                    <p class="text-green mb-0 ms-4 ps-4 fw-bold">{{total_elementary_student_classroom}}</p>
+                    <div class="bg-green ratiocircle circle3">
+                        <p class="ratio-p pt-4">{{elementary_per_student_classroom}}<span class="d-block">RATIO</span>
+                        </p>
+                        <div class="bg-gray gray2"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-4 ps-6 fw-bold">{{total_elementary_classroom}}</p>
+                    <h4 class="text-dark fs-6 ps-2 ms-4 fw-normal">Elementary</h4>
+                </div>
+
+                <div class="ms-5 mt-4">
+                    <p class="text-green mb-0 ms-5 ps-3 fw-bold">{{total_secondary_student_classroom}}</p>
+                    <div class="bg-green ratiocircle circle4">
+                        <p class="ratio-p pt-4">28<span class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray3"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-3 fw-bold">{{total_secondary_classroom}}</p>
+                    <h4 class="text-dark fs-6 ps-4 ms-4 fw-normal">Secondary</h4>
+                </div>
+
+                <div class="ms-5">
+                    <p class="text-green mb-0 ms-5 ps-4 fw-bold">{{total_higher_secondary_student_classroom}}</p>
+                    <div class="bg-green ratiocircle circle5">
+                        <p class="ratio-p pt-4">{{higher_secondary_per_student_classroom}}<span
+                                class="d-block">RATIO</span></p>
+                        <div class="bg-gray gray4"></div>
+                    </div>
+                    <p class="text-secondary mb-0 ms-5 ps-6 fw-bold">{{total_higher_secondary_classroom}}</p>
+                    <h4 class="text-dark fs-6 ps-3 ms-3 fw-normal">Higher Secondary</h4>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+</body>
+
+</html>

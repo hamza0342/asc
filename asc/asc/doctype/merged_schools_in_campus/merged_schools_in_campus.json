@@ -1,0 +1,44 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2022-03-11 15:39:01.163207",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "semis_code",
+        "school_name",
+        "merging_date"
+    ],
+    "fields": [
+        {
+            "fieldname": "semis_code",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Semis Code"
+        },
+        {
+            "fieldname": "school_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "School Name"
+        },
+        {
+            "fieldname": "merging_date",
+            "fieldtype": "Date",
+            "label": "Merging Date"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2022-08-22 14:57:43.664341",
+    "modified_by": "Administrator",
+    "module": "ASC",
+    "name": "Merged Schools in Campus",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}
